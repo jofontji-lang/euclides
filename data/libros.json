@@ -1,0 +1,93 @@
+[
+  {
+    "numero": "I",
+    "titulo": "Triángulos, paralelas y áreas",
+    "proposiciones": 48,
+    "disponible": true,
+    "slug": "libro-1"
+  },
+  {
+    "numero": "II",
+    "titulo": "Álgebra geométrica",
+    "proposiciones": 14,
+    "disponible": false,
+    "slug": "libro-2"
+  },
+  {
+    "numero": "III",
+    "titulo": "El círculo",
+    "proposiciones": 37,
+    "disponible": false,
+    "slug": "libro-3"
+  },
+  {
+    "numero": "IV",
+    "titulo": "Polígonos inscritos y circunscritos",
+    "proposiciones": 16,
+    "disponible": false,
+    "slug": "libro-4"
+  },
+  {
+    "numero": "V",
+    "titulo": "Proporciones de Eudoxo",
+    "proposiciones": 25,
+    "disponible": false,
+    "slug": "libro-5"
+  },
+  {
+    "numero": "VI",
+    "titulo": "Semejanza",
+    "proposiciones": 33,
+    "disponible": false,
+    "slug": "libro-6"
+  },
+  {
+    "numero": "VII",
+    "titulo": "Aritmética: primos y máximo común divisor",
+    "proposiciones": 39,
+    "disponible": false,
+    "slug": "libro-7"
+  },
+  {
+    "numero": "VIII",
+    "titulo": "Proporciones continuas",
+    "proposiciones": 27,
+    "disponible": false,
+    "slug": "libro-8"
+  },
+  {
+    "numero": "IX",
+    "titulo": "Infinitud de los primos y números perfectos",
+    "proposiciones": 36,
+    "disponible": false,
+    "slug": "libro-9"
+  },
+  {
+    "numero": "X",
+    "titulo": "Magnitudes inconmensurables",
+    "proposiciones": 115,
+    "disponible": false,
+    "slug": "libro-10"
+  },
+  {
+    "numero": "XI",
+    "titulo": "Geometría del espacio",
+    "proposiciones": 39,
+    "disponible": false,
+    "slug": "libro-11"
+  },
+  {
+    "numero": "XII",
+    "titulo": "Método de exhaución",
+    "proposiciones": 18,
+    "disponible": false,
+    "slug": "libro-12"
+  },
+  {
+    "numero": "XIII",
+    "titulo": "Los cinco sólidos regulares",
+    "proposiciones": 18,
+    "disponible": false,
+    "slug": "libro-13"
+  }
+]
