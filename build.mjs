@@ -48,6 +48,13 @@ function layout({ rel, title, description, active, body, figures = false, absolu
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Euclides · Los Elementos">
+<meta property="og:image" content="${SITE}/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Euclides · Los Elementos: la arquitectura lógica de las matemáticas">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#203b30">
 <link rel="icon" href="${r}assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,6 +105,7 @@ const props = libro1.proposiciones;
 const heroArt = `<svg viewBox="0 0 500 410" role="img" aria-label="Composición geométrica: dos triángulos equiláteros inscritos en un círculo"><g fill="none" stroke="#b18a4b" stroke-width="1.15"><circle cx="250" cy="204" r="143"/><circle cx="250" cy="204" r="93" stroke-dasharray="3 6"/><path d="M107 204 321.5 80.5 321.5 327.5Z"/><path d="M393 204 178.5 80.5 178.5 327.5Z"/><path d="M107 204H393M250 61V347" stroke="#c9b995" stroke-dasharray="4 5"/><path d="M178.5 80.5 321.5 327.5M321.5 80.5 178.5 327.5" opacity=".6"/></g><g fill="#203b30"><circle cx="107" cy="204" r="4"/><circle cx="393" cy="204" r="4"/><circle cx="250" cy="61" r="4"/><circle cx="250" cy="347" r="4"/><circle cx="321.5" cy="80.5" r="3"/><circle cx="321.5" cy="327.5" r="3"/><circle cx="178.5" cy="80.5" r="3"/><circle cx="178.5" cy="327.5" r="3"/></g><g font-family="DM Mono, monospace" font-size="11" fill="#666b60"><text x="89" y="198">A</text><text x="401" y="198">B</text><text x="258" y="55">C</text><text x="258" y="365">D</text></g></svg>`;
 
 const featured = props.filter(p => p.figura);
+const numeral = n => ["Cero", "Una", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez", "Once", "Doce"][n] ?? String(n);
 const home = layout({
   rel: "index.html", active: "inicio", figures: true,
   title: "Euclides · Los Elementos",
@@ -107,7 +115,7 @@ const home = layout({
   <div>
     <div class="kicker">Alejandría, c. 300 a. C.</div>
     <h1>La arquitectura<br>lógica de las<br><em>matemáticas</em></h1>
-    <p class="intro">Los <i>Elementos</i> de Euclides, compuestos hacia el 300 a. C., son una de las obras fundamentales de la historia de las matemáticas. Organizados en trece libros, abarcan la geometría, la teoría de números, las proporciones y la geometría del espacio. Su principal aportación reside en el método deductivo: partir de definiciones, postulados y nociones comunes para demostrar proposiciones mediante razonamientos lógicos encadenados. Durante siglos, la obra ha constituido una referencia esencial para la enseñanza de las matemáticas y un modelo de rigor en la organización y fundamentación del conocimiento matemático.</p>
+    <p class="intro">Hacia el 300 a. C., Euclides reunió en trece libros la geometría y la aritmética de su tiempo. Partiendo de unas pocas definiciones, postulados y nociones comunes, demostró cientos de proposiciones encadenadas: un modelo de rigor que se ha enseñado durante más de dos mil años.</p>
     <div class="actions"><a class="btn" href="libro-1/">Empezar por el Libro I ↗</a><a class="btn secondary" href="libro-1/47/">Ver el teorema de Pitágoras</a></div>
     <div class="meta">
       <div><strong>13</strong><span>libros</span></div>
@@ -117,7 +125,7 @@ const home = layout({
   </div>
   <div class="hero-art">${heroArt}<div class="art-caption">FIG. 01 — ORDEN A PARTIR DE PUNTOS</div></div>
 </section>
-<div class="rule wrap">Los trece libros</div>
+<div class="rule wrap">ΣΤΟΙΧΕΙΑ · Elementos</div>
 <section class="section library" id="libros"><div class="wrap">
   <div class="section-head"><div><div class="kicker">El archivo euclidiano</div><h2>Trece libros.<br>Una sola estructura.</h2></div>
   <p>De los fundamentos de la geometría plana a las proporciones, la aritmética, los inconmensurables y los cinco sólidos regulares.</p></div>
@@ -127,14 +135,14 @@ const home = layout({
   <p class="notice">El Libro I está completo: todas sus definiciones, postulados, nociones comunes y proposiciones. Los demás libros se irán incorporando con el mismo formato.</p>
 </div></section>
 <section class="section wrap">
-  <div class="section-head"><div><div class="kicker">El lector geométrico</div><h2>Tres demostraciones<br>para empezar.</h2></div>
+  <div class="section-head"><div><div class="kicker">El lector geométrico</div><h2>${featured.length === 1 ? "Una demostración" : `${numeral(featured.length)} demostraciones`}<br>para empezar.</h2></div>
   <p>Cada una se construye paso a paso. Puedes deformar la figura y ver que la conclusión no depende del dibujo.</p></div>
   <div class="demos">${featured.map(p => `<a class="demo" href="libro-1/${p.n}/">
     ${figureHTML(p.figura, "#mini-" + p.n, { still: true })}
     <ol id="mini-${p.n}" hidden>${p.pasos.map(s => `<li>${s}</li>`).join("")}</ol>
     <span class="kicker">Proposición I.${p.n}</span><h3>${esc(p.titulo)}</h3><p>${esc(kind(p))}</p></a>`).join("")}</div>
 </section>
-<section class="about wrap" style="border-top:1px solid var(--line)">
+<section class="about wrap divided">
   <div><div class="kicker">Criterio editorial</div><h2>Fidelidad sin fingir completitud.</h2>
   <p>Los enunciados siguen el orden y la numeración tradicionales y están traducidos al castellano actual para esta edición. No son una transcripción de una edición histórica concreta.</p>
   <p>Las figuras son construcciones originales, no facsímiles. Sus colores siguen la idea de Oliver Byrne (1847): cada segmento y cada ángulo lleva un color, y el texto los nombra con ese mismo color.</p></div>
@@ -142,7 +150,7 @@ const home = layout({
   <div class="keyrow"><span class="tag">✓ Con figura</span><span>Proposición con figura interactiva y demostración completa paso a paso.</span></div>
   <div class="keyrow"><span class="tag pending">◷ Enunciado</span><span>Proposición con su enunciado; la figura y la demostración están en preparación.</span></div>
   <div class="keyrow"><span class="tag pending">◷ En preparación</span><span>Libro aún no incorporado a la edición.</span></div>
-  <p style="margin-top:22px"><a href="sobre/">Más sobre la edición y las fuentes →</a></p></div>
+  <p class="more"><a href="sobre/">Más sobre la edición y las fuentes →</a></p></div>
 </section>`
 });
 write("index.html", home);
@@ -199,7 +207,7 @@ const bookPage = layout({
     </section>
   </div>
 </div>
-<div style="height:60px"></div>`
+<div class="spacer"></div>`
 });
 write("libro-1/index.html", bookPage);
 
@@ -233,7 +241,7 @@ for (const p of props) {
   <section class="proof">
     <div class="kicker">${p.tipo === "problema" ? "Construcción y demostración" : "Demostración"}</div>
     <h3>Paso a paso</h3>
-    <p class="small muted" style="font-size:13px">Pulsa un paso para verlo en la figura.</p>
+    <p class="small muted hint">Pulsa un paso para verlo en la figura.</p>
     <ol id="pasos">${p.pasos.map(s => `<li>${s}</li>`).join("")}</ol>
   </section>` : `
   <div class="grid2">
@@ -297,12 +305,12 @@ fs.writeFileSync(path.join(OUT, "404.html"), layout({
   description: "Esta página no existe.",
   body: `<div class="wrap"><article class="prose"><div class="kicker">Error 404</div><h1>Esta página no existe.</h1>
   <p>Puede que la dirección esté mal escrita o que la proposición aún no esté publicada.</p>
-  <div class="actions" style="margin-top:24px"><a class="btn" href="/">Volver al inicio</a><a class="btn secondary" href="/libro-1/#proposiciones">Ver las proposiciones del Libro I</a></div></article></div>`
+  <div class="actions spaced"><a class="btn" href="/">Volver al inicio</a><a class="btn secondary" href="/libro-1/#proposiciones">Ver las proposiciones del Libro I</a></div></article></div>`
 }));
 
 // ---------- Recursos, sitemap y dominio ----------
 fs.mkdirSync(path.join(OUT, "assets"), { recursive: true });
-for (const f of ["style.css", "site.js", "figures.js"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
+for (const f of ["style.css", "site.js", "figures.js", "og.png"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
 fs.writeFileSync(path.join(OUT, "assets/icon.svg"), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#203b30"/><circle cx="32" cy="32" r="25" fill="none" stroke="#b18a4b" stroke-width="1.5"/><text x="32" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="32" fill="#f4f1e8">Ε</text></svg>`);
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p => `  <url><loc>${SITE}/${p}</loc></url>`).join("\n")}\n</urlset>\n`);
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);

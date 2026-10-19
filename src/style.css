@@ -114,6 +114,11 @@ p{margin:0}
 .about h2{font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-.035em;margin:12px 0 18px}
 .about p{font-size:14px;line-height:1.9;color:var(--muted)}
 .about p+p{margin-top:12px}
+.about.divided{border-top:1px solid var(--line)}
+.about p.more{margin-top:22px}
+.spacer{height:60px}
+.hint{font-size:13px}
+.actions.spaced{margin-top:24px}
 .keyrow{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.7;color:var(--muted);margin-top:14px}
 .keyrow .tag{flex-shrink:0}
 

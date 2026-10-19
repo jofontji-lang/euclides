@@ -11,6 +11,7 @@ data/libro-1.json    Libro I: definiciones, postulados, nociones comunes y 48 pr
 src/style.css        Diseño de toda la web
 src/figures.js       Figuras interactivas (I.1, I.32, I.47)
 src/site.js          Menú, pestañas y buscador
+src/og.png           Imagen de vista previa al compartir (se genera desde src/og.html)
 build.mjs            Genera la web a partir de los datos
 .github/workflows/   Publicación automática en GitHub Pages
 ```
