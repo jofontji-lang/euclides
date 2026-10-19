@@ -106,8 +106,8 @@ const home = layout({
 <section class="hero wrap">
   <div>
     <div class="kicker">Alejandría, c. 300 a. C.</div>
-    <h1>La belleza de<br>lo <em>demostrable.</em></h1>
-    <p class="intro">Explora <i>Los Elementos</i>, la arquitectura de la geometría: definiciones, postulados y proposiciones que construyen un universo lógico a partir de unas pocas ideas. Las figuras se mueven: arrastra un punto y comprueba que la demostración sigue valiendo.</p>
+    <h1>La arquitectura<br>lógica de las<br><em>matemáticas</em></h1>
+    <p class="intro">Los <i>Elementos</i> de Euclides, compuestos hacia el 300 a. C., son una de las obras fundamentales de la historia de las matemáticas. Organizados en trece libros, abarcan la geometría, la teoría de números, las proporciones y la geometría del espacio. Su principal aportación reside en el método deductivo: partir de definiciones, postulados y nociones comunes para demostrar proposiciones mediante razonamientos lógicos encadenados. Durante siglos, la obra ha constituido una referencia esencial para la enseñanza de las matemáticas y un modelo de rigor en la organización y fundamentación del conocimiento matemático.</p>
     <div class="actions"><a class="btn" href="libro-1/">Empezar por el Libro I ↗</a><a class="btn secondary" href="libro-1/47/">Ver el teorema de Pitágoras</a></div>
     <div class="meta">
       <div><strong>13</strong><span>libros</span></div>
