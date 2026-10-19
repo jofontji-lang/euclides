@@ -28,7 +28,7 @@ FIGS["I.1"]={vb:[400,310],points:{A:{x:145,y:205},B:{x:255,y:205}},drag:["A","B"
     const d=len(sub(q,o));if(d<40)q=add(o,mul(unit(sub(q,o)),40));if(d>125)q=add(o,mul(unit(sub(q,o)),125));P[k]=q},
   draw(P,s,at){const{A,B}=P,L=len(sub(B,A)),C=add(mid(A,B),mul(perp(sub(B,A)),-Math.sqrt(3)/2)),G=mul(add(add(A,B),C),1/3);
     return at(4,poly([A,B,C],"f-ink"))+at(1,circ(A,L,"cons"))+at(2,circ(B,L,"cons"))
-      +ln(A,B,"ln-blue")+at(3,ln(C,A,"ln-red")+ln(C,B,"ln-yellow")+pt(C)+lab(C,"C",G))+lab(A,"A",G)+lab(B,"B",G)},
+      +ln(A,B,"ln-blue")+at(3,ln(C,A,"ln-red")+ln(C,B,"ln-sage")+pt(C)+lab(C,"C",G))+lab(A,"A",G)+lab(B,"B",G)},
   readout(P,s){const L=len(sub(P.B,P.A))/10;return s>=3?`AB = ${fmt(L)} · BC = ${fmt(L)} · CA = ${fmt(L)}`:`AB = ${fmt(L)}`}};
 
 /* I.32 — Suma de los ángulos de un triángulo */
@@ -36,7 +36,7 @@ FIGS["I.32"]={vb:[400,300],points:{A:{x:150,y:70},B:{x:70,y:235},C:{x:250,y:235}
   draw(P,s,at){const{A,B,C}=P,G=mul(add(add(A,B),C),1/3);
     const u=unit(sub(C,B)),D=add(C,mul(u,105)),E=add(C,mul(unit(sub(A,B)),110));
     const m={x:u.y,y:-u.x},sw=dot(m,sub(A,C))>0?1:0,s1=add(C,mul(u,-44)),s2=add(C,mul(u,44));
-    return wedge(A,B,C,22,"w-red")+wedge(B,A,C,22,"w-blue")+wedge(C,A,B,20,"w-yellow")
+    return wedge(A,B,C,22,"w-red")+wedge(B,A,C,22,"w-blue")+wedge(C,A,B,20,"w-sage")
       +at(3,wedge(C,A,E,30,"w-red"))+at(4,wedge(C,E,D,30,"w-blue"))
       +at(5,`<path d="M${f(s1.x)} ${f(s1.y)} A44 44 0 0 ${sw} ${f(s2.x)} ${f(s2.y)}" class="dash"/>`)
       +at(1,ln(C,D,"ln")+lab(D,"D",C))+at(2,ln(C,E,"ln")+lab(E,"E",C))
@@ -54,11 +54,11 @@ FIGS["I.47"]={vb:[400,330],points:{A:{x:O.x-R*Math.cos(1.2),y:O.y-R*Math.sin(1.2
     const n=sub(sqBC[3],B),F=add(B,mul(sub(C,B),dot(sub(A,B),sub(C,B))/dot(sub(C,B),sub(C,B)))),L=add(F,n);
     const u1=unit(sub(B,A)),u2=unit(sub(C,A)),r1=add(A,mul(u1,10)),r2=add(r1,mul(u2,10)),r3=add(A,mul(u2,10));
     return `<path d="M${B.x} ${B.y} A${R} ${R} 0 0 1 ${C.x} ${C.y}" class="dash"/>`
-      +at(1,poly(sqAB,"f-red")+poly(sqAC,"f-yellow"))
-      +at(4,poly([B,F,L,sqBC[3]],"f-red")+poly([F,C,sqBC[2],L],"f-yellow"))
+      +at(1,poly(sqAB,"f-red")+poly(sqAC,"f-sage"))
+      +at(4,poly([B,F,L,sqBC[3]],"f-red")+poly([F,C,sqBC[2],L],"f-sage"))
       +at(2,poly(sqBC,"f-blue"))+at(3,ln(A,L,"ln"))
       +`<polyline points="${f(r1.x)},${f(r1.y)} ${f(r2.x)},${f(r2.y)} ${f(r3.x)},${f(r3.y)}" class="ln"/>`
-      +ln(A,B,"ln-red")+ln(A,C,"ln-yellow")+ln(B,C,"ln-blue")
+      +ln(A,B,"ln-red")+ln(A,C,"ln-sage")+ln(B,C,"ln-blue")
       +lab(A,"A",G)+lab(B,"B",{x:G.x+30,y:G.y-20})+lab(C,"C",{x:G.x-30,y:G.y-20})},
   readout(P){const ab=(len(sub(P.A,P.B))/10)**2,ac=(len(sub(P.A,P.C))/10)**2,bc=(len(sub(P.B,P.C))/10)**2;
     return `AB² = ${fmt(ab)} · AC² = ${fmt(ac)} · AB² + AC² = ${fmt(ab+ac)} · BC² = ${fmt(bc)}`}};

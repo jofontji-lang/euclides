@@ -57,8 +57,8 @@
         "Sea <span class=\"sg sg-blue\">AB</span> la recta finita dada. Hay que construir sobre ella un triángulo equilátero.",
         "Con centro <i>A</i> y distancia <span class=\"sg sg-blue\">AB</span> se describe un círculo (Post. 3).",
         "Con centro <i>B</i> y distancia <span class=\"sg sg-blue\">BA</span> se describe otro círculo (Post. 3).",
-        "Desde el punto <i>C</i>, donde se cortan los círculos, se trazan las rectas <span class=\"sg sg-red\">CA</span> y <span class=\"sg sg-yellow\">CB</span> (Post. 1).",
-        "<span class=\"sg sg-red\">CA</span> = <span class=\"sg sg-blue\">AB</span> por ser radios del primer círculo, y <span class=\"sg sg-yellow\">CB</span> = <span class=\"sg sg-blue\">BA</span> por ser radios del segundo. Las cosas iguales a una misma cosa son iguales entre sí (N.C. 1): el triángulo <i>ABC</i> es equilátero. <i>Q.E.F.</i>"
+        "Desde el punto <i>C</i>, donde se cortan los círculos, se trazan las rectas <span class=\"sg sg-red\">CA</span> y <span class=\"sg sg-sage\">CB</span> (Post. 1).",
+        "<span class=\"sg sg-red\">CA</span> = <span class=\"sg sg-blue\">AB</span> por ser radios del primer círculo, y <span class=\"sg sg-sage\">CB</span> = <span class=\"sg sg-blue\">BA</span> por ser radios del segundo. Las cosas iguales a una misma cosa son iguales entre sí (N.C. 1): el triángulo <i>ABC</i> es equilátero. <i>Q.E.F.</i>"
       ],
       "nota": "Euclides da por hecho que los dos círculos se cortan. En una axiomática moderna, como la de Hilbert, ese paso necesita un axioma de continuidad."
     },
@@ -256,12 +256,12 @@
         "N.C. 2"
       ],
       "pasos": [
-        "Sea <i>ABC</i> un triángulo, con sus ángulos en <span class=\"sg sg-red\">A</span>, <span class=\"sg sg-blue\">B</span> y <span class=\"sg sg-yellow\">C</span>. Arrastra cualquier vértice.",
+        "Sea <i>ABC</i> un triángulo, con sus ángulos en <span class=\"sg sg-red\">A</span>, <span class=\"sg sg-blue\">B</span> y <span class=\"sg sg-sage\">C</span>. Arrastra cualquier vértice.",
         "Se prolonga el lado <i>BC</i> hasta <i>D</i> (Post. 2).",
         "Por <i>C</i> se traza <i>CE</i> paralela a <i>AB</i> (I.31).",
         "<i>AC</i> incide sobre las paralelas <i>AB</i> y <i>CE</i>, así que el ángulo <i>ACE</i> es igual a su alterno <span class=\"sg sg-red\">BAC</span> (I.29).",
         "<i>BD</i> incide sobre las mismas paralelas, así que el ángulo externo <i>ECD</i> es igual al interno y opuesto <span class=\"sg sg-blue\">ABC</span> (I.29).",
-        "El ángulo externo <i>ACD</i> es igual a <span class=\"sg sg-red\">BAC</span> + <span class=\"sg sg-blue\">ABC</span>. Sumando <span class=\"sg sg-yellow\">ACB</span> a ambos (N.C. 2), los tres ángulos del triángulo son iguales a <i>ACB</i> + <i>ACD</i>, es decir, a dos rectos (I.13). <i>Q.E.D.</i>"
+        "El ángulo externo <i>ACD</i> es igual a <span class=\"sg sg-red\">BAC</span> + <span class=\"sg sg-blue\">ABC</span>. Sumando <span class=\"sg sg-sage\">ACB</span> a ambos (N.C. 2), los tres ángulos del triángulo son iguales a <i>ACB</i> + <i>ACD</i>, es decir, a dos rectos (I.13). <i>Q.E.D.</i>"
       ],
       "nota": "Es la primera gran consecuencia del quinto postulado, que entra a través de I.29. En geometría hiperbólica la suma es menor que dos rectos."
     },
@@ -365,10 +365,10 @@
       ],
       "pasos": [
         "Sea <i>ABC</i> un triángulo con el ángulo <i>BAC</i> recto. Arrastra <i>A</i> sobre el semicírculo: el ángulo en <i>A</i> sigue siendo recto (III.31).",
-        "Se describen los cuadrados sobre <span class=\"sg sg-red\">BA</span> y <span class=\"sg sg-yellow\">AC</span> (I.46).",
+        "Se describen los cuadrados sobre <span class=\"sg sg-red\">BA</span> y <span class=\"sg sg-sage\">AC</span> (I.46).",
         "Se describe el cuadrado sobre <span class=\"sg sg-blue\">BC</span> (I.46).",
         "Por <i>A</i> se traza una paralela a los lados del cuadrado sobre <span class=\"sg sg-blue\">BC</span> (I.31). Divide ese cuadrado en dos rectángulos.",
-        "El rectángulo junto a <i>B</i> es igual al cuadrado sobre <span class=\"sg sg-red\">BA</span>, y el rectángulo junto a <i>C</i> es igual al cuadrado sobre <span class=\"sg sg-yellow\">AC</span> (I.4, I.41). Luego el cuadrado sobre <span class=\"sg sg-blue\">BC</span> es igual a los dos cuadrados juntos (N.C. 2). <i>Q.E.D.</i>"
+        "El rectángulo junto a <i>B</i> es igual al cuadrado sobre <span class=\"sg sg-red\">BA</span>, y el rectángulo junto a <i>C</i> es igual al cuadrado sobre <span class=\"sg sg-sage\">AC</span> (I.4, I.41). Luego el cuadrado sobre <span class=\"sg sg-blue\">BC</span> es igual a los dos cuadrados juntos (N.C. 2). <i>Q.E.D.</i>"
       ],
       "nota": "La figura se conoce como «el molino de viento». La demostración no usa semejanza: Euclides la deja para el Libro VI (VI.31), donde generaliza el resultado a figuras semejantes cualesquiera."
     },

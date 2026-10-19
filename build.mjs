@@ -102,7 +102,24 @@ const kind = p => p.tipo === "problema" ? "Problema · Q.E.F." : "Teorema · Q.E
 const props = libro1.proposiciones;
 
 // ---------- Portada ----------
-const heroArt = `<svg viewBox="0 0 500 410" role="img" aria-label="Composición geométrica: dos triángulos equiláteros inscritos en un círculo"><g fill="none" stroke="#b18a4b" stroke-width="1.15"><circle cx="250" cy="204" r="143"/><circle cx="250" cy="204" r="93" stroke-dasharray="3 6"/><path d="M107 204 321.5 80.5 321.5 327.5Z"/><path d="M393 204 178.5 80.5 178.5 327.5Z"/><path d="M107 204H393M250 61V347" stroke="#c9b995" stroke-dasharray="4 5"/><path d="M178.5 80.5 321.5 327.5M321.5 80.5 178.5 327.5" opacity=".6"/></g><g fill="#203b30"><circle cx="107" cy="204" r="4"/><circle cx="393" cy="204" r="4"/><circle cx="250" cy="61" r="4"/><circle cx="250" cy="347" r="4"/><circle cx="321.5" cy="80.5" r="3"/><circle cx="321.5" cy="327.5" r="3"/><circle cx="178.5" cy="80.5" r="3"/><circle cx="178.5" cy="327.5" r="3"/></g><g font-family="DM Mono, monospace" font-size="11" fill="#666b60"><text x="89" y="198">A</text><text x="401" y="198">B</text><text x="258" y="55">C</text><text x="258" y="365">D</text></g></svg>`;
+// Figura de I.47 (triángulo 3-4-5): los cuadrados sobre AB y AC tienen la misma área
+// que los dos rectángulos en que la altura desde A divide el cuadrado sobre BC.
+// Se traza una vez al cargar la página (animación en style.css, sección «Portada»).
+const heroArt = `<svg class="pyth" viewBox="0 0 500 410" role="img" aria-label="Proposición I.47: cuadrados sobre los lados de un triángulo rectángulo; la altura divide el cuadrado de la hipotenusa en dos rectángulos iguales a los otros dos cuadrados">
+  <g class="fills">
+    <path class="red" d="M170 215 272.4 138.2 195.6 35.8 93.2 112.6Z"/><path class="red" d="M170 215H272.4V375H170Z"/>
+    <path class="blue" d="M272.4 138.2 330 215 406.8 157.4 349.2 80.6Z"/><path class="blue" d="M272.4 215H330V375H272.4Z"/>
+    <path class="sage" d="M170 215 272.4 138.2 330 215Z"/>
+  </g>
+  <path class="aux" d="M272.4 138.2 170 375M93.2 112.6 330 215M272.4 138.2 330 375M406.8 157.4 170 215"/>
+  <path class="draw d1" pathLength="1" d="M170 215 272.4 138.2 330 215Z"/>
+  <path class="draw d2" pathLength="1" d="M170 215 93.2 112.6 195.6 35.8 272.4 138.2"/>
+  <path class="draw d3" pathLength="1" d="M272.4 138.2 349.2 80.6 406.8 157.4 330 215"/>
+  <path class="draw d4" pathLength="1" d="M170 215V375H330V215"/>
+  <path class="draw d5 alt" pathLength="1" d="M272.4 138.2V375"/>
+  <g class="pts"><circle cx="170" cy="215" r="3.5"/><circle cx="272.4" cy="138.2" r="3.5"/><circle cx="330" cy="215" r="3.5"/>
+    <text x="268" y="126">A</text><text x="154" y="220">B</text><text x="338" y="226">C</text></g>
+</svg>`;
 
 const featured = props.filter(p => p.figura);
 const numeral = n => ["Cero", "Una", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez", "Once", "Doce"][n] ?? String(n);
@@ -123,7 +140,7 @@ const home = layout({
       <div><strong>${featured.length}</strong><span>figuras interactivas</span></div>
     </div>
   </div>
-  <div class="hero-art">${heroArt}<div class="art-caption">FIG. 01 — ORDEN A PARTIR DE PUNTOS</div></div>
+  <div class="hero-art">${heroArt}<div class="art-caption">FIG. I.47 — EL CUADRADO DE LA HIPOTENUSA</div></div>
 </section>
 <div class="rule wrap">ΣΤΟΙΧΕΙΑ · Elementos</div>
 <section class="section library" id="libros"><div class="wrap">
