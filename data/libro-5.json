@@ -1,0 +1,225 @@
+{
+  "numero": "V",
+  "titulo": "Proporciones de Eudoxo",
+  "intro": "Dieciocho definiciones y veinticinco proposiciones sobre razones y proporciones entre magnitudes cualesquiera: longitudes, áreas, volúmenes o tiempos. Es la teoría de Eudoxo de Cnido, que permite comparar magnitudes inconmensurables sin usar números. En las notas, cada resultado aparece en notación actual.",
+  "buscar": "Buscar: alternando, 16, múltiplo…",
+  "definiciones": [
+    "Una magnitud es <i>parte</i> de otra magnitud, la menor de la mayor, cuando mide a la mayor.",
+    "La mayor es <i>múltiplo</i> de la menor cuando es medida por la menor.",
+    "Una <i>razón</i> es cierta relación según el tamaño entre dos magnitudes del mismo tipo.",
+    "Se dice que dos magnitudes <i>tienen razón</i> entre sí cuando, multiplicada, cada una puede exceder a la otra.",
+    "Se dice que unas magnitudes están en la misma razón, la primera con la segunda y la tercera con la cuarta, cuando, tomados cualesquiera equimúltiplos de la primera y la tercera y cualesquiera equimúltiplos de la segunda y la cuarta, los primeros equimúltiplos a la vez exceden, son iguales o son menores que los segundos, tomados en el orden correspondiente.",
+    "Las magnitudes que tienen la misma razón se llaman <i>proporcionales</i>.",
+    "Cuando, de los equimúltiplos, el múltiplo de la primera magnitud excede al múltiplo de la segunda, pero el múltiplo de la tercera no excede al múltiplo de la cuarta, se dice que la primera tiene con la segunda una razón mayor que la tercera con la cuarta.",
+    "Una proporción tiene al menos tres términos.",
+    "Cuando tres magnitudes son proporcionales, se dice que la primera tiene con la tercera la razón <i>duplicada</i> de la que tiene con la segunda.",
+    "Cuando cuatro magnitudes son continuamente proporcionales, se dice que la primera tiene con la cuarta la razón <i>triplicada</i> de la que tiene con la segunda, y así sucesivamente, sea cual sea la proporción.",
+    "Se llaman magnitudes <i>correspondientes</i> los antecedentes respecto de los antecedentes y los consecuentes respecto de los consecuentes.",
+    "Razón <i>alternada</i> es tomar el antecedente respecto del antecedente y el consecuente respecto del consecuente.",
+    "Razón <i>inversa</i> es tomar el consecuente como antecedente respecto del antecedente como consecuente.",
+    "<i>Composición</i> de una razón es tomar el antecedente junto con el consecuente, como una sola magnitud, respecto del consecuente solo.",
+    "<i>Separación</i> de una razón es tomar el exceso del antecedente sobre el consecuente respecto del consecuente solo.",
+    "<i>Conversión</i> de una razón es tomar el antecedente respecto del exceso del antecedente sobre el consecuente.",
+    "Hay razón <i>por igualdad</i> (<i>ex aequali</i>) cuando, dadas varias magnitudes y otras tantas que tomadas de dos en dos están en la misma razón, la primera es a la última de las primeras como la primera a la última de las segundas; es decir, cuando se toman los extremos suprimiendo los términos intermedios.",
+    "Hay proporción <i>perturbada</i> cuando, dadas tres magnitudes y otras tres, el antecedente es al consecuente en las primeras como el antecedente al consecuente en las segundas, mientras que el consecuente es a una tercera en las primeras como una tercera es al antecedente en las segundas."
+  ],
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "teorema",
+      "titulo": "Múltiplo de una suma",
+      "enunciado": "Si hay un número cualquiera de magnitudes que son equimúltiplos de otras tantas, cada una de cada una, el múltiplo que sea una de una lo serán también todas de todas.",
+      "usa": ["N.C. 2"],
+      "nota": "En notación actual: m·a + m·b + m·c = m·(a + b + c). Las seis primeras proposiciones son propiedades de los múltiplos que Euclides necesita para el resto del libro."
+    },
+    {
+      "n": 2,
+      "tipo": "teorema",
+      "titulo": "Suma de múltiplos",
+      "enunciado": "Si una primera magnitud es el mismo múltiplo de una segunda que una tercera de una cuarta, y una quinta es también el mismo múltiplo de la segunda que una sexta de la cuarta, la primera y la quinta juntas serán el mismo múltiplo de la segunda que la tercera y la sexta juntas de la cuarta.",
+      "usa": ["N.C. 2"],
+      "nota": "En notación actual: m·a + n·a = (m + n)·a."
+    },
+    {
+      "n": 3,
+      "tipo": "teorema",
+      "titulo": "Múltiplo de un múltiplo",
+      "enunciado": "Si una primera magnitud es el mismo múltiplo de una segunda que una tercera de una cuarta, y se toman equimúltiplos de la primera y de la tercera, también por igualdad las magnitudes tomadas serán equimúltiplos, una de la segunda y otra de la cuarta.",
+      "usa": ["V.2"],
+      "nota": "En notación actual: n·(m·a) = (n·m)·a."
+    },
+    {
+      "n": 4,
+      "tipo": "teorema",
+      "titulo": "Equimúltiplos de una proporción",
+      "enunciado": "Si una primera magnitud tiene con una segunda la misma razón que una tercera con una cuarta, cualesquiera equimúltiplos de la primera y la tercera tendrán también la misma razón con cualesquiera equimúltiplos de la segunda y la cuarta, tomados en el orden correspondiente.",
+      "usa": ["V.3"],
+      "nota": "En notación actual: si a : b = c : d, entonces m·a : n·b = m·c : n·d."
+    },
+    {
+      "n": 5,
+      "tipo": "teorema",
+      "titulo": "Múltiplo de una diferencia",
+      "enunciado": "Si una magnitud es el mismo múltiplo de otra que una parte quitada de la primera lo es de una parte quitada de la segunda, el resto será también el mismo múltiplo del resto que el todo del todo.",
+      "usa": ["V.1"],
+      "nota": "En notación actual: m·a − m·b = m·(a − b)."
+    },
+    {
+      "n": 6,
+      "tipo": "teorema",
+      "titulo": "Diferencia de múltiplos",
+      "enunciado": "Si dos magnitudes son equimúltiplos de otras dos, y se quitan de ellas magnitudes que sean equimúltiplos de las mismas, los restos o son iguales a ellas o son equimúltiplos de ellas.",
+      "usa": ["V.2"],
+      "nota": "En notación actual: m·a − n·a = (m − n)·a."
+    },
+    {
+      "n": 7,
+      "tipo": "teorema",
+      "titulo": "Magnitudes iguales, razones iguales",
+      "enunciado": "Las magnitudes iguales tienen la misma razón con una misma magnitud, y una misma magnitud tiene la misma razón con magnitudes iguales.",
+      "usa": [],
+      "nota": "En notación actual: si a = b, entonces a : c = b : c y c : a = c : b."
+    },
+    {
+      "n": 8,
+      "tipo": "teorema",
+      "titulo": "Magnitud mayor, razón mayor",
+      "enunciado": "De magnitudes desiguales, la mayor tiene con una misma magnitud una razón mayor que la menor, y la misma magnitud tiene con la menor una razón mayor que con la mayor.",
+      "usa": ["V.1"],
+      "nota": "En notación actual: si a > b, entonces a : c > b : c y c : b > c : a."
+    },
+    {
+      "n": 9,
+      "tipo": "teorema",
+      "titulo": "Razones iguales, magnitudes iguales",
+      "enunciado": "Las magnitudes que tienen la misma razón con una misma magnitud son iguales entre sí, y aquellas con las que una misma magnitud tiene la misma razón son iguales.",
+      "usa": ["V.8"],
+      "nota": "Recíproco de V.7: si a : c = b : c, entonces a = b."
+    },
+    {
+      "n": 10,
+      "tipo": "teorema",
+      "titulo": "Razón mayor, magnitud mayor",
+      "enunciado": "De las magnitudes que tienen razón con una misma magnitud, la que tiene razón mayor es mayor, y aquella con la que la misma magnitud tiene razón mayor es menor.",
+      "usa": ["V.7", "V.8"],
+      "nota": "Recíproco de V.8: si a : c > b : c, entonces a > b."
+    },
+    {
+      "n": 11,
+      "tipo": "teorema",
+      "titulo": "Transitividad de las proporciones",
+      "enunciado": "Las razones que son iguales a una misma razón son también iguales entre sí.",
+      "usa": [],
+      "nota": "En notación actual: si a : b = c : d y c : d = e : f, entonces a : b = e : f. Parece evidente, pero con la definición de Eudoxo (definición 5) hay que demostrarlo."
+    },
+    {
+      "n": 12,
+      "tipo": "teorema",
+      "titulo": "Suma de antecedentes y consecuentes",
+      "enunciado": "Si un número cualquiera de magnitudes son proporcionales, como uno de los antecedentes es a uno de los consecuentes, así serán todos los antecedentes a todos los consecuentes.",
+      "usa": ["V.1"],
+      "nota": "En notación actual: si a : b = c : d = e : f, entonces a : b = (a + c + e) : (b + d + f)."
+    },
+    {
+      "n": 13,
+      "tipo": "teorema",
+      "titulo": "Razón igual a una razón mayor",
+      "enunciado": "Si una primera magnitud tiene con una segunda la misma razón que una tercera con una cuarta, y la tercera tiene con la cuarta una razón mayor que una quinta con una sexta, también la primera tendrá con la segunda una razón mayor que la quinta con la sexta.",
+      "usa": [],
+      "nota": "En notación actual: si a : b = c : d y c : d > e : f, entonces a : b > e : f."
+    },
+    {
+      "n": 14,
+      "tipo": "teorema",
+      "titulo": "Comparación de términos de una proporción",
+      "enunciado": "Si una primera magnitud tiene con una segunda la misma razón que una tercera con una cuarta, y la primera es mayor que la tercera, también la segunda será mayor que la cuarta; si es igual, igual, y si es menor, menor.",
+      "usa": ["V.8", "V.10", "V.13"]
+    },
+    {
+      "n": 15,
+      "tipo": "teorema",
+      "titulo": "Las partes y sus múltiplos tienen la misma razón",
+      "enunciado": "Las partes tienen la misma razón que sus equimúltiplos tomados en el orden correspondiente.",
+      "usa": ["V.7", "V.12"],
+      "nota": "En notación actual: a : b = m·a : m·b."
+    },
+    {
+      "n": 16,
+      "tipo": "teorema",
+      "titulo": "Proporción alternada",
+      "enunciado": "Si cuatro magnitudes son proporcionales, también serán proporcionales alternando.",
+      "usa": ["V.11", "V.14", "V.15"],
+      "nota": "En notación actual: si a : b = c : d, entonces a : c = b : d. Solo tiene sentido si las cuatro magnitudes son del mismo tipo; Euclides lo usa constantemente en el Libro VI."
+    },
+    {
+      "n": 17,
+      "tipo": "teorema",
+      "titulo": "De la composición a la separación",
+      "enunciado": "Si unas magnitudes son proporcionales por composición, también serán proporcionales por separación.",
+      "usa": ["V.1", "V.2"],
+      "nota": "En notación actual: si (a + b) : b = (c + d) : d, entonces a : b = c : d."
+    },
+    {
+      "n": 18,
+      "tipo": "teorema",
+      "titulo": "De la separación a la composición",
+      "enunciado": "Si unas magnitudes son proporcionales por separación, también serán proporcionales por composición.",
+      "usa": ["V.11", "V.14", "V.17"],
+      "nota": "En notación actual: si a : b = c : d, entonces (a + b) : b = (c + d) : d."
+    },
+    {
+      "n": 19,
+      "tipo": "teorema",
+      "titulo": "El resto es al resto como el todo al todo",
+      "enunciado": "Si el todo es al todo como una parte quitada es a una parte quitada, también el resto será al resto como el todo al todo.",
+      "usa": ["V.11", "V.16", "V.17"],
+      "nota": "En notación actual: si a : b = c : d con c < a y d < b, entonces (a − c) : (b − d) = a : b. Euclides deduce como corolario la proporción por conversión: si a : b = c : d, entonces a : (a − b) = c : (c − d)."
+    },
+    {
+      "n": 20,
+      "tipo": "teorema",
+      "titulo": "Comparación por igualdad",
+      "enunciado": "Si hay tres magnitudes, y otras tantas que tomadas de dos en dos están en la misma razón, y por igualdad la primera es mayor que la tercera, también la cuarta será mayor que la sexta; si es igual, igual, y si es menor, menor.",
+      "usa": ["V.7", "V.8", "V.10", "V.13"]
+    },
+    {
+      "n": 21,
+      "tipo": "teorema",
+      "titulo": "Comparación por igualdad en proporción perturbada",
+      "enunciado": "Si hay tres magnitudes, y otras tantas que tomadas de dos en dos están en la misma razón y su proporción es perturbada, y por igualdad la primera es mayor que la tercera, también la cuarta será mayor que la sexta; si es igual, igual, y si es menor, menor.",
+      "usa": ["V.7", "V.8", "V.10", "V.13"]
+    },
+    {
+      "n": 22,
+      "tipo": "teorema",
+      "titulo": "Proporción por igualdad",
+      "enunciado": "Si hay un número cualquiera de magnitudes, y otras tantas que tomadas de dos en dos están en la misma razón, también estarán en la misma razón por igualdad.",
+      "usa": ["V.4", "V.20"],
+      "nota": "En notación actual: si a : b = d : e y b : c = e : f, entonces a : c = d : f. Equivale a multiplicar razones: es la base de la razón compuesta del Libro VI."
+    },
+    {
+      "n": 23,
+      "tipo": "teorema",
+      "titulo": "Proporción por igualdad perturbada",
+      "enunciado": "Si hay tres magnitudes, y otras tantas que tomadas de dos en dos están en la misma razón y su proporción es perturbada, también estarán en la misma razón por igualdad.",
+      "usa": ["V.4", "V.11", "V.15", "V.16", "V.21"],
+      "nota": "En notación actual: si a : b = e : f y b : c = d : e, entonces a : c = d : f."
+    },
+    {
+      "n": 24,
+      "tipo": "teorema",
+      "titulo": "Suma de proporciones con el mismo consecuente",
+      "enunciado": "Si una primera magnitud tiene con una segunda la misma razón que una tercera con una cuarta, y una quinta tiene con la segunda la misma razón que una sexta con la cuarta, también la primera y la quinta juntas tendrán con la segunda la misma razón que la tercera y la sexta juntas con la cuarta.",
+      "usa": ["V.18", "V.22"],
+      "nota": "En notación actual: si a : b = c : d y e : b = f : d, entonces (a + e) : b = (c + f) : d."
+    },
+    {
+      "n": 25,
+      "tipo": "teorema",
+      "titulo": "Los extremos suman más que los medios",
+      "enunciado": "Si cuatro magnitudes son proporcionales, la mayor y la menor juntas son mayores que las otras dos.",
+      "usa": ["V.19"],
+      "nota": "En notación actual: si a : b = c : d y a es la mayor, entonces a + d > b + c. Es una forma geométrica de la desigualdad entre la media aritmética y la geométrica."
+    }
+  ]
+}

@@ -31,14 +31,14 @@
     "numero": "V",
     "titulo": "Proporciones de Eudoxo",
     "proposiciones": 25,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-5"
   },
   {
     "numero": "VI",
     "titulo": "Semejanza",
     "proposiciones": 33,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-6"
   },
   {

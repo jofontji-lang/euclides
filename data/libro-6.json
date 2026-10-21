@@ -1,0 +1,267 @@
+{
+  "numero": "VI",
+  "titulo": "Semejanza",
+  "intro": "Cuatro definiciones y treinta y tres proposiciones que aplican la teoría de proporciones del Libro V a las figuras planas: triángulos semejantes, el teorema de Tales de los segmentos proporcionales, la media proporcional, la resolución geométrica de ecuaciones de segundo grado y una generalización del teorema de Pitágoras.",
+  "buscar": "Buscar: semejantes, 2, media proporcional…",
+  "definiciones": [
+    "Figuras rectilíneas <i>semejantes</i> son las que tienen sus ángulos iguales uno a uno y proporcionales los lados que comprenden los ángulos iguales.",
+    "Dos figuras están <i>inversamente relacionadas</i> cuando en cada una de ellas hay un antecedente y un consecuente de las razones.",
+    "Se dice que una recta está cortada en <i>extrema y media razón</i> cuando la recta entera es al segmento mayor como el segmento mayor es al menor.",
+    "La <i>altura</i> de una figura es la perpendicular trazada desde el vértice hasta la base."
+  ],
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "teorema",
+      "titulo": "Figuras de la misma altura",
+      "enunciado": "Los triángulos y los paralelogramos que tienen la misma altura son entre sí como sus bases.",
+      "usa": ["I.38", "I.41", "V.15"],
+      "nota": "Es el puente entre el Libro V y la geometría: a partir de aquí, las razones entre áreas se pueden convertir en razones entre segmentos."
+    },
+    {
+      "n": 2,
+      "tipo": "teorema",
+      "titulo": "Paralela a un lado del triángulo (teorema de Tales)",
+      "enunciado": "Si se traza una recta paralela a uno de los lados de un triángulo, cortará proporcionalmente los lados del triángulo; y si los lados del triángulo están cortados proporcionalmente, la recta que une los puntos de corte será paralela al lado restante.",
+      "usa": ["I.37", "I.38", "I.39", "V.7", "V.9", "V.11", "VI.1"],
+      "nota": "En España y en otros países se conoce como teorema de Tales: las paralelas cortan segmentos proporcionales sobre dos rectas que se cortan. No debe confundirse con III.31, el ángulo inscrito en la semicircunferencia, que en otros países recibe el mismo nombre."
+    },
+    {
+      "n": 3,
+      "tipo": "teorema",
+      "titulo": "Teorema de la bisectriz",
+      "enunciado": "Si se divide en dos partes iguales un ángulo de un triángulo y la recta que corta el ángulo corta también la base, los segmentos de la base tendrán la misma razón que los lados restantes del triángulo; y si los segmentos de la base tienen la misma razón que los lados restantes, la recta trazada desde el vértice hasta el punto de corte dividirá en dos partes iguales el ángulo del triángulo.",
+      "usa": ["I.5", "I.6", "I.29", "I.31", "V.7", "V.9", "V.11", "VI.2"],
+      "nota": "En notación actual: si la bisectriz del ángulo A corta BC en D, entonces BD : DC = AB : AC."
+    },
+    {
+      "n": 4,
+      "tipo": "teorema",
+      "titulo": "Triángulos equiángulos tienen los lados proporcionales",
+      "enunciado": "En los triángulos equiángulos, los lados que comprenden los ángulos iguales son proporcionales, y son correspondientes los lados que subtienden los ángulos iguales.",
+      "usa": ["I.17", "I.28", "I.34", "V.16", "V.22", "VI.2"],
+      "nota": "Es el criterio de semejanza por ángulos: dos triángulos con los mismos ángulos son semejantes."
+    },
+    {
+      "n": 5,
+      "tipo": "teorema",
+      "titulo": "Lados proporcionales, triángulos equiángulos",
+      "enunciado": "Si dos triángulos tienen sus lados proporcionales, los triángulos serán equiángulos y tendrán iguales los ángulos que subtienden los lados correspondientes.",
+      "usa": ["I.8", "I.23", "I.32", "V.9", "V.11", "VI.4"],
+      "nota": "Criterio de semejanza por tres lados, recíproco de VI.4."
+    },
+    {
+      "n": 6,
+      "tipo": "teorema",
+      "titulo": "Un ángulo igual y lados proporcionales",
+      "enunciado": "Si dos triángulos tienen un ángulo igual a un ángulo y proporcionales los lados que comprenden los ángulos iguales, los triángulos serán equiángulos y tendrán iguales los ángulos que subtienden los lados correspondientes.",
+      "usa": ["I.4", "I.23", "I.32", "V.9", "V.11", "VI.4"],
+      "nota": "Criterio de semejanza por un ángulo y los dos lados que lo comprenden."
+    },
+    {
+      "n": 7,
+      "tipo": "teorema",
+      "titulo": "Un ángulo igual y lados proporcionales en otro ángulo",
+      "enunciado": "Si dos triángulos tienen un ángulo igual a un ángulo, proporcionales los lados que comprenden otros ángulos, y los ángulos restantes son a la vez menores o a la vez no menores que un recto, los triángulos serán equiángulos y tendrán iguales los ángulos comprendidos por los lados proporcionales.",
+      "usa": ["I.5", "I.13", "I.17", "I.23", "I.32", "V.9", "VI.4"]
+    },
+    {
+      "n": 8,
+      "tipo": "teorema",
+      "titulo": "La altura sobre la hipotenusa",
+      "enunciado": "Si en un triángulo rectángulo se traza una perpendicular desde el ángulo recto hasta la base, los triángulos adyacentes a la perpendicular son semejantes al triángulo entero y entre sí.",
+      "usa": ["I.32", "VI.4"],
+      "nota": "Euclides añade como corolario que la altura es media proporcional entre los dos segmentos de la hipotenusa: es el teorema de la altura. De aquí salen también el teorema del cateto y una segunda demostración de I.47 (VI.31)."
+    },
+    {
+      "n": 9,
+      "tipo": "problema",
+      "titulo": "Cortar una parte dada de un segmento",
+      "enunciado": "Cortar de una recta dada una parte prescrita.",
+      "usa": ["I.31", "V.18", "VI.2"],
+      "nota": "Por ejemplo, un tercio: se lleva tres veces un segmento cualquiera sobre otra recta que parte del mismo extremo y se trazan paralelas. Es el método que se sigue usando para dividir un segmento en partes iguales."
+    },
+    {
+      "n": 10,
+      "tipo": "problema",
+      "titulo": "Dividir un segmento como otro dado",
+      "enunciado": "Cortar una recta dada no cortada de manera semejante a una recta dada ya cortada.",
+      "usa": ["I.31", "I.34", "VI.2"]
+    },
+    {
+      "n": 11,
+      "tipo": "problema",
+      "titulo": "Tercera proporcional",
+      "enunciado": "Dadas dos rectas, hallar una tercera proporcional.",
+      "usa": ["I.3", "I.31", "VI.2"],
+      "nota": "Dadas a y b, se construye c con a : b = b : c; en notación actual, c = b²/a."
+    },
+    {
+      "n": 12,
+      "tipo": "problema",
+      "titulo": "Cuarta proporcional",
+      "enunciado": "Dadas tres rectas, hallar una cuarta proporcional.",
+      "usa": ["I.3", "I.31", "VI.2"],
+      "nota": "Dadas a, b y c, se construye d con a : b = c : d; en notación actual, d = b·c/a. Es la regla de tres hecha con regla y compás."
+    },
+    {
+      "n": 13,
+      "tipo": "problema",
+      "titulo": "Media proporcional",
+      "enunciado": "Dadas dos rectas, hallar una media proporcional.",
+      "usa": ["I.11", "III.31", "VI.8"],
+      "nota": "Dadas a y b, se construye x con a : x = x : b; en notación actual, x = √(a·b). Se colocan a y b seguidas, se traza la semicircunferencia sobre las dos y la perpendicular por el punto de unión: su altura es x. Permite construir raíces cuadradas."
+    },
+    {
+      "n": 14,
+      "tipo": "teorema",
+      "titulo": "Paralelogramos iguales y equiángulos",
+      "enunciado": "En los paralelogramos iguales y equiángulos, los lados que comprenden los ángulos iguales son inversamente proporcionales; y los paralelogramos equiángulos en que los lados que comprenden los ángulos iguales son inversamente proporcionales son iguales.",
+      "usa": ["I.14", "V.7", "V.9", "V.11", "VI.1"]
+    },
+    {
+      "n": 15,
+      "tipo": "teorema",
+      "titulo": "Triángulos iguales con un ángulo igual",
+      "enunciado": "En los triángulos iguales que tienen un ángulo igual a un ángulo, los lados que comprenden los ángulos iguales son inversamente proporcionales; y los triángulos que tienen un ángulo igual a un ángulo y los lados que lo comprenden inversamente proporcionales son iguales.",
+      "usa": ["I.14", "V.7", "V.9", "V.11", "VI.1"]
+    },
+    {
+      "n": 16,
+      "tipo": "teorema",
+      "titulo": "Producto de extremos y de medios",
+      "enunciado": "Si cuatro rectas son proporcionales, el rectángulo comprendido por las extremas es igual al rectángulo comprendido por las medias; y si el rectángulo comprendido por las extremas es igual al comprendido por las medias, las cuatro rectas son proporcionales.",
+      "usa": ["I.3", "I.11", "VI.14"],
+      "nota": "En notación actual: a : b = c : d si y solo si a·d = b·c."
+    },
+    {
+      "n": 17,
+      "tipo": "teorema",
+      "titulo": "El cuadrado de la media",
+      "enunciado": "Si tres rectas son proporcionales, el rectángulo comprendido por las extremas es igual al cuadrado de la media; y si el rectángulo comprendido por las extremas es igual al cuadrado de la media, las tres rectas son proporcionales.",
+      "usa": ["VI.16"],
+      "nota": "En notación actual: a : b = b : c si y solo si a·c = b²."
+    },
+    {
+      "n": 18,
+      "tipo": "problema",
+      "titulo": "Construir una figura semejante sobre un segmento",
+      "enunciado": "Sobre una recta dada, describir una figura rectilínea semejante y situada de modo semejante a una figura rectilínea dada.",
+      "usa": ["I.23", "I.32", "VI.4"]
+    },
+    {
+      "n": 19,
+      "tipo": "teorema",
+      "titulo": "Razón de las áreas de triángulos semejantes",
+      "enunciado": "Los triángulos semejantes son entre sí en la razón duplicada de la de sus lados correspondientes.",
+      "usa": ["V.11", "V.16", "VI.1", "VI.11", "VI.15"],
+      "nota": "En notación actual: si la razón de semejanza es k, la razón de las áreas es k². Si se duplican los lados, el área se multiplica por cuatro."
+    },
+    {
+      "n": 20,
+      "tipo": "teorema",
+      "titulo": "Polígonos semejantes",
+      "enunciado": "Los polígonos semejantes se dividen en triángulos semejantes, iguales en número y en la misma razón que los polígonos enteros, y un polígono es a otro en la razón duplicada de la que tiene un lado con el lado correspondiente.",
+      "usa": ["V.12", "V.22", "VI.6", "VI.19"]
+    },
+    {
+      "n": 21,
+      "tipo": "teorema",
+      "titulo": "Semejantes a una misma figura",
+      "enunciado": "Las figuras semejantes a una misma figura rectilínea son también semejantes entre sí.",
+      "usa": ["V.11"]
+    },
+    {
+      "n": 22,
+      "tipo": "teorema",
+      "titulo": "Figuras semejantes sobre segmentos proporcionales",
+      "enunciado": "Si cuatro rectas son proporcionales, también serán proporcionales las figuras rectilíneas semejantes y descritas de modo semejante sobre ellas; y si las figuras son proporcionales, también lo serán las rectas.",
+      "usa": ["V.11", "V.22", "VI.11", "VI.18", "VI.20"]
+    },
+    {
+      "n": 23,
+      "tipo": "teorema",
+      "titulo": "Razón compuesta",
+      "enunciado": "Los paralelogramos equiángulos tienen entre sí la razón compuesta de las razones de sus lados.",
+      "usa": ["I.14", "V.22", "VI.1", "VI.12"],
+      "nota": "En notación actual: el área de un paralelogramo de lados a y b es proporcional a a·b. La «razón compuesta» es lo que hoy llamamos producto de razones."
+    },
+    {
+      "n": 24,
+      "tipo": "teorema",
+      "titulo": "Paralelogramos en torno a la diagonal",
+      "enunciado": "En todo paralelogramo, los paralelogramos situados en torno a la diagonal son semejantes al paralelogramo entero y entre sí.",
+      "usa": ["I.29", "V.22", "VI.2", "VI.4"]
+    },
+    {
+      "n": 25,
+      "tipo": "problema",
+      "titulo": "Figura semejante a una e igual a otra",
+      "enunciado": "Construir una misma figura semejante a una figura rectilínea dada e igual a otra figura rectilínea dada.",
+      "usa": ["I.44", "I.45", "V.11", "VI.13", "VI.18", "VI.19"],
+      "nota": "Plutarco lo considera más sutil y más científico que el teorema de Pitágoras (I.47), y recoge la tradición de que Pitágoras ofreció un sacrificio al descubrirlo."
+    },
+    {
+      "n": 26,
+      "tipo": "teorema",
+      "titulo": "Paralelogramo semejante con un ángulo común",
+      "enunciado": "Si de un paralelogramo se quita un paralelogramo semejante y situado de modo semejante al entero, y que tenga un ángulo común con él, está en torno a la misma diagonal que el entero.",
+      "usa": ["VI.24"]
+    },
+    {
+      "n": 27,
+      "tipo": "teorema",
+      "titulo": "El mayor paralelogramo aplicado con defecto",
+      "enunciado": "De todos los paralelogramos aplicados a una misma recta y deficientes en figuras paralelogramas semejantes y situadas de modo semejante a la descrita sobre la mitad de la recta, el mayor es el aplicado a la mitad de la recta y semejante al defecto.",
+      "usa": ["I.36", "I.43", "VI.24", "VI.26"],
+      "nota": "Es el primer problema de máximos de la historia: en el caso más sencillo dice que, de todos los rectángulos con un perímetro dado, el de mayor área es el cuadrado."
+    },
+    {
+      "n": 28,
+      "tipo": "problema",
+      "titulo": "Aplicación de áreas con defecto",
+      "enunciado": "Aplicar a una recta dada un paralelogramo igual a una figura rectilínea dada y deficiente en una figura paralelograma semejante a una dada; es necesario que la figura rectilínea dada no sea mayor que el paralelogramo descrito sobre la mitad de la recta y semejante al defecto.",
+      "usa": ["I.10", "I.36", "I.43", "VI.24", "VI.25", "VI.27"],
+      "nota": "Equivale a resolver la ecuación de segundo grado x·(a − x) = S. La condición del enunciado es la del discriminante: la ecuación solo tiene solución si S ≤ (a/2)², y VI.27 dice por qué."
+    },
+    {
+      "n": 29,
+      "tipo": "problema",
+      "titulo": "Aplicación de áreas con exceso",
+      "enunciado": "Aplicar a una recta dada un paralelogramo igual a una figura rectilínea dada y que exceda en una figura paralelograma semejante a una dada.",
+      "usa": ["I.10", "I.36", "I.43", "VI.24", "VI.25"],
+      "nota": "Equivale a resolver la ecuación x·(a + x) = S, que siempre tiene solución. Los nombres de las cónicas vienen de aquí: Apolonio llamó elipse (defecto), parábola (aplicación exacta) e hipérbola (exceso) a las curvas según el tipo de aplicación de áreas."
+    },
+    {
+      "n": 30,
+      "tipo": "problema",
+      "titulo": "Extrema y media razón",
+      "enunciado": "Cortar una recta finita dada en extrema y media razón.",
+      "usa": ["I.46", "VI.29"],
+      "nota": "Es la razón áurea, ahora definida como proporción (definición 3). Euclides ya la había construido como problema de áreas en II.11."
+    },
+    {
+      "n": 31,
+      "tipo": "teorema",
+      "titulo": "Pitágoras para figuras semejantes",
+      "enunciado": "En los triángulos rectángulos, la figura construida sobre el lado que subtiende el ángulo recto es igual a las figuras semejantes y descritas de modo semejante sobre los lados que comprenden el ángulo recto.",
+      "usa": ["V.24", "VI.8", "VI.19", "VI.20"],
+      "nota": "Generaliza I.47: vale no solo para cuadrados, sino para semicírculos, triángulos equiláteros o cualquier otra familia de figuras semejantes construidas sobre los tres lados."
+    },
+    {
+      "n": 32,
+      "tipo": "teorema",
+      "titulo": "Triángulos con lados paralelos y proporcionales",
+      "enunciado": "Si se colocan dos triángulos con dos lados proporcionales a dos lados, unidos por un ángulo, de modo que sus lados correspondientes sean paralelos, los lados restantes de los triángulos estarán en línea recta.",
+      "usa": ["I.14", "I.29", "I.32", "VI.6"]
+    },
+    {
+      "n": 33,
+      "tipo": "teorema",
+      "titulo": "Ángulos proporcionales a los arcos",
+      "enunciado": "En círculos iguales, los ángulos tienen la misma razón que los arcos sobre los que se apoyan, tanto si están en los centros como en las circunferencias.",
+      "usa": ["III.20", "III.27", "V.15"],
+      "nota": "Es la idea que hay detrás de medir los ángulos en radianes: el ángulo central es proporcional al arco que abarca."
+    }
+  ]
+}
