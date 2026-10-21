@@ -1,0 +1,136 @@
+{
+  "numero": "IV",
+  "titulo": "Polígonos inscritos y circunscritos",
+  "intro": "Siete definiciones y dieciséis problemas de construcción: inscribir y circunscribir triángulos, cuadrados, el pentágono, el hexágono y el polígono de quince lados en un círculo, y círculos en ellos. Su pieza central es el pentágono regular, que se apoya en la sección áurea del Libro II.",
+  "buscar": "Buscar: pentágono, 10, inscribir…",
+  "definiciones": [
+    "Se dice que una figura rectilínea está <i>inscrita</i> en otra figura rectilínea cuando cada uno de los ángulos de la figura inscrita está sobre un lado de aquella en la que se inscribe.",
+    "Del mismo modo, se dice que una figura está <i>circunscrita</i> a otra cuando cada lado de la figura circunscrita pasa por un ángulo de aquella a la que se circunscribe.",
+    "Se dice que una figura rectilínea está inscrita en un círculo cuando cada ángulo de la figura inscrita está sobre la circunferencia del círculo.",
+    "Se dice que una figura rectilínea está circunscrita a un círculo cuando cada lado de la figura circunscrita toca la circunferencia del círculo.",
+    "Del mismo modo, se dice que un círculo está inscrito en una figura cuando la circunferencia del círculo toca cada lado de la figura en la que se inscribe.",
+    "Se dice que un círculo está circunscrito a una figura cuando la circunferencia del círculo pasa por cada ángulo de la figura a la que se circunscribe.",
+    "Se dice que una recta está <i>adaptada</i> a un círculo cuando sus extremos están sobre la circunferencia del círculo."
+  ],
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "problema",
+      "titulo": "Adaptar una cuerda de longitud dada",
+      "enunciado": "Adaptar a un círculo dado una recta igual a una recta dada que no sea mayor que el diámetro del círculo.",
+      "usa": ["Post. 3", "I.3", "N.C. 1"]
+    },
+    {
+      "n": 2,
+      "tipo": "problema",
+      "titulo": "Inscribir un triángulo de ángulos dados",
+      "enunciado": "Inscribir en un círculo dado un triángulo equiángulo a un triángulo dado.",
+      "usa": ["I.23", "I.32", "III.16", "III.32"],
+      "nota": "«Equiángulo» quiere decir con los mismos ángulos: el triángulo inscrito es semejante al dado, aunque Euclides no habla de semejanza hasta el Libro VI."
+    },
+    {
+      "n": 3,
+      "tipo": "problema",
+      "titulo": "Circunscribir un triángulo de ángulos dados",
+      "enunciado": "Circunscribir a un círculo dado un triángulo equiángulo a un triángulo dado.",
+      "usa": ["Post. 2", "I.13", "I.23", "I.32", "III.1", "III.16", "III.18"]
+    },
+    {
+      "n": 4,
+      "tipo": "problema",
+      "titulo": "Inscribir un círculo en un triángulo",
+      "enunciado": "Inscribir un círculo en un triángulo dado.",
+      "usa": ["I.9", "I.12", "I.26", "III.16"],
+      "nota": "El centro es el punto donde se cortan las bisectrices de los ángulos: lo que hoy llamamos incentro."
+    },
+    {
+      "n": 5,
+      "tipo": "problema",
+      "titulo": "Circunscribir un círculo a un triángulo",
+      "enunciado": "Circunscribir un círculo a un triángulo dado.",
+      "usa": ["I.4", "I.10", "I.11"],
+      "nota": "El centro es el punto donde se cortan las mediatrices de los lados: el circuncentro. Euclides añade que cae dentro del triángulo si es acutángulo, sobre un lado si es rectángulo y fuera si es obtusángulo."
+    },
+    {
+      "n": 6,
+      "tipo": "problema",
+      "titulo": "Inscribir un cuadrado en un círculo",
+      "enunciado": "Inscribir un cuadrado en un círculo dado.",
+      "usa": ["I.4", "I.11", "III.31"]
+    },
+    {
+      "n": 7,
+      "tipo": "problema",
+      "titulo": "Circunscribir un cuadrado a un círculo",
+      "enunciado": "Circunscribir un cuadrado a un círculo dado.",
+      "usa": ["I.11", "I.28", "I.34", "III.16", "III.18"]
+    },
+    {
+      "n": 8,
+      "tipo": "problema",
+      "titulo": "Inscribir un círculo en un cuadrado",
+      "enunciado": "Inscribir un círculo en un cuadrado dado.",
+      "usa": ["I.10", "I.31", "I.34", "III.16"]
+    },
+    {
+      "n": 9,
+      "tipo": "problema",
+      "titulo": "Circunscribir un círculo a un cuadrado",
+      "enunciado": "Circunscribir un círculo a un cuadrado dado.",
+      "usa": ["I.6", "I.8"]
+    },
+    {
+      "n": 10,
+      "tipo": "problema",
+      "titulo": "Triángulo áureo",
+      "enunciado": "Construir un triángulo isósceles que tenga cada uno de los ángulos de la base doble del ángulo restante.",
+      "usa": ["I.5", "I.32", "II.11", "III.32", "III.37", "IV.1", "IV.5"],
+      "nota": "Sus ángulos miden 72°, 72° y 36°, y la razón entre el lado y la base es la razón áurea. Se construye con la sección áurea (II.11) y es la clave del pentágono regular (IV.11)."
+    },
+    {
+      "n": 11,
+      "tipo": "problema",
+      "titulo": "Inscribir un pentágono regular",
+      "enunciado": "Inscribir en un círculo dado un pentágono equilátero y equiángulo.",
+      "usa": ["I.9", "III.26", "III.29", "IV.2", "IV.10"],
+      "nota": "Se inscribe en el círculo un triángulo áureo (IV.2, IV.10) y se dividen en dos partes iguales sus ángulos de la base: los tres vértices del triángulo y los dos puntos donde las bisectrices cortan la circunferencia la dividen en cinco arcos iguales."
+    },
+    {
+      "n": 12,
+      "tipo": "problema",
+      "titulo": "Circunscribir un pentágono regular",
+      "enunciado": "Circunscribir a un círculo dado un pentágono equilátero y equiángulo.",
+      "usa": ["I.8", "I.26", "I.47", "III.16", "III.18", "III.27", "IV.11"]
+    },
+    {
+      "n": 13,
+      "tipo": "problema",
+      "titulo": "Inscribir un círculo en un pentágono regular",
+      "enunciado": "Inscribir un círculo en un pentágono dado que sea equilátero y equiángulo.",
+      "usa": ["I.4", "I.6", "I.9", "I.12", "I.26", "III.16"]
+    },
+    {
+      "n": 14,
+      "tipo": "problema",
+      "titulo": "Circunscribir un círculo a un pentágono regular",
+      "enunciado": "Circunscribir un círculo a un pentágono dado que sea equilátero y equiángulo.",
+      "usa": ["I.6", "I.9"]
+    },
+    {
+      "n": 15,
+      "tipo": "problema",
+      "titulo": "Inscribir un hexágono regular",
+      "enunciado": "Inscribir en un círculo dado un hexágono equilátero y equiángulo.",
+      "usa": ["I.5", "I.13", "I.15", "I.32", "III.1", "III.26", "III.29"],
+      "nota": "Euclides añade como corolario que el lado del hexágono es igual al radio del círculo: basta llevar el radio seis veces con el compás sobre la circunferencia."
+    },
+    {
+      "n": 16,
+      "tipo": "problema",
+      "titulo": "Inscribir un polígono regular de quince lados",
+      "enunciado": "Inscribir en un círculo dado un pentadecágono equilátero y equiángulo.",
+      "usa": ["III.30", "IV.1", "IV.2", "IV.11"],
+      "nota": "Se combinan el triángulo y el pentágono: si el arco de un tercio de la circunferencia contiene cinco quinceavos y el de un quinto contiene tres, su diferencia es de dos quinceavos, y basta dividirla por la mitad. Con regla y compás solo se pueden construir ciertos polígonos regulares; Gauss demostró en 1796 que el de 17 lados es uno de ellos."
+    }
+  ]
+}
