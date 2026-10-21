@@ -1,0 +1,279 @@
+{
+  "numero": "IX",
+  "titulo": "Infinitud de los primos y números perfectos",
+  "intro": "Treinta y seis proposiciones, sin definiciones nuevas, que completan la teoría de números: cuadrados y cubos, progresiones que empiezan en la unidad, la unicidad de la descomposición en primos, la infinitud de los números primos, las reglas de pares e impares, la suma de una progresión geométrica y la fórmula de los números perfectos.",
+  "buscar": "Buscar: primos, 20, perfecto…",
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "teorema",
+      "titulo": "Producto de planos semejantes",
+      "enunciado": "Si dos números planos semejantes, multiplicándose entre sí, producen un número, el producto será cuadrado.",
+      "usa": ["VII.17", "VIII.18", "VIII.22"],
+      "nota": "Por ejemplo, 6 = 2·3 y 24 = 4·6 son planos semejantes, y 6·24 = 144 = 12²."
+    },
+    {
+      "n": 2,
+      "tipo": "teorema",
+      "titulo": "Si el producto es cuadrado",
+      "enunciado": "Si dos números, multiplicándose entre sí, producen un número cuadrado, son planos semejantes.",
+      "usa": ["VII.17", "VIII.20"],
+      "nota": "Recíproco de IX.1."
+    },
+    {
+      "n": 3,
+      "tipo": "teorema",
+      "titulo": "El cuadrado de un cubo",
+      "enunciado": "Si un número cubo, multiplicándose por sí mismo, produce un número, el producto será cubo.",
+      "usa": ["VII.15", "VIII.23"],
+      "nota": "En notación actual: (a³)² = (a²)³."
+    },
+    {
+      "n": 4,
+      "tipo": "teorema",
+      "titulo": "Producto de dos cubos",
+      "enunciado": "Si un número cubo, multiplicando a un número cubo, produce un número, el producto será cubo.",
+      "usa": ["VII.17", "VIII.23", "IX.3"],
+      "nota": "En notación actual: a³·b³ = (a·b)³."
+    },
+    {
+      "n": 5,
+      "tipo": "teorema",
+      "titulo": "Cubo por un número da cubo",
+      "enunciado": "Si un número cubo, multiplicando a un número, produce un número cubo, también el número multiplicado será cubo.",
+      "usa": ["VII.17", "VIII.25", "IX.3"]
+    },
+    {
+      "n": 6,
+      "tipo": "teorema",
+      "titulo": "Si el cuadrado es cubo",
+      "enunciado": "Si un número, multiplicándose por sí mismo, produce un número cubo, él mismo será también cubo.",
+      "usa": ["VII.17", "VIII.25"],
+      "nota": "En notación actual: si a² es un cubo, a también lo es. Por ejemplo, 64 = 8² = 4³, y 8 = 2³."
+    },
+    {
+      "n": 7,
+      "tipo": "teorema",
+      "titulo": "Compuesto por un número da sólido",
+      "enunciado": "Si un número compuesto, multiplicando a un número cualquiera, produce un número, el producto será sólido.",
+      "usa": []
+    },
+    {
+      "n": 8,
+      "tipo": "teorema",
+      "titulo": "Cuadrados y cubos en una progresión desde la unidad",
+      "enunciado": "Si tantos números como se quiera, empezando por la unidad, están en proporción continua, el tercero a partir de la unidad será cuadrado, y también los que se obtienen saltando uno; el cuarto será cubo, y también todos los que se obtienen saltando dos; y el séptimo será a la vez cubo y cuadrado, y también los que se obtienen saltando cinco.",
+      "usa": ["VII.15", "VIII.22", "VIII.23"],
+      "nota": "En notación actual, la progresión es 1, a, a², a³, a⁴…: son cuadrados las potencias pares, cubos las múltiplos de 3, y a⁶ es a la vez cuadrado y cubo."
+    },
+    {
+      "n": 9,
+      "tipo": "teorema",
+      "titulo": "Si el segundo término es cuadrado o cubo",
+      "enunciado": "Si tantos números como se quiera, empezando por la unidad, están en proporción continua, y el número que sigue a la unidad es cuadrado, todos los demás serán también cuadrados; y si el número que sigue a la unidad es cubo, todos los demás serán también cubos.",
+      "usa": ["VIII.22", "VIII.23", "IX.8"]
+    },
+    {
+      "n": 10,
+      "tipo": "teorema",
+      "titulo": "Si el segundo término no es cuadrado",
+      "enunciado": "Si tantos números como se quiera, empezando por la unidad, están en proporción continua, y el número que sigue a la unidad no es cuadrado, tampoco será cuadrado ningún otro salvo el tercero a partir de la unidad y todos los que se obtienen saltando uno; y si el número que sigue a la unidad no es cubo, tampoco será cubo ningún otro salvo el cuarto a partir de la unidad y todos los que se obtienen saltando dos.",
+      "usa": ["VIII.24", "VIII.25", "IX.8"]
+    },
+    {
+      "n": 11,
+      "tipo": "teorema",
+      "titulo": "Las potencias se miden entre sí",
+      "enunciado": "Si tantos números como se quiera, empezando por la unidad, están en proporción continua, el menor mide al mayor según alguno de los números que están en la progresión.",
+      "usa": ["VII.14", "VII.15"],
+      "nota": "En notación actual: aᵐ divide a aⁿ si m ≤ n, y el cociente es aⁿ⁻ᵐ, que también está en la progresión."
+    },
+    {
+      "n": 12,
+      "tipo": "teorema",
+      "titulo": "Los primos que miden la última potencia",
+      "enunciado": "Si tantos números como se quiera, empezando por la unidad, están en proporción continua, todo número primo que mida al último medirá también al que sigue a la unidad.",
+      "usa": ["VII.19", "VII.30", "IX.11"],
+      "nota": "En notación actual: si un primo p divide a aⁿ, entonces p divide a a."
+    },
+    {
+      "n": 13,
+      "tipo": "teorema",
+      "titulo": "Divisores de la potencia de un primo",
+      "enunciado": "Si tantos números como se quiera, empezando por la unidad, están en proporción continua, y el que sigue a la unidad es primo, el mayor no será medido por ningún otro salvo por los que están en la progresión.",
+      "usa": ["VII.19", "VII.30", "IX.11", "IX.12"],
+      "nota": "En notación actual: los únicos divisores de pⁿ, con p primo, son 1, p, p², …, pⁿ. Se usa en IX.36 para los números perfectos."
+    },
+    {
+      "n": 14,
+      "tipo": "teorema",
+      "titulo": "Unicidad de los factores primos",
+      "enunciado": "Si un número es el menor medido por ciertos números primos, no será medido por ningún otro número primo salvo los que lo miden desde el principio.",
+      "usa": ["VII.30"],
+      "nota": "Es la versión de Euclides de la unicidad de la descomposición en factores primos, para números sin factores repetidos. El teorema fundamental de la aritmética, con su enunciado completo, lo demostró Gauss en 1801."
+    },
+    {
+      "n": 15,
+      "tipo": "teorema",
+      "titulo": "Tres términos mínimos en proporción continua",
+      "enunciado": "Si tres números en proporción continua son los menores de los que tienen la misma razón con ellos, dos cualesquiera de ellos sumados serán primos con el restante.",
+      "usa": ["VII.24", "VII.25", "VII.28", "VIII.2"],
+      "nota": "Por ejemplo, 4, 6, 9: 4 + 6 = 10 es primo con 9, 4 + 9 = 13 con 6, y 6 + 9 = 15 con 4."
+    },
+    {
+      "n": 16,
+      "tipo": "teorema",
+      "titulo": "Sin tercera proporcional entre primos entre sí",
+      "enunciado": "Si dos números son primos entre sí, el segundo no será a ningún otro número como el primero es al segundo.",
+      "usa": ["VII.20", "VII.21"],
+      "nota": "Por ejemplo, no hay ningún número entero c con 2 : 3 = 3 : c, porque c tendría que ser 9/2."
+    },
+    {
+      "n": 17,
+      "tipo": "teorema",
+      "titulo": "Sin continuación de una progresión de extremos primos",
+      "enunciado": "Si hay tantos números como se quiera en proporción continua y sus extremos son primos entre sí, el último no será a ningún otro número como el primero es al segundo.",
+      "usa": ["VII.20", "VII.21", "VIII.1"]
+    },
+    {
+      "n": 18,
+      "tipo": "problema",
+      "titulo": "¿Existe tercera proporcional?",
+      "enunciado": "Dados dos números, examinar si es posible hallar un tercero proporcional a ellos.",
+      "usa": ["VII.19", "IX.16"],
+      "nota": "Dados a y b, existe un entero c con a : b = b : c si y solo si a divide a b²."
+    },
+    {
+      "n": 19,
+      "tipo": "problema",
+      "titulo": "¿Existe cuarta proporcional?",
+      "enunciado": "Dados tres números, examinar cuándo es posible hallar un cuarto proporcional a ellos.",
+      "usa": ["VII.19"],
+      "nota": "Dados a, b y c, existe un entero d con a : b = c : d si y solo si a divide a b·c."
+    },
+    {
+      "n": 20,
+      "tipo": "teorema",
+      "titulo": "Hay infinitos números primos",
+      "enunciado": "Los números primos son más que cualquier cantidad propuesta de números primos.",
+      "usa": ["VII.31", "VII.36"],
+      "nota": "Una de las demostraciones más célebres de las matemáticas. Dados unos primos, se multiplican y se suma 1: el resultado o es primo o tiene un factor primo (VII.31), y ninguno de los primos dados puede medirlo, porque dejaría resto 1. Así siempre hay un primo más. Euclides no habla de infinito: dice que nunca se acaban."
+    },
+    {
+      "n": 21,
+      "tipo": "teorema",
+      "titulo": "Suma de pares",
+      "enunciado": "Si se suman tantos números pares como se quiera, el total es par.",
+      "usa": [],
+      "nota": "Las proposiciones IX.21 a IX.34 son las reglas de los pares y los impares, probablemente de origen pitagórico."
+    },
+    {
+      "n": 22,
+      "tipo": "teorema",
+      "titulo": "Una cantidad par de impares",
+      "enunciado": "Si se suman tantos números impares como se quiera y su cantidad es par, el total será par.",
+      "usa": ["IX.21"]
+    },
+    {
+      "n": 23,
+      "tipo": "teorema",
+      "titulo": "Una cantidad impar de impares",
+      "enunciado": "Si se suman tantos números impares como se quiera y su cantidad es impar, el total también será impar.",
+      "usa": ["IX.22"]
+    },
+    {
+      "n": 24,
+      "tipo": "teorema",
+      "titulo": "Par menos par",
+      "enunciado": "Si de un número par se resta un número par, el resto será par.",
+      "usa": []
+    },
+    {
+      "n": 25,
+      "tipo": "teorema",
+      "titulo": "Par menos impar",
+      "enunciado": "Si de un número par se resta un número impar, el resto será impar.",
+      "usa": ["IX.24"]
+    },
+    {
+      "n": 26,
+      "tipo": "teorema",
+      "titulo": "Impar menos impar",
+      "enunciado": "Si de un número impar se resta un número impar, el resto será par.",
+      "usa": []
+    },
+    {
+      "n": 27,
+      "tipo": "teorema",
+      "titulo": "Impar menos par",
+      "enunciado": "Si de un número impar se resta un número par, el resto será impar.",
+      "usa": []
+    },
+    {
+      "n": 28,
+      "tipo": "teorema",
+      "titulo": "Impar por par",
+      "enunciado": "Si un número impar, multiplicando a un número par, produce un número, el producto será par.",
+      "usa": ["IX.21"]
+    },
+    {
+      "n": 29,
+      "tipo": "teorema",
+      "titulo": "Impar por impar",
+      "enunciado": "Si un número impar, multiplicando a un número impar, produce un número, el producto será impar.",
+      "usa": ["IX.23"]
+    },
+    {
+      "n": 30,
+      "tipo": "teorema",
+      "titulo": "Un impar que mide a un par mide a su mitad",
+      "enunciado": "Si un número impar mide a un número par, también medirá a su mitad.",
+      "usa": ["IX.23"]
+    },
+    {
+      "n": 31,
+      "tipo": "teorema",
+      "titulo": "Primo con un número, primo con su doble",
+      "enunciado": "Si un número impar es primo con un número, también será primo con su doble.",
+      "usa": []
+    },
+    {
+      "n": 32,
+      "tipo": "teorema",
+      "titulo": "Las potencias de dos",
+      "enunciado": "Cada uno de los números que se obtienen doblando sucesivamente a partir del dos es solo parmente par.",
+      "usa": ["IX.13"],
+      "nota": "Las potencias de 2 (2, 4, 8, 16…) solo tienen divisores pares, aparte de la unidad."
+    },
+    {
+      "n": 33,
+      "tipo": "teorema",
+      "titulo": "Si la mitad es impar",
+      "enunciado": "Si la mitad de un número es impar, el número es solo parmente impar.",
+      "usa": []
+    },
+    {
+      "n": 34,
+      "tipo": "teorema",
+      "titulo": "Ni potencia de dos ni de mitad impar",
+      "enunciado": "Si un número no es de los que se obtienen doblando a partir del dos ni tiene la mitad impar, es a la vez parmente par y parmente impar.",
+      "usa": []
+    },
+    {
+      "n": 35,
+      "tipo": "teorema",
+      "titulo": "Suma de una progresión geométrica",
+      "enunciado": "Si hay tantos números como se quiera en proporción continua y se quitan del segundo y del último números iguales al primero, el exceso del segundo será al primero como el exceso del último a todos los anteriores a él.",
+      "usa": ["VII.11", "VII.12"],
+      "nota": "En notación actual: si la progresión es a, a·r, …, a·rⁿ, entonces (a·r − a) : a = (a·rⁿ − a) : (a + a·r + … + a·rⁿ⁻¹). Despejando se obtiene la fórmula de la suma: a·(rⁿ − 1)/(r − 1)."
+    },
+    {
+      "n": 36,
+      "tipo": "teorema",
+      "titulo": "Números perfectos",
+      "enunciado": "Si, empezando por la unidad, se toman tantos números como se quiera en proporción doble hasta que la suma de todos resulte un número primo, y la suma, multiplicada por el último, produce un número, el producto será perfecto.",
+      "usa": ["VII.19", "VII.30", "IX.13", "IX.35"],
+      "nota": "En notación actual: si 1 + 2 + 4 + … + 2ⁿ⁻¹ = 2ⁿ − 1 es primo, entonces 2ⁿ⁻¹·(2ⁿ − 1) es perfecto. Así se obtienen 6, 28, 496 y 8128. Euler demostró en el siglo XVIII que todos los perfectos pares son de esta forma. Nadie sabe todavía si existe algún perfecto impar."
+    }
+  ]
+}
