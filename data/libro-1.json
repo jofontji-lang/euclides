@@ -66,181 +66,211 @@
       "n": 2,
       "tipo": "problema",
       "titulo": "Trasladar un segmento a un punto dado",
-      "enunciado": "Colocar en un punto dado, como extremo, una recta igual a una recta dada."
+      "enunciado": "Colocar en un punto dado, como extremo, una recta igual a una recta dada.",
+      "usa": ["Post. 1", "Post. 2", "Post. 3", "I.1", "N.C. 1", "N.C. 3"]
     },
     {
       "n": 3,
       "tipo": "problema",
       "titulo": "Cortar de un segmento otro igual a uno menor",
-      "enunciado": "Dadas dos rectas desiguales, quitar de la mayor una recta igual a la menor."
+      "enunciado": "Dadas dos rectas desiguales, quitar de la mayor una recta igual a la menor.",
+      "usa": ["Post. 3", "I.2", "N.C. 1"]
     },
     {
       "n": 4,
       "tipo": "teorema",
       "titulo": "Criterio lado-ángulo-lado",
-      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, e iguales los ángulos comprendidos por esos lados, tendrán también la base igual a la base, el triángulo igual al triángulo, y los ángulos restantes iguales a los ángulos restantes, aquellos que subtienden lados iguales."
+      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, e iguales los ángulos comprendidos por esos lados, tendrán también la base igual a la base, el triángulo igual al triángulo, y los ángulos restantes iguales a los ángulos restantes, aquellos que subtienden lados iguales.",
+      "usa": ["N.C. 4"]
     },
     {
       "n": 5,
       "tipo": "teorema",
       "titulo": "Los ángulos de la base del isósceles",
-      "enunciado": "En los triángulos isósceles los ángulos de la base son iguales entre sí y, prolongados los lados iguales, los ángulos situados bajo la base también son iguales entre sí."
+      "enunciado": "En los triángulos isósceles los ángulos de la base son iguales entre sí y, prolongados los lados iguales, los ángulos situados bajo la base también son iguales entre sí.",
+      "usa": ["Post. 1", "Post. 2", "I.3", "I.4", "N.C. 3"]
     },
     {
       "n": 6,
       "tipo": "teorema",
       "titulo": "Recíproco del triángulo isósceles",
-      "enunciado": "Si dos ángulos de un triángulo son iguales entre sí, los lados que subtienden esos ángulos también son iguales entre sí."
+      "enunciado": "Si dos ángulos de un triángulo son iguales entre sí, los lados que subtienden esos ángulos también son iguales entre sí.",
+      "usa": ["I.3", "I.4", "N.C. 5"]
     },
     {
       "n": 7,
       "tipo": "teorema",
       "titulo": "Unicidad del triángulo sobre una base",
-      "enunciado": "Sobre una misma recta no pueden construirse, desde sus extremos y del mismo lado, otras dos rectas iguales a dos rectas dadas, cada una a cada una, que se encuentren en un punto distinto."
+      "enunciado": "Sobre una misma recta no pueden construirse, desde sus extremos y del mismo lado, otras dos rectas iguales a dos rectas dadas, cada una a cada una, que se encuentren en un punto distinto.",
+      "usa": ["I.5", "N.C. 5"]
     },
     {
       "n": 8,
       "tipo": "teorema",
       "titulo": "Criterio lado-lado-lado",
-      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, y la base igual a la base, tendrán también iguales los ángulos comprendidos por los lados iguales."
+      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, y la base igual a la base, tendrán también iguales los ángulos comprendidos por los lados iguales.",
+      "usa": ["I.7"]
     },
     {
       "n": 9,
       "tipo": "problema",
       "titulo": "Bisecar un ángulo",
-      "enunciado": "Dividir en dos partes iguales un ángulo rectilíneo dado."
+      "enunciado": "Dividir en dos partes iguales un ángulo rectilíneo dado.",
+      "usa": ["I.1", "I.3", "I.8"]
     },
     {
       "n": 10,
       "tipo": "problema",
       "titulo": "Hallar el punto medio de un segmento",
-      "enunciado": "Dividir en dos partes iguales una recta finita dada."
+      "enunciado": "Dividir en dos partes iguales una recta finita dada.",
+      "usa": ["I.1", "I.4", "I.9"]
     },
     {
       "n": 11,
       "tipo": "problema",
       "titulo": "Perpendicular por un punto de la recta",
-      "enunciado": "Trazar una recta perpendicular a una recta dada desde un punto dado en ella."
+      "enunciado": "Trazar una recta perpendicular a una recta dada desde un punto dado en ella.",
+      "usa": ["I.1", "I.3", "I.8"]
     },
     {
       "n": 12,
       "tipo": "problema",
       "titulo": "Perpendicular desde un punto exterior",
-      "enunciado": "Trazar una perpendicular a una recta infinita dada desde un punto dado que no está en ella."
+      "enunciado": "Trazar una perpendicular a una recta infinita dada desde un punto dado que no está en ella.",
+      "usa": ["Post. 3", "I.8", "I.10"]
     },
     {
       "n": 13,
       "tipo": "teorema",
       "titulo": "Ángulos adyacentes: dos rectos",
-      "enunciado": "Si una recta levantada sobre otra forma ángulos, formará o bien dos rectos o bien ángulos iguales a dos rectos."
+      "enunciado": "Si una recta levantada sobre otra forma ángulos, formará o bien dos rectos o bien ángulos iguales a dos rectos.",
+      "usa": ["I.11", "N.C. 1", "N.C. 2"]
     },
     {
       "n": 14,
       "tipo": "teorema",
       "titulo": "Rectas en línea recta",
-      "enunciado": "Si en un punto de una recta dos rectas, no situadas del mismo lado, forman con ella ángulos adyacentes iguales a dos rectos, esas dos rectas están en línea recta."
+      "enunciado": "Si en un punto de una recta dos rectas, no situadas del mismo lado, forman con ella ángulos adyacentes iguales a dos rectos, esas dos rectas están en línea recta.",
+      "usa": ["I.13", "N.C. 3", "N.C. 5"]
     },
     {
       "n": 15,
       "tipo": "teorema",
       "titulo": "Ángulos opuestos por el vértice",
-      "enunciado": "Si dos rectas se cortan, forman ángulos opuestos por el vértice iguales entre sí."
+      "enunciado": "Si dos rectas se cortan, forman ángulos opuestos por el vértice iguales entre sí.",
+      "usa": ["Post. 4", "I.13", "N.C. 3"]
     },
     {
       "n": 16,
       "tipo": "teorema",
       "titulo": "El ángulo externo es mayor",
-      "enunciado": "En todo triángulo, si se prolonga uno de los lados, el ángulo externo es mayor que cada uno de los ángulos internos y opuestos."
+      "enunciado": "En todo triángulo, si se prolonga uno de los lados, el ángulo externo es mayor que cada uno de los ángulos internos y opuestos.",
+      "usa": ["Post. 2", "I.3", "I.4", "I.10", "I.15", "N.C. 5"]
     },
     {
       "n": 17,
       "tipo": "teorema",
       "titulo": "Dos ángulos suman menos de dos rectos",
-      "enunciado": "En todo triángulo, dos ángulos tomados juntos de cualquier manera son menores que dos rectos."
+      "enunciado": "En todo triángulo, dos ángulos tomados juntos de cualquier manera son menores que dos rectos.",
+      "usa": ["I.13", "I.16"]
     },
     {
       "n": 18,
       "tipo": "teorema",
       "titulo": "Al mayor lado, el mayor ángulo",
-      "enunciado": "En todo triángulo, el lado mayor subtiende el ángulo mayor."
+      "enunciado": "En todo triángulo, el lado mayor subtiende el ángulo mayor.",
+      "usa": ["I.3", "I.5", "I.16"]
     },
     {
       "n": 19,
       "tipo": "teorema",
       "titulo": "Al mayor ángulo, el mayor lado",
-      "enunciado": "En todo triángulo, el ángulo mayor es subtendido por el lado mayor."
+      "enunciado": "En todo triángulo, el ángulo mayor es subtendido por el lado mayor.",
+      "usa": ["I.5", "I.18"]
     },
     {
       "n": 20,
       "tipo": "teorema",
       "titulo": "Desigualdad triangular",
-      "enunciado": "En todo triángulo, dos lados tomados juntos de cualquier manera son mayores que el restante."
+      "enunciado": "En todo triángulo, dos lados tomados juntos de cualquier manera son mayores que el restante.",
+      "usa": ["I.3", "I.5", "I.19"]
     },
     {
       "n": 21,
       "tipo": "teorema",
       "titulo": "Rectas interiores a un triángulo",
-      "enunciado": "Si desde los extremos de un lado de un triángulo se trazan dos rectas que se encuentren dentro de él, esas rectas son menores que los dos lados restantes, pero comprenden un ángulo mayor."
+      "enunciado": "Si desde los extremos de un lado de un triángulo se trazan dos rectas que se encuentren dentro de él, esas rectas son menores que los dos lados restantes, pero comprenden un ángulo mayor.",
+      "usa": ["I.16", "I.20"]
     },
     {
       "n": 22,
       "tipo": "problema",
       "titulo": "Triángulo con tres segmentos dados",
-      "enunciado": "Construir un triángulo con tres rectas iguales a tres rectas dadas; es necesario que dos de ellas, tomadas juntas de cualquier manera, sean mayores que la restante."
+      "enunciado": "Construir un triángulo con tres rectas iguales a tres rectas dadas; es necesario que dos de ellas, tomadas juntas de cualquier manera, sean mayores que la restante.",
+      "usa": ["Post. 3", "I.3", "I.20"]
     },
     {
       "n": 23,
       "tipo": "problema",
       "titulo": "Copiar un ángulo",
-      "enunciado": "Construir, en un punto dado de una recta dada, un ángulo rectilíneo igual a un ángulo rectilíneo dado."
+      "enunciado": "Construir, en un punto dado de una recta dada, un ángulo rectilíneo igual a un ángulo rectilíneo dado.",
+      "usa": ["I.8", "I.22"]
     },
     {
       "n": 24,
       "tipo": "teorema",
       "titulo": "Mayor ángulo, mayor base",
-      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, pero uno tiene mayor el ángulo comprendido, también tendrá mayor la base."
+      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, pero uno tiene mayor el ángulo comprendido, también tendrá mayor la base.",
+      "usa": ["I.4", "I.5", "I.19", "I.23"]
     },
     {
       "n": 25,
       "tipo": "teorema",
       "titulo": "Mayor base, mayor ángulo",
-      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, pero uno tiene mayor la base, también tendrá mayor el ángulo comprendido por los lados iguales."
+      "enunciado": "Si dos triángulos tienen dos lados iguales a dos lados, cada uno a cada uno, pero uno tiene mayor la base, también tendrá mayor el ángulo comprendido por los lados iguales.",
+      "usa": ["I.4", "I.24"]
     },
     {
       "n": 26,
       "tipo": "teorema",
       "titulo": "Criterios ángulo-lado-ángulo",
-      "enunciado": "Si dos triángulos tienen dos ángulos iguales a dos ángulos, cada uno a cada uno, y un lado igual a un lado, sea el adyacente a los ángulos iguales o el que subtiende uno de ellos, tendrán también iguales los lados restantes y el ángulo restante."
+      "enunciado": "Si dos triángulos tienen dos ángulos iguales a dos ángulos, cada uno a cada uno, y un lado igual a un lado, sea el adyacente a los ángulos iguales o el que subtiende uno de ellos, tendrán también iguales los lados restantes y el ángulo restante.",
+      "usa": ["I.3", "I.4", "I.16"]
     },
     {
       "n": 27,
       "tipo": "teorema",
       "titulo": "Alternos iguales: rectas paralelas",
-      "enunciado": "Si una recta que incide sobre otras dos forma ángulos alternos iguales entre sí, esas rectas son paralelas."
+      "enunciado": "Si una recta que incide sobre otras dos forma ángulos alternos iguales entre sí, esas rectas son paralelas.",
+      "usa": ["I.16"]
     },
     {
       "n": 28,
       "tipo": "teorema",
       "titulo": "Correspondientes iguales: rectas paralelas",
-      "enunciado": "Si una recta que incide sobre otras dos forma el ángulo externo igual al interno y opuesto del mismo lado, o los internos del mismo lado iguales a dos rectos, esas rectas son paralelas."
+      "enunciado": "Si una recta que incide sobre otras dos forma el ángulo externo igual al interno y opuesto del mismo lado, o los internos del mismo lado iguales a dos rectos, esas rectas son paralelas.",
+      "usa": ["I.13", "I.15", "I.27"]
     },
     {
       "n": 29,
       "tipo": "teorema",
       "titulo": "Paralelas: ángulos alternos iguales",
-      "enunciado": "Una recta que incide sobre dos paralelas forma ángulos alternos iguales, el externo igual al interno y opuesto, y los internos del mismo lado iguales a dos rectos."
+      "enunciado": "Una recta que incide sobre dos paralelas forma ángulos alternos iguales, el externo igual al interno y opuesto, y los internos del mismo lado iguales a dos rectos.",
+      "usa": ["Post. 5", "I.13", "I.15"]
     },
     {
       "n": 30,
       "tipo": "teorema",
       "titulo": "Transitividad del paralelismo",
-      "enunciado": "Las rectas paralelas a una misma recta son paralelas entre sí."
+      "enunciado": "Las rectas paralelas a una misma recta son paralelas entre sí.",
+      "usa": ["I.29"]
     },
     {
       "n": 31,
       "tipo": "problema",
       "titulo": "Trazar una paralela por un punto",
-      "enunciado": "Trazar por un punto dado una recta paralela a una recta dada."
+      "enunciado": "Trazar por un punto dado una recta paralela a una recta dada.",
+      "usa": ["I.23", "I.27"]
     },
     {
       "n": 32,
@@ -269,85 +299,99 @@
       "n": 33,
       "tipo": "teorema",
       "titulo": "Segmentos iguales y paralelos",
-      "enunciado": "Las rectas que unen por el mismo lado los extremos de dos rectas iguales y paralelas son también iguales y paralelas."
+      "enunciado": "Las rectas que unen por el mismo lado los extremos de dos rectas iguales y paralelas son también iguales y paralelas.",
+      "usa": ["I.4", "I.27", "I.29"]
     },
     {
       "n": 34,
       "tipo": "teorema",
       "titulo": "Propiedades del paralelogramo",
-      "enunciado": "En un paralelogramo, los lados y los ángulos opuestos son iguales entre sí, y la diagonal lo divide en dos partes iguales."
+      "enunciado": "En un paralelogramo, los lados y los ángulos opuestos son iguales entre sí, y la diagonal lo divide en dos partes iguales.",
+      "usa": ["I.4", "I.26", "I.29"]
     },
     {
       "n": 35,
       "tipo": "teorema",
       "titulo": "Paralelogramos sobre la misma base",
-      "enunciado": "Los paralelogramos que están sobre la misma base y entre las mismas paralelas son iguales entre sí."
+      "enunciado": "Los paralelogramos que están sobre la misma base y entre las mismas paralelas son iguales entre sí.",
+      "usa": ["I.4", "I.29", "I.34"]
     },
     {
       "n": 36,
       "tipo": "teorema",
       "titulo": "Paralelogramos sobre bases iguales",
-      "enunciado": "Los paralelogramos que están sobre bases iguales y entre las mismas paralelas son iguales entre sí."
+      "enunciado": "Los paralelogramos que están sobre bases iguales y entre las mismas paralelas son iguales entre sí.",
+      "usa": ["I.33", "I.34", "I.35"]
     },
     {
       "n": 37,
       "tipo": "teorema",
       "titulo": "Triángulos sobre la misma base",
-      "enunciado": "Los triángulos que están sobre la misma base y entre las mismas paralelas son iguales entre sí."
+      "enunciado": "Los triángulos que están sobre la misma base y entre las mismas paralelas son iguales entre sí.",
+      "usa": ["I.31", "I.34", "I.35"]
     },
     {
       "n": 38,
       "tipo": "teorema",
       "titulo": "Triángulos sobre bases iguales",
-      "enunciado": "Los triángulos que están sobre bases iguales y entre las mismas paralelas son iguales entre sí."
+      "enunciado": "Los triángulos que están sobre bases iguales y entre las mismas paralelas son iguales entre sí.",
+      "usa": ["I.31", "I.34", "I.36"]
     },
     {
       "n": 39,
       "tipo": "teorema",
       "titulo": "Recíproco de I.37",
-      "enunciado": "Los triángulos iguales que están sobre la misma base y del mismo lado están también entre las mismas paralelas."
+      "enunciado": "Los triángulos iguales que están sobre la misma base y del mismo lado están también entre las mismas paralelas.",
+      "usa": ["I.31", "I.37"]
     },
     {
       "n": 40,
       "tipo": "teorema",
       "titulo": "Recíproco de I.38",
-      "enunciado": "Los triángulos iguales que están sobre bases iguales y del mismo lado están también entre las mismas paralelas."
+      "enunciado": "Los triángulos iguales que están sobre bases iguales y del mismo lado están también entre las mismas paralelas.",
+      "usa": ["I.31", "I.38"]
     },
     {
       "n": 41,
       "tipo": "teorema",
       "titulo": "El paralelogramo es doble del triángulo",
-      "enunciado": "Si un paralelogramo tiene la misma base que un triángulo y está entre las mismas paralelas, el paralelogramo es el doble del triángulo."
+      "enunciado": "Si un paralelogramo tiene la misma base que un triángulo y está entre las mismas paralelas, el paralelogramo es el doble del triángulo.",
+      "usa": ["I.34", "I.37"]
     },
     {
       "n": 42,
       "tipo": "problema",
       "titulo": "Paralelogramo igual a un triángulo",
-      "enunciado": "Construir, en un ángulo rectilíneo dado, un paralelogramo igual a un triángulo dado."
+      "enunciado": "Construir, en un ángulo rectilíneo dado, un paralelogramo igual a un triángulo dado.",
+      "usa": ["I.10", "I.23", "I.31", "I.38", "I.41"]
     },
     {
       "n": 43,
       "tipo": "teorema",
       "titulo": "Complementos en torno a la diagonal",
-      "enunciado": "En todo paralelogramo, los complementos de los paralelogramos situados en torno a la diagonal son iguales entre sí."
+      "enunciado": "En todo paralelogramo, los complementos de los paralelogramos situados en torno a la diagonal son iguales entre sí.",
+      "usa": ["I.34"]
     },
     {
       "n": 44,
       "tipo": "problema",
       "titulo": "Aplicación de áreas",
-      "enunciado": "Aplicar a una recta dada, en un ángulo rectilíneo dado, un paralelogramo igual a un triángulo dado."
+      "enunciado": "Aplicar a una recta dada, en un ángulo rectilíneo dado, un paralelogramo igual a un triángulo dado.",
+      "usa": ["I.15", "I.29", "I.31", "I.42", "I.43"]
     },
     {
       "n": 45,
       "tipo": "problema",
       "titulo": "Paralelogramo igual a un rectilíneo",
-      "enunciado": "Construir, en un ángulo rectilíneo dado, un paralelogramo igual a una figura rectilínea dada."
+      "enunciado": "Construir, en un ángulo rectilíneo dado, un paralelogramo igual a una figura rectilínea dada.",
+      "usa": ["I.14", "I.29", "I.30", "I.33", "I.34", "I.42", "I.44"]
     },
     {
       "n": 46,
       "tipo": "problema",
       "titulo": "Construir un cuadrado",
-      "enunciado": "Construir un cuadrado sobre una recta dada."
+      "enunciado": "Construir un cuadrado sobre una recta dada.",
+      "usa": ["I.3", "I.11", "I.31", "I.34"]
     },
     {
       "n": 47,
@@ -376,7 +420,8 @@
       "n": 48,
       "tipo": "teorema",
       "titulo": "Recíproco del teorema de Pitágoras",
-      "enunciado": "Si en un triángulo el cuadrado de uno de los lados es igual a la suma de los cuadrados de los otros dos, el ángulo comprendido por esos dos lados es recto."
+      "enunciado": "Si en un triángulo el cuadrado de uno de los lados es igual a la suma de los cuadrados de los otros dos, el ángulo comprendido por esos dos lados es recto.",
+      "usa": ["I.3", "I.8", "I.11", "I.47"]
     }
   ]
 }

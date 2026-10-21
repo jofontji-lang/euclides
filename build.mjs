@@ -29,13 +29,14 @@ function write(rel, html) {
 }
 
 // ---------- Plantilla común ----------
-function layout({ rel, title, description, active, body, figures = false, absolute = false }) {
+function layout({ rel, title, description, active, body, figures = false, script = "", absolute = false }) {
   const depth = rel.split("/").length - 1;
   const r = absolute ? "/" : "../".repeat(depth) || "./";
   const url = SITE + "/" + rel.replace(/index\.html$/, "");
   const nav = [
     ["inicio", r, "Inicio"],
     ...disponibles.map(b => [b.slug, r + b.slug + "/", "Libro " + b.numero]),
+    ["mapa", r + "mapa/", "Mapa"],
     ["sobre", r + "sobre/", "La edición"],
   ].map(([k, href, t]) => `<a href="${href}"${active === k ? ' aria-current="page"' : ""}>${t}</a>`).join("");
   return `<!doctype html>
@@ -79,7 +80,7 @@ ${body}
   <div class="footer-right">ΜΕΤΡΟΝ ΑΡΙΣΤΟΝ<br><span>LA MEDIDA ES LO MEJOR</span></div>
 </div></footer>
 <script src="${r}assets/site.js" defer></script>
-${figures ? `<script src="${r}assets/figures.js" defer></script>` : ""}
+${figures ? `<script src="${r}assets/figures.js" defer></script>` : ""}${script ? `<script src="${r}assets/${script}" defer></script>` : ""}
 </body>
 </html>
 `;
@@ -305,6 +306,43 @@ disponibles.forEach((b, bi) => {
   }
 });
 
+// ---------- Mapa de dependencias ----------
+// Nodos: postulados, nociones comunes y proposiciones de los libros disponibles; aristas: las citas «usa».
+// src/mapa.js lo dibuja como un diagrama de arcos vertical.
+const libro1 = libroPorNumero.I;
+const nodos = [
+  ...libro1.postulados.map((t, i) => ({ id: `Post. ${i + 1}`, grupo: "Principios", titulo: `Postulado ${i + 1}`, texto: strip(t), href: "libro-1/#postulados" })),
+  ...libro1.nociones.map((t, i) => ({ id: `N.C. ${i + 1}`, grupo: "Principios", titulo: `Noción común ${i + 1}`, texto: strip(t), href: "libro-1/#nociones" })),
+  ...disponibles.flatMap(b => b.proposiciones.map(p => ({ id: `${b.numero}.${p.n}`, grupo: `Libro ${b.numero}`, titulo: p.titulo, texto: strip(p.enunciado), href: `${b.slug}/${p.n}/`, usa: p.usa || [] }))),
+];
+const ids = new Set(nodos.map(n => n.id));
+nodos.forEach(n => { n.usa = (n.usa || []).filter(c => ids.has(c)); });
+const citas = {};
+nodos.forEach(n => n.usa.forEach(c => { citas[c] = (citas[c] || 0) + 1; }));
+const masCitada = Object.entries(citas).filter(([c]) => !/^(Post|N\.C)/.test(c)).sort((a, b) => b[1] - a[1])[0];
+const numAristas = nodos.reduce((s, n) => s + n.usa.length, 0);
+write("mapa/index.html", layout({
+  rel: "mapa/index.html", active: "mapa", script: "mapa.js",
+  title: "Mapa de dependencias · Euclides · Los Elementos",
+  description: `Cómo se apoyan unas en otras las ${nodos.length - 10} proposiciones de ${listaLibros} de los Elementos de Euclides, hasta los postulados y las nociones comunes.`,
+  body: `
+<div class="wrap">
+  <nav class="crumbs" aria-label="Ruta"><a href="../">Elementos</a><span aria-hidden="true">›</span><span>Mapa</span></nav>
+  <header class="map-head">
+    <div class="kicker">Mapa de dependencias</div>
+    <h1>Cada proposición se apoya<br>en las anteriores.</h1>
+    <p>Las ${nodos.length - 10} proposiciones de ${listaLibros}, los 5 postulados y las 5 nociones comunes, unidos por las ${numAristas} citas de sus demostraciones. Pulsa una proposición: en <span class="sg sg-red">rojo</span>, todo lo que necesita hasta llegar a los postulados; en <span class="sg sg-blue">azul</span>, todo lo que se construye sobre ella.</p>
+    <p class="small muted">La más citada es <a href="../${nodos.find(n => n.id === masCitada[0]).href}">${masCitada[0]}</a>, ${esc(nodos.find(n => n.id === masCitada[0]).titulo.toLowerCase())}: la usan directamente ${masCitada[1]} proposiciones.</p>
+  </header>
+  <div class="map">
+    <aside class="map-info" id="map-info" aria-live="polite"><p class="muted">Cargando el mapa…</p></aside>
+    <div class="map-graph" id="map-graph"><noscript><p>El mapa necesita JavaScript. Las dependencias de cada proposición están también en su ficha, en «Se apoya en» y «La usan».</p></noscript></div>
+  </div>
+  <script type="application/json" id="map-data">${JSON.stringify(nodos.map(({ id, grupo, titulo, texto, href, usa }) => ({ id, grupo, titulo, texto, href, usa }))).replace(/</g, "\\u003c")}</script>
+</div>
+<div class="spacer"></div>`
+}));
+
 // ---------- La edición ----------
 write("sobre/index.html", layout({
   rel: "sobre/index.html", active: "sobre",
@@ -346,7 +384,7 @@ fs.writeFileSync(path.join(OUT, "404.html"), layout({
 
 // ---------- Recursos, sitemap y dominio ----------
 fs.mkdirSync(path.join(OUT, "assets"), { recursive: true });
-for (const f of ["style.css", "site.js", "figures.js", "og.png"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
+for (const f of ["style.css", "site.js", "figures.js", "mapa.js", "og.png"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, "assets", f));
 fs.writeFileSync(path.join(OUT, "assets/icon.svg"), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#203b30"/><circle cx="32" cy="32" r="25" fill="none" stroke="#b18a4b" stroke-width="1.5"/><text x="32" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="32" fill="#f4f1e8">Ε</text></svg>`);
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p => `  <url><loc>${SITE}/${p}</loc></url>`).join("\n")}\n</urlset>\n`);
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
