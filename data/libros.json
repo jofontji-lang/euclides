@@ -73,14 +73,14 @@
     "numero": "XI",
     "titulo": "Geometría del espacio",
     "proposiciones": 39,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-11"
   },
   {
     "numero": "XII",
     "titulo": "Método de exhaución",
     "proposiciones": 18,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-12"
   },
   {
