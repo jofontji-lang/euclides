@@ -10,7 +10,7 @@
     "numero": "II",
     "titulo": "Álgebra geométrica",
     "proposiciones": 14,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-2"
   },
   {

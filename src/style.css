@@ -116,7 +116,7 @@ p{margin:0}
 @media (max-width:950px){.books{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:680px){.books{grid-template-columns:repeat(2,minmax(0,1fr))}.books .card{padding:18px 14px}.books strong{font-size:17px}}
 
-.demos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.demos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:18px}
 .demo{background:var(--card);border:1px solid #ded8c9;padding:22px;text-decoration:none;display:grid;gap:10px;align-content:start;transition:border-color .2s}
 .demo:hover{border-color:var(--gold)}
 .demo svg{background:#f7f5ee;border:1px solid #eee8da;width:100%;height:auto}

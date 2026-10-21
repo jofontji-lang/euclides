@@ -55,13 +55,44 @@ FIGS["I.47"]={vb:[400,330],points:{A:{x:O.x-R*Math.cos(1.2),y:O.y-R*Math.sin(1.2
     const u1=unit(sub(B,A)),u2=unit(sub(C,A)),r1=add(A,mul(u1,10)),r2=add(r1,mul(u2,10)),r3=add(A,mul(u2,10));
     return `<path d="M${B.x} ${B.y} A${R} ${R} 0 0 1 ${C.x} ${C.y}" class="dash"/>`
       +at(1,poly(sqAB,"f-red")+poly(sqAC,"f-sage"))
-      +at(4,poly([B,F,L,sqBC[3]],"f-red")+poly([F,C,sqBC[2],L],"f-sage"))
-      +at(2,poly(sqBC,"f-blue"))+at(3,ln(A,L,"ln"))
+      +at(2,poly(sqBC,"f-blue"))
+      +at(4,poly([B,F,L,sqBC[3]],"f-red")+poly([F,C,sqBC[2],L],"f-sage"))+at(3,ln(A,L,"ln"))
       +`<polyline points="${f(r1.x)},${f(r1.y)} ${f(r2.x)},${f(r2.y)} ${f(r3.x)},${f(r3.y)}" class="ln"/>`
       +ln(A,B,"ln-red")+ln(A,C,"ln-sage")+ln(B,C,"ln-blue")
       +lab(A,"A",G)+lab(B,"B",{x:G.x+30,y:G.y-20})+lab(C,"C",{x:G.x-30,y:G.y-20})},
   readout(P){const ab=(len(sub(P.A,P.B))/10)**2,ac=(len(sub(P.A,P.C))/10)**2,bc=(len(sub(P.B,P.C))/10)**2;
     return `AB² = ${fmt(ab)} · AC² = ${fmt(ac)} · AB² + AC² = ${fmt(ab+ac)} · BC² = ${fmt(bc)}`}};
+
+/* II.4 — Cuadrado de una suma: (AC + CB)² = AC² + CB² + 2·AC·CB.
+   Cuadrado ADEB sobre AB; la diagonal BD y las paralelas por C y por G lo dividen en dos cuadrados y dos complementos. */
+const Q={A:{x:80,y:45},B:{x:320,y:45},D:{x:80,y:285},E:{x:320,y:285}},QC={x:200,y:165};
+FIGS["II.4"]={vb:[400,330],points:{C:{x:170,y:45}},drag:["C"],
+  move(P,k,p){P.C={x:Math.max(Q.A.x+35,Math.min(Q.B.x-35,p.x)),y:Q.A.y}},
+  draw(P,s,at){const{A,B,D,E}=Q,C=P.C,G={x:C.x,y:A.y+(B.x-C.x)},H={x:A.x,y:G.y},K={x:B.x,y:G.y},F={x:C.x,y:D.y};
+    return at(3,poly([C,B,K,G],"f-blue"))+at(4,poly([H,G,F,D],"f-red"))+at(5,poly([A,C,G,H],"f-sage")+poly([G,K,E,F],"f-sage"))
+      +at(1,poly([A,B,E,D],"ln")+ln(B,D,"cons")+lab(D,"D",QC)+lab(E,"E",QC))
+      +at(2,ln(C,F,"ln")+ln(H,K,"ln")+pt(G)+lab(G,"G",{x:G.x-10,y:G.y-10})+lab(F,"F",{x:F.x,y:F.y-10})+lab(H,"H",{x:H.x+10,y:H.y})+lab(K,"K",{x:K.x-10,y:K.y}))
+      +ln(A,C,"ln-red")+ln(C,B,"ln-blue")+lab(A,"A",QC)+lab(B,"B",QC)+lab(C,"C",{x:C.x,y:C.y+10})},
+  readout(P,s){const a=(P.C.x-Q.A.x)/10,b=(Q.B.x-P.C.x)/10;
+    return s<5?`AC = ${fmt(a)} · CB = ${fmt(b)}`:`AB² = ${fmt((a+b)**2)} · AC² + CB² + 2·AC·CB = ${fmt(a*a)} + ${fmt(b*b)} + ${fmt(2*a*b)} = ${fmt(a*a+b*b+2*a*b)}`}};
+
+/* II.11 — Sección áurea: cortar AB en H con AB·HB = AH².
+   Cuadrado ABDC hacia abajo; E punto medio de AC; F sobre la prolongación de CA con EF = EB; cuadrado AFGH hacia arriba. */
+const AU={x:115,y:150};
+FIGS["II.11"]={vb:[400,380],points:{B:{x:280,y:150}},drag:["B"],
+  move(P,k,p){P.B={x:Math.max(AU.x+120,Math.min(AU.x+200,p.x)),y:AU.y}},
+  draw(P,s,at){const A=AU,B=P.B,a=B.x-A.x,C={x:A.x,y:A.y+a},D={x:B.x,y:C.y},E={x:A.x,y:A.y+a/2},r=len(sub(B,E));
+    const F={x:A.x,y:E.y-r},H={x:A.x+(r-a/2),y:A.y},G={x:H.x,y:F.y},K={x:H.x,y:C.y},Ctr={x:A.x+a/2,y:A.y+a/2};
+    return (s===4?poly([F,G,K,C],"f-ink")+poly([A,B,D,C],"f-ink"):"")+at(3,poly([A,F,G,H],"f-red"))+at(5,poly([H,B,D,K],"f-blue"))
+      +at(1,poly([A,B,D,C],"ln")+ln(B,E,"ln")+pt(E)+lab(E,"E",{x:E.x+10,y:E.y})+lab(C,"C",Ctr)+lab(D,"D",Ctr))
+      +at(2,`<path d="M${f(B.x)} ${f(B.y)} A${f(r)} ${f(r)} 0 0 0 ${f(F.x)} ${f(F.y)}" class="cons"/>`+ln(A,F,"ln")+pt(F)+lab(F,"F",{x:F.x+10,y:F.y+10}))
+      +at(3,ln(F,G,"ln")+ln(G,K,"ln")+lab(G,"G",{x:G.x-10,y:G.y+10})+lab(H,"H",{x:H.x-10,y:H.y+10})+lab(K,"K",{x:K.x,y:K.y-10}))
+      +(s<3?ln(A,B,"ln-blue"):ln(A,H,"ln-red")+ln(H,B,"ln-blue"))
+      +lab(A,"A",{x:A.x+10,y:A.y})+lab(B,"B",{x:B.x-10,y:B.y+10})},
+  readout(P,s){const a=(P.B.x-AU.x)/10,h=a*(Math.sqrt(5)-1)/2,dec=n=>n.toLocaleString("es-ES",{minimumFractionDigits:3,maximumFractionDigits:3});
+    if(s<3)return `AB = ${fmt(a)}`;
+    if(s<5)return `AB = ${fmt(a)} · AH = ${fmt(h)} · HB = ${fmt(a-h)} · AB : AH = ${dec(a/h)}`;
+    return `AH² = ${fmt(h*h)} · AB·HB = ${fmt(a*(a-h))} · AB : AH = ${dec(a/h)}`}};
 
 /* Motor */
 function init(root){

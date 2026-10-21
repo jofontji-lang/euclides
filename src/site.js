@@ -23,7 +23,7 @@ if(list){
   const chips=[...document.querySelectorAll(".chip[data-f]")];let filt="all";
   const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
   const rows=[...list.children];const total=rows.length;
-  const apply=()=>{const term=norm(q.value.trim()).replace(/^i\.\s*/,"");let shown=0;
+  const apply=()=>{const term=norm(q.value.trim()).replace(/^[ivx]+\.\s*/,"");let shown=0;
     rows.forEach(li=>{const okK=filt==="all"||li.dataset.k===filt||(filt==="fig"&&li.dataset.fig);
       const okT=!term||(/^\d+$/.test(term)?li.dataset.n===term:norm(li.textContent).includes(term));
       li.hidden=!(okK&&okT);if(!li.hidden)shown++});

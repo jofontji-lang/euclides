@@ -1,0 +1,142 @@
+{
+  "numero": "II",
+  "titulo": "Álgebra geométrica",
+  "intro": "Dos definiciones y catorce proposiciones sobre rectángulos y cuadrados: lo que hoy escribiríamos como identidades algebraicas, demostrado con figuras. Termina con la cuadratura de cualquier figura rectilínea.",
+  "buscar": "Buscar: cuadrado, 11, obtusángulo…",
+  "definiciones": [
+    "Se dice que todo paralelogramo rectángulo está comprendido por las dos rectas que comprenden el ángulo recto.",
+    "En todo paralelogramo, se llama <i>gnomon</i> a cualquiera de los paralelogramos situados en torno a su diagonal junto con los dos complementos."
+  ],
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "teorema",
+      "titulo": "Propiedad distributiva",
+      "enunciado": "Si hay dos rectas y una de ellas se corta en un número cualquiera de segmentos, el rectángulo comprendido por las dos rectas es igual a los rectángulos comprendidos por la recta no cortada y cada uno de los segmentos.",
+      "usa": ["I.3", "I.11", "I.31", "I.34"],
+      "nota": "En notación actual: a(b + c + d) = ab + ac + ad."
+    },
+    {
+      "n": 2,
+      "tipo": "teorema",
+      "titulo": "El cuadrado como suma de dos rectángulos",
+      "enunciado": "Si una recta se corta al azar, los rectángulos comprendidos por la recta entera y cada uno de los segmentos son iguales al cuadrado de la recta entera.",
+      "usa": ["I.31", "I.46", "II.1"],
+      "nota": "En notación actual: (a + b)a + (a + b)b = (a + b)²."
+    },
+    {
+      "n": 3,
+      "tipo": "teorema",
+      "titulo": "Rectángulo del todo por una parte",
+      "enunciado": "Si una recta se corta al azar, el rectángulo comprendido por la recta entera y uno de los segmentos es igual al rectángulo comprendido por los segmentos más el cuadrado del segmento mencionado.",
+      "usa": ["I.31", "I.46", "II.1"],
+      "nota": "En notación actual: (a + b)a = ab + a²."
+    },
+    {
+      "n": 4,
+      "tipo": "teorema",
+      "titulo": "El cuadrado de una suma",
+      "enunciado": "Si una recta se corta al azar, el cuadrado de la recta entera es igual a los cuadrados de los segmentos más dos veces el rectángulo comprendido por los segmentos.",
+      "figura": "II.4",
+      "usa": ["I.5", "I.6", "I.29", "I.31", "I.32", "I.34", "I.43", "I.46"],
+      "pasos": [
+        "Sea la recta <i>AB</i>, cortada al azar en el punto <i>C</i> en los segmentos <span class=\"sg sg-red\">AC</span> y <span class=\"sg sg-blue\">CB</span>. Arrastra <i>C</i>.",
+        "Se describe sobre <i>AB</i> el cuadrado <i>ADEB</i> (I.46) y se traza su diagonal <i>BD</i>.",
+        "Por <i>C</i> se traza <i>CF</i>, paralela a <i>AD</i> y a <i>BE</i>, que corta la diagonal en <i>G</i>. Por <i>G</i> se traza <i>HK</i>, paralela a <i>AB</i> (I.31).",
+        "Como el triángulo <i>ADB</i> es isósceles, la diagonal forma con <i>AB</i> medio ángulo recto (I.5, I.32). El ángulo en <i>G</i> es igual al ángulo en <i>D</i> (I.29), así que <i>CG</i> = <span class=\"sg sg-blue\">CB</span> (I.6): <i>CGKB</i> es el cuadrado sobre <span class=\"sg sg-blue\">CB</span> (I.34).",
+        "Del mismo modo, <i>HGFD</i> es un cuadrado, y su lado <i>HG</i> es igual a <span class=\"sg sg-red\">AC</span> (I.34): es el cuadrado sobre <span class=\"sg sg-red\">AC</span>.",
+        "Los complementos <i>ACGH</i> y <i>GKEF</i> son iguales (I.43), y cada uno es el rectángulo comprendido por <span class=\"sg sg-red\">AC</span> y <span class=\"sg sg-blue\">CB</span>. Por tanto, el cuadrado sobre <i>AB</i> es igual a los cuadrados sobre <span class=\"sg sg-red\">AC</span> y <span class=\"sg sg-blue\">CB</span> más dos veces el rectángulo comprendido por ellos. <i>Q.E.D.</i>"
+      ],
+      "nota": "En notación actual: (a + b)² = a² + b² + 2ab. Es la base de las proposiciones II.12 y II.13."
+    },
+    {
+      "n": 5,
+      "tipo": "teorema",
+      "titulo": "Producto de suma por diferencia",
+      "enunciado": "Si una recta se corta en segmentos iguales y desiguales, el rectángulo comprendido por los segmentos desiguales de la recta entera, junto con el cuadrado de la recta situada entre los puntos de corte, es igual al cuadrado de la mitad.",
+      "usa": ["I.31", "I.36", "I.43", "I.46"],
+      "nota": "En notación actual: si la recta mide 2m y se corta en m + d y m − d, entonces (m + d)(m − d) + d² = m². Es decir, (m + d)(m − d) = m² − d². Se usa en II.14 para cuadrar un rectángulo."
+    },
+    {
+      "n": 6,
+      "tipo": "teorema",
+      "titulo": "Recta bisecada y prolongada",
+      "enunciado": "Si una recta se divide en dos partes iguales y se le añade otra recta en línea recta, el rectángulo comprendido por la recta entera con la añadida y por la añadida, junto con el cuadrado de la mitad, es igual al cuadrado de la recta formada por la mitad y la añadida.",
+      "usa": ["I.31", "I.36", "I.43", "I.46"],
+      "nota": "En notación actual: (2a + b)b + a² = (a + b)². Equivale a resolver la ecuación de segundo grado x² + px = q, y se usa en II.11."
+    },
+    {
+      "n": 7,
+      "tipo": "teorema",
+      "titulo": "El cuadrado de una diferencia",
+      "enunciado": "Si una recta se corta al azar, el cuadrado de la recta entera y el de uno de los segmentos, juntos, son iguales a dos veces el rectángulo comprendido por la recta entera y dicho segmento más el cuadrado del segmento restante.",
+      "usa": ["I.43", "I.46"],
+      "nota": "En notación actual: (a + b)² + a² = 2(a + b)a + b². Escrito de otro modo, (x − a)² = x² − 2xa + a². Es la base de II.13."
+    },
+    {
+      "n": 8,
+      "tipo": "teorema",
+      "titulo": "Cuatro rectángulos y un cuadrado",
+      "enunciado": "Si una recta se corta al azar, cuatro veces el rectángulo comprendido por la recta entera y uno de los segmentos, junto con el cuadrado del segmento restante, es igual al cuadrado de la recta formada por la recta entera y dicho segmento como una sola recta.",
+      "usa": ["I.31", "I.34", "I.36", "I.43", "I.46"],
+      "nota": "En notación actual: 4(a + b)a + b² = (2a + b)²."
+    },
+    {
+      "n": 9,
+      "tipo": "teorema",
+      "titulo": "Suma de cuadrados de los segmentos desiguales",
+      "enunciado": "Si una recta se corta en segmentos iguales y desiguales, los cuadrados de los segmentos desiguales de la recta entera son el doble del cuadrado de la mitad y del cuadrado de la recta situada entre los puntos de corte.",
+      "usa": ["I.5", "I.6", "I.11", "I.29", "I.32", "I.47"],
+      "nota": "En notación actual: (m + d)² + (m − d)² = 2m² + 2d². A diferencia de las anteriores, la demostración usa el teorema de Pitágoras en lugar de descomponer áreas."
+    },
+    {
+      "n": 10,
+      "tipo": "teorema",
+      "titulo": "Recta bisecada y prolongada: suma de cuadrados",
+      "enunciado": "Si una recta se divide en dos partes iguales y se le añade otra recta en línea recta, el cuadrado de la recta entera con la añadida y el cuadrado de la añadida, juntos, son el doble del cuadrado de la mitad y del cuadrado de la recta formada por la mitad y la añadida.",
+      "usa": ["I.5", "I.6", "I.11", "I.29", "I.31", "I.32", "I.47"],
+      "nota": "En notación actual: (2a + b)² + b² = 2a² + 2(a + b)²."
+    },
+    {
+      "n": 11,
+      "tipo": "problema",
+      "titulo": "Sección áurea",
+      "enunciado": "Cortar una recta dada de modo que el rectángulo comprendido por la recta entera y uno de los segmentos sea igual al cuadrado del segmento restante.",
+      "figura": "II.11",
+      "usa": ["I.3", "I.10", "I.31", "I.46", "I.47", "II.6"],
+      "pasos": [
+        "Sea <i>AB</i> la recta dada. Hay que cortarla en un punto <i>H</i> de modo que el rectángulo comprendido por <i>AB</i> y <span class=\"sg sg-blue\">HB</span> sea igual al cuadrado de <span class=\"sg sg-red\">AH</span>. Arrastra <i>B</i>.",
+        "Se describe sobre <i>AB</i> el cuadrado <i>ABDC</i> (I.46), se divide <i>AC</i> en dos partes iguales en <i>E</i> (I.10) y se traza <i>BE</i>.",
+        "Se prolonga <i>CA</i> hasta <i>F</i> de modo que <i>EF</i> = <i>EB</i> (I.3): con el compás, centro en <i>E</i> y radio <i>EB</i>.",
+        "Se describe sobre <i>AF</i> el cuadrado <i>FGHA</i> (I.46) y se prolonga <i>GH</i> hasta <i>K</i>. El punto <i>H</i> es el que se busca.",
+        "Como <i>CA</i> está dividida en dos partes iguales en <i>E</i> y se le ha añadido <i>AF</i>, el rectángulo <i>CF</i>·<i>FA</i> más el cuadrado de <i>AE</i> es igual al cuadrado de <i>EF</i> (II.6), es decir, al de <i>EB</i>, que es igual a los cuadrados de <i>BA</i> y <i>AE</i> (I.47). Quitando el cuadrado de <i>AE</i>, el rectángulo <i>FGKC</i> es igual al cuadrado <i>ABDC</i>.",
+        "Se quita a ambos la parte común <i>AHKC</i>: queda el cuadrado <i>FGHA</i>, que es el de <span class=\"sg sg-red\">AH</span>, igual al rectángulo <i>HBDK</i>, que es el comprendido por <i>AB</i> y <span class=\"sg sg-blue\">HB</span>, porque <i>BD</i> = <i>AB</i>. <i>Q.E.F.</i>"
+      ],
+      "nota": "En notación actual: dividir una recta de longitud a en x y a − x con a(a − x) = x². La razón a : x es la razón áurea, (1 + √5)/2. Euclides la vuelve a usar en IV.10 para construir el pentágono regular, y en el Libro XIII para el dodecaedro y el icosaedro."
+    },
+    {
+      "n": 12,
+      "tipo": "teorema",
+      "titulo": "Triángulo obtusángulo",
+      "enunciado": "En los triángulos obtusángulos, el cuadrado del lado que subtiende el ángulo obtuso es mayor que los cuadrados de los lados que comprenden el ángulo obtuso en dos veces el rectángulo comprendido por uno de los lados del ángulo obtuso, aquel sobre cuya prolongación cae la perpendicular, y la recta que la perpendicular deja fuera, junto al ángulo obtuso.",
+      "usa": ["I.12", "I.47", "II.4"],
+      "nota": "Es la ley de los cosenos para un ángulo obtuso, sin trigonometría: c² = a² + b² + 2a·d, donde d es la proyección de b sobre la prolongación de a. Generaliza el teorema de Pitágoras."
+    },
+    {
+      "n": 13,
+      "tipo": "teorema",
+      "titulo": "Triángulo acutángulo",
+      "enunciado": "En los triángulos acutángulos, el cuadrado del lado que subtiende un ángulo agudo es menor que los cuadrados de los lados que comprenden ese ángulo agudo en dos veces el rectángulo comprendido por uno de los lados del ángulo agudo, aquel sobre el que cae la perpendicular, y la recta que la perpendicular deja dentro, junto al ángulo agudo.",
+      "usa": ["I.12", "I.47", "II.7"],
+      "nota": "Es la ley de los cosenos para un ángulo agudo: c² = a² + b² − 2a·d, donde d es la proyección de b sobre a. Junto con II.12 e I.47 cubre todos los casos."
+    },
+    {
+      "n": 14,
+      "tipo": "problema",
+      "titulo": "Cuadratura de una figura rectilínea",
+      "enunciado": "Construir un cuadrado igual a una figura rectilínea dada.",
+      "usa": ["I.3", "I.10", "I.45", "I.47", "II.5"],
+      "nota": "Primero la figura se convierte en un rectángulo de igual área (I.45). Después el rectángulo se convierte en un cuadrado: su lado es la media geométrica de los lados del rectángulo. Cierra el programa de cuadrar cualquier polígono; la cuadratura del círculo resultó imposible con regla y compás (Lindemann, 1882)."
+    }
+  ]
+}

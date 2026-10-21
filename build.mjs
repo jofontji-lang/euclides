@@ -12,7 +12,10 @@ const SITE = "https://euclides.matematicasjosepfont.es";
 const HOME = "https://matematicasjosepfont.es";
 
 const libros = JSON.parse(fs.readFileSync(path.join(ROOT, "data/libros.json"), "utf8"));
-const libro1 = JSON.parse(fs.readFileSync(path.join(ROOT, "data/libro-1.json"), "utf8"));
+// Libros disponibles, con sus datos (data/libro-N.json)
+const disponibles = libros.filter(b => b.disponible).map(b => ({ ...b, ...JSON.parse(fs.readFileSync(path.join(ROOT, `data/${b.slug}.json`), "utf8")) }));
+const libroPorNumero = Object.fromEntries(disponibles.map(b => [b.numero, b]));
+const ordinal = { I: "primero", II: "segundo", III: "tercero", IV: "cuarto", V: "quinto", VI: "sexto", VII: "séptimo", VIII: "octavo", IX: "noveno", X: "décimo", XI: "undécimo", XII: "duodécimo", XIII: "decimotercero" };
 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const strip = s => String(s).replace(/<[^>]+>/g, "");
@@ -32,8 +35,7 @@ function layout({ rel, title, description, active, body, figures = false, absolu
   const url = SITE + "/" + rel.replace(/index\.html$/, "");
   const nav = [
     ["inicio", r, "Inicio"],
-    ["libro-1", r + "libro-1/", "Libro I"],
-    ["proposiciones", r + "libro-1/#proposiciones", "Proposiciones"],
+    ...disponibles.map(b => [b.slug, r + b.slug + "/", "Libro " + b.numero]),
     ["sobre", r + "sobre/", "La edición"],
   ].map(([k, href, t]) => `<a href="${href}"${active === k ? ' aria-current="page"' : ""}>${t}</a>`).join("");
   return `<!doctype html>
@@ -85,10 +87,10 @@ ${figures ? `<script src="${r}assets/figures.js" defer></script>` : ""}
 
 // Bloque de figura interactiva
 const figureHTML = (id, stepsSel, { still = false } = {}) => {
-  const vb = { "I.1": "0 0 400 310", "I.32": "0 0 400 300", "I.47": "0 -20 400 350" }[id];
-  const aria = { "I.1": "Construcción del triángulo equilátero sobre AB", "I.32": "Ángulos de un triángulo y paralela por C", "I.47": "Cuadrados sobre los lados de un triángulo rectángulo" }[id];
+  const vb = { "I.1": "0 0 400 310", "I.32": "0 0 400 300", "I.47": "0 -20 400 350", "II.4": "0 0 400 330", "II.11": "0 0 400 380" }[id];
+  const aria = { "I.1": "Construcción del triángulo equilátero sobre AB", "I.32": "Ángulos de un triángulo y paralela por C", "I.47": "Cuadrados sobre los lados de un triángulo rectángulo", "II.4": "Cuadrado sobre AB dividido en los cuadrados sobre AC y CB y dos rectángulos iguales", "II.11": "Construcción de la sección áurea: el cuadrado sobre AH es igual al rectángulo comprendido por AB y HB" }[id];
   if (still) return `<div class="diagram" data-fig="${id}" data-steps="${stepsSel}" data-still><svg viewBox="${vb}" role="img" aria-label="${aria}"><g class="layer"></g></svg></div>`;
-  const hint = { "I.1": "ARRASTRA A O B", "I.32": "ARRASTRA LOS VÉRTICES", "I.47": "ARRASTRA A" }[id];
+  const hint = { "I.1": "ARRASTRA A O B", "I.32": "ARRASTRA LOS VÉRTICES", "I.47": "ARRASTRA A", "II.4": "ARRASTRA C", "II.11": "ARRASTRA B" }[id];
   return `<div data-fig="${id}" data-steps="${stepsSel}">
   <div class="fig-toolbar"><div class="kicker">Figura dinámica</div><span>${hint}</span></div>
   <div class="diagram"><svg viewBox="${vb}" role="img" aria-label="${aria}"><g class="layer"></g></svg></div>
@@ -99,7 +101,6 @@ const figureHTML = (id, stepsSel, { still = false } = {}) => {
 };
 
 const kind = p => p.tipo === "problema" ? "Problema · Q.E.F." : "Teorema · Q.E.D.";
-const props = libro1.proposiciones;
 
 // ---------- Portada ----------
 // Figura de I.47 (triángulo 3-4-5): los cuadrados sobre AB y AC tienen la misma área
@@ -121,7 +122,11 @@ const heroArt = `<svg class="pyth" viewBox="0 0 500 410" role="img" aria-label="
     <text x="268" y="126">A</text><text x="154" y="220">B</text><text x="338" y="226">C</text></g>
 </svg>`;
 
-const featured = props.filter(p => p.figura);
+// Proposiciones con figura interactiva, de todos los libros
+const featured = disponibles.flatMap(b => b.proposiciones.filter(p => p.figura).map(p => ({ ...p, id: `${b.numero}.${p.n}`, href: `${b.slug}/${p.n}/` })));
+// «los Libros I y II», «los Libros I, II y III»…
+const listaLibros = disponibles.length === 1 ? `el Libro ${disponibles[0].numero}`
+  : `los Libros ${disponibles.slice(0, -1).map(b => b.numero).join(", ")} y ${disponibles.at(-1).numero}`;
 const numeral = n => ["Cero", "Una", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez", "Once", "Doce"][n] ?? String(n);
 const home = layout({
   rel: "index.html", active: "inicio", figures: true,
@@ -149,15 +154,15 @@ const home = layout({
   <ol class="books">${libros.map(b => b.disponible
     ? `<li class="ready"><a class="card" href="${b.slug}/"><span class="roman">LIBER ${b.numero}</span><strong>${esc(b.titulo)}</strong><small>${b.proposiciones} proposiciones</small><span class="status ready">Disponible</span></a></li>`
     : `<li><div class="card"><span class="roman">LIBER ${b.numero}</span><strong>${esc(b.titulo)}</strong><small>${b.proposiciones} proposiciones</small><span class="status">En preparación</span></div></li>`).join("")}</ol>
-  <p class="notice">El Libro I está completo: todas sus definiciones, postulados, nociones comunes y proposiciones. Los demás libros se irán incorporando con el mismo formato.</p>
+  <p class="notice">${disponibles.length === 1 ? "Ya está disponible" : "Ya están disponibles"} ${listaLibros}, con todas sus definiciones y proposiciones. Los demás libros se irán incorporando con el mismo formato.</p>
 </div></section>
 <section class="section wrap">
   <div class="section-head"><div><div class="kicker">El lector geométrico</div><h2>${featured.length === 1 ? "Una demostración" : `${numeral(featured.length)} demostraciones`}<br>para empezar.</h2></div>
   <p>Cada una se construye paso a paso. Puedes deformar la figura y ver que la conclusión no depende del dibujo.</p></div>
-  <div class="demos">${featured.map(p => `<a class="demo" href="libro-1/${p.n}/">
-    ${figureHTML(p.figura, "#mini-" + p.n, { still: true })}
-    <ol id="mini-${p.n}" hidden>${p.pasos.map(s => `<li>${s}</li>`).join("")}</ol>
-    <span class="kicker">Proposición I.${p.n}</span><h3>${esc(p.titulo)}</h3><p>${esc(kind(p))}</p></a>`).join("")}</div>
+  <div class="demos">${featured.map(p => `<a class="demo" href="${p.href}">
+    ${figureHTML(p.figura, "#mini-" + p.id.replace(".", "-"), { still: true })}
+    <ol id="mini-${p.id.replace(".", "-")}" hidden>${p.pasos.map(s => `<li>${s}</li>`).join("")}</ol>
+    <span class="kicker">Proposición ${p.id}</span><h3>${esc(p.titulo)}</h3><p>${esc(kind(p))}</p></a>`).join("")}</div>
 </section>
 <section class="about wrap divided">
   <div><div class="kicker">Criterio editorial</div><h2>Fidelidad sin fingir completitud.</h2>
@@ -172,85 +177,91 @@ const home = layout({
 });
 write("index.html", home);
 
-// ---------- Libro I ----------
+// ---------- Páginas de libro ----------
 const items = (arr, cls = "") => `<ol class="items ${cls}">${arr.map((t, i) => `<li><span class="n">${i + 1}</span><span>${t}</span></li>`).join("")}</ol>`;
-const tabsDef = [
-  ["definiciones", "Definiciones", libro1.definiciones.length],
-  ["postulados", "Postulados", libro1.postulados.length],
-  ["nociones", "Nociones comunes", libro1.nociones.length],
-  ["proposiciones", "Proposiciones", props.length],
-];
-const bookPage = layout({
-  rel: "libro-1/index.html", active: "libro-1",
-  title: "Libro I · Euclides · Los Elementos",
-  description: "Libro I de los Elementos de Euclides: 23 definiciones, 5 postulados, 5 nociones comunes y 48 proposiciones, hasta el teorema de Pitágoras.",
-  body: `
-<div class="wrap">
-  <nav class="crumbs" aria-label="Ruta"><a href="../">Elementos</a><span aria-hidden="true">›</span><span>Libro I</span></nav>
-  <header class="book-head">
-    <div class="big" aria-hidden="true">I</div>
-    <div><div class="kicker">Libro primero</div><h1>${esc(libro1.titulo)}</h1><p>${esc(libro1.intro)}</p></div>
-  </header>
-  <div data-tabs>
-    <div class="tabs" role="tablist" aria-label="Partes del Libro I">${tabsDef.map(([id, t, n]) => `<button class="tab" role="tab" type="button" id="tab-${id}" aria-controls="${id}" aria-selected="false">${t}<b>${n}</b></button>`).join("")}</div>
-    <section class="panel" id="definiciones" role="tabpanel" aria-labelledby="tab-definiciones">
-      <p class="panel-intro"><span class="kicker">ὅροι</span><br>Fijan el significado de los términos. No afirman que los objetos existan: eso lo garantizan los postulados y las construcciones.</p>
-      ${items(libro1.definiciones, "defs")}
-    </section>
-    <section class="panel" id="postulados" role="tabpanel" aria-labelledby="tab-postulados">
-      <p class="panel-intro"><span class="kicker">αἰτήματα</span><br>Lo que se pide conceder: las construcciones con regla y compás, y dos hechos sobre ángulos y rectas.</p>
-      ${items(libro1.postulados)}
-      <p class="note">El quinto postulado, el de las paralelas, no se usa hasta la <a href="29/">proposición I.29</a>. Las 28 proposiciones anteriores valen también en geometrías no euclídeas.</p>
-    </section>
-    <section class="panel" id="nociones" role="tabpanel" aria-labelledby="tab-nociones">
-      <p class="panel-intro"><span class="kicker">κοιναὶ ἔννοιαι</span><br>Principios generales sobre magnitudes, válidos también fuera de la geometría.</p>
-      ${items(libro1.nociones)}
-    </section>
-    <section class="panel" id="proposiciones" role="tabpanel" aria-labelledby="tab-proposiciones">
-      <p class="panel-intro"><span class="kicker">προτάσεις</span><br>Los problemas piden construir algo y terminan con <i>Q.E.F.</i>, «lo que había que hacer». Los teoremas afirman algo y terminan con <i>Q.E.D.</i>, «lo que había que demostrar».</p>
+for (const b of disponibles) {
+  const tabsDef = [
+    ["definiciones", "Definiciones", b.definiciones],
+    ["postulados", "Postulados", b.postulados],
+    ["nociones", "Nociones comunes", b.nociones],
+    ["proposiciones", "Proposiciones", b.proposiciones],
+  ].filter(([, , arr]) => arr?.length);
+  const panels = {
+    definiciones: `<p class="panel-intro"><span class="kicker">ὅροι</span><br>Fijan el significado de los términos. No afirman que los objetos existan: eso lo garantizan los postulados y las construcciones.</p>
+      ${items(b.definiciones || [], "defs")}`,
+    postulados: `<p class="panel-intro"><span class="kicker">αἰτήματα</span><br>Lo que se pide conceder: las construcciones con regla y compás, y dos hechos sobre ángulos y rectas.</p>
+      ${items(b.postulados || [])}
+      <p class="note">El quinto postulado, el de las paralelas, no se usa hasta la <a href="29/">proposición I.29</a>. Las 28 proposiciones anteriores valen también en geometrías no euclídeas.</p>`,
+    nociones: `<p class="panel-intro"><span class="kicker">κοιναὶ ἔννοιαι</span><br>Principios generales sobre magnitudes, válidos también fuera de la geometría.</p>
+      ${items(b.nociones || [])}`,
+    proposiciones: `<p class="panel-intro"><span class="kicker">προτάσεις</span><br>Los problemas piden construir algo y terminan con <i>Q.E.F.</i>, «lo que había que hacer». Los teoremas afirman algo y terminan con <i>Q.E.D.</i>, «lo que había que demostrar».</p>
       <div class="tools" role="group" aria-label="Filtrar proposiciones">
         <button type="button" class="chip" data-f="all" aria-pressed="true">Todas</button>
         <button type="button" class="chip" data-f="problema" aria-pressed="false">Problemas</button>
         <button type="button" class="chip" data-f="teorema" aria-pressed="false">Teoremas</button>
-        <button type="button" class="chip" data-f="fig" aria-pressed="false">Con figura</button>
-        <label class="search"><span aria-hidden="true">⌕</span><input id="buscar" type="search" placeholder="Buscar: paralelas, 47, isósceles…" aria-label="Buscar proposiciones"></label>
+        ${b.proposiciones.some(p => p.figura) ? `<button type="button" class="chip" data-f="fig" aria-pressed="false">Con figura</button>` : ""}
+        <label class="search"><span aria-hidden="true">⌕</span><input id="buscar" type="search" placeholder="${esc(b.buscar || "Buscar: paralelas, 47, isósceles…")}" aria-label="Buscar proposiciones"></label>
         <span class="count" id="count"></span>
       </div>
-      <ol class="proplist" id="proplist">${props.map(p => `<li data-n="${p.n}" data-k="${p.tipo}"${p.figura ? ' data-fig="1"' : ""}><a href="${p.n}/">
-        <span class="pn">I.${p.n}</span>
+      <ol class="proplist" id="proplist">${b.proposiciones.map(p => `<li data-n="${p.n}" data-k="${p.tipo}"${p.figura ? ' data-fig="1"' : ""}><a href="${p.n}/">
+        <span class="pn">${b.numero}.${p.n}</span>
         <span><span class="pt">${esc(p.titulo)}</span><span class="pd">${esc(p.enunciado)}</span><span class="ps${p.figura ? " ready" : ""}">${p.tipo === "problema" ? "Problema" : "Teorema"} · ${p.figura ? "✓ Con figura interactiva" : "Enunciado"}</span></span>
         <span class="arrow" aria-hidden="true">↗</span></a></li>`).join("")}</ol>
-      <p class="empty" id="empty" hidden>Ninguna proposición coincide con la búsqueda.</p>
-    </section>
+      <p class="empty" id="empty" hidden>Ninguna proposición coincide con la búsqueda.</p>`,
+  };
+  const partes = tabsDef.map(([, t, arr]) => `${arr.length} ${t.toLowerCase()}`);
+  write(`${b.slug}/index.html`, layout({
+    rel: `${b.slug}/index.html`, active: b.slug,
+    title: `Libro ${b.numero} · Euclides · Los Elementos`,
+    description: `Libro ${b.numero} de los Elementos de Euclides (${b.titulo}): ${partes.slice(0, -1).join(", ")} y ${partes.at(-1)}.`,
+    body: `
+<div class="wrap">
+  <nav class="crumbs" aria-label="Ruta"><a href="../">Elementos</a><span aria-hidden="true">›</span><span>Libro ${b.numero}</span></nav>
+  <header class="book-head">
+    <div class="big" aria-hidden="true">${b.numero}</div>
+    <div><div class="kicker">Libro ${ordinal[b.numero]}</div><h1>${esc(b.titulo)}</h1><p>${esc(b.intro)}</p></div>
+  </header>
+  <div data-tabs>
+    <div class="tabs" role="tablist" aria-label="Partes del Libro ${b.numero}">${tabsDef.map(([id, t, arr]) => `<button class="tab" role="tab" type="button" id="tab-${id}" aria-controls="${id}" aria-selected="false">${t}<b>${arr.length}</b></button>`).join("")}</div>
+    ${tabsDef.map(([id]) => `<section class="panel" id="${id}" role="tabpanel" aria-labelledby="tab-${id}">
+      ${panels[id]}
+    </section>`).join("\n    ")}
   </div>
 </div>
 <div class="spacer"></div>`
-});
-write("libro-1/index.html", bookPage);
+  }));
+}
 
 // ---------- Fichas de proposición ----------
+// Las citas («I.5», «II.4», «Post. 1», «N.C. 2») enlazan a su ficha si el libro está disponible.
 const citeLink = c => {
   let m;
-  if ((m = c.match(/^I\.(\d+)$/))) return `<a href="../${m[1]}/">${c}</a>`;
-  if (/^Post\./.test(c)) return `<a href="../#postulados">${c}</a>`;
-  if (/^N\.C\./.test(c)) return `<a href="../#nociones">${c}</a>`;
+  if ((m = c.match(/^([IVX]+)\.(\d+)$/)) && libroPorNumero[m[1]]) return `<a href="../../${libroPorNumero[m[1]].slug}/${m[2]}/">${c}</a>`;
+  if (/^Post\./.test(c)) return `<a href="../../libro-1/#postulados">${c}</a>`;
+  if (/^N\.C\./.test(c)) return `<a href="../../libro-1/#nociones">${c}</a>`;
   return `<span>${c}</span>`;
 };
 const usedBy = {};
-props.forEach(p => (p.usa || []).forEach(c => { const m = c.match(/^I\.(\d+)$/); if (m) (usedBy[m[1]] ||= []).push(p.n); }));
+for (const b of disponibles) for (const p of b.proposiciones) for (const c of p.usa || []) {
+  if (/^[IVX]+\.\d+$/.test(c)) (usedBy[c] ||= []).push(`${b.numero}.${p.n}`);
+}
 
-for (const p of props) {
-  const prev = props[p.n - 2], next = props[p.n];
-  const uses = p.usa?.length ? `<div class="block"><div class="kicker">Se apoya en</div><div class="cites">${p.usa.map(citeLink).join("")}</div></div>` : "";
-  const users = usedBy[p.n] ? `<div class="block"><div class="kicker">La usan</div><div class="cites">${usedBy[p.n].map(n => `<a href="../${n}/">I.${n}</a>`).join("")}</div></div>` : "";
-  const statement = `<article class="paper">
+disponibles.forEach((b, bi) => {
+  const props = b.proposiciones, sig = disponibles[bi + 1];
+  const sigNumero = libros[libros.findIndex(x => x.numero === b.numero) + 1]?.numero;
+  for (const p of props) {
+    const id = `${b.numero}.${p.n}`;
+    const prev = props[p.n - 2], next = props[p.n];
+    const uses = p.usa?.length ? `<div class="block"><div class="kicker">Se apoya en</div><div class="cites">${p.usa.map(citeLink).join("")}</div></div>` : "";
+    const users = usedBy[id] ? `<div class="block"><div class="kicker">La usan</div><div class="cites">${usedBy[id].map(citeLink).join("")}</div></div>` : "";
+    const statement = `<article class="paper">
       <div class="kicker">Enunciado</div>
       <h2>${esc(p.enunciado)}</h2>
       <span class="tag${p.figura ? "" : " pending"}">${p.figura ? "✓ Con figura y demostración" : "◷ Figura en preparación"}</span>
       ${uses}${users}
       ${p.nota ? `<div class="block"><div class="kicker">Nota</div><p class="small">${esc(p.nota)}</p></div>` : ""}
     </article>`;
-  const main = p.figura ? `
+    const main = p.figura ? `
   <div class="grid2">
     ${statement}
     <div class="paper">${figureHTML(p.figura, "#pasos")}</div>
@@ -265,26 +276,34 @@ for (const p of props) {
     ${statement}
     <aside class="pending-card"><div class="kicker">Estado de la ficha</div><h3>Figura y demostración en preparación</h3>
       <p>Esta proposición ya tiene su enunciado completo. La construcción interactiva y la demostración paso a paso se añadirán más adelante.</p>
-      <p>Mientras tanto, puedes ver cómo funcionan las fichas completas en ${featured.map(f => `<a href="../${f.n}/">I.${f.n}</a>`).join(", ")}.</p></aside>
+      <p>Mientras tanto, puedes ver cómo funcionan las fichas completas en ${featured.map(f => citeLink(f.id)).join(", ")}.</p></aside>
   </div>`;
-  write(`libro-1/${p.n}/index.html`, layout({
-    rel: `libro-1/${p.n}/index.html`, active: "proposiciones", figures: !!p.figura,
-    title: `I.${p.n} · ${p.titulo} · Euclides`,
-    description: `Proposición ${p.n} del Libro I de los Elementos de Euclides: ${strip(p.enunciado)}`,
-    body: `
+    const before = prev
+      ? `<a href="../${prev.n}/"><span class="dir">← ${b.numero}.${prev.n}</span><span class="t">${esc(prev.titulo)}</span></a>`
+      : `<a href="../#${b.postulados ? "postulados" : "definiciones"}"><span class="dir">← Principios</span><span class="t">${b.postulados ? "Definiciones y postulados" : "Definiciones"}</span></a>`;
+    const after = next
+      ? `<a class="next" href="../${next.n}/"><span class="dir">${b.numero}.${next.n} →</span><span class="t">${esc(next.titulo)}</span></a>`
+      : sig ? `<a class="next" href="../../${sig.slug}/"><span class="dir">Libro ${sig.numero} →</span><span class="t">${esc(sig.titulo)}</span></a>`
+      : sigNumero ? `<span class="next"><span class="dir">Libro ${sigNumero} →</span><span class="t">En preparación</span></span>` : "";
+    write(`${b.slug}/${p.n}/index.html`, layout({
+      rel: `${b.slug}/${p.n}/index.html`, active: b.slug, figures: !!p.figura,
+      title: `${id} · ${p.titulo} · Euclides`,
+      description: `Proposición ${p.n} del Libro ${b.numero} de los Elementos de Euclides: ${strip(p.enunciado)}`,
+      body: `
 <div class="wrap">
-  <nav class="crumbs" aria-label="Ruta"><a href="../../">Elementos</a><span aria-hidden="true">›</span><a href="../">Libro I</a><span aria-hidden="true">›</span><a href="../#proposiciones">Proposiciones</a><span aria-hidden="true">›</span><span>I.${p.n}</span></nav>
-  <header class="prop-head"><div><div class="kicker">${kind(p)}</div><h1>Proposición I.${p.n}</h1><div class="sub">${esc(p.titulo)}</div></div></header>
+  <nav class="crumbs" aria-label="Ruta"><a href="../../">Elementos</a><span aria-hidden="true">›</span><a href="../">Libro ${b.numero}</a><span aria-hidden="true">›</span><a href="../#proposiciones">Proposiciones</a><span aria-hidden="true">›</span><span>${id}</span></nav>
+  <header class="prop-head"><div><div class="kicker">${kind(p)}</div><h1>Proposición ${id}</h1><div class="sub">${esc(p.titulo)}</div></div></header>
 </div>
 <section class="reader"><div class="wrap">
   ${main}
   <nav class="pager" aria-label="Proposiciones vecinas">
-    ${prev ? `<a href="../${prev.n}/"><span class="dir">← I.${prev.n}</span><span class="t">${esc(prev.titulo)}</span></a>` : `<a href="../#postulados"><span class="dir">← Principios</span><span class="t">Definiciones y postulados</span></a>`}
-    ${next ? `<a class="next" href="../${next.n}/"><span class="dir">I.${next.n} →</span><span class="t">${esc(next.titulo)}</span></a>` : `<span class="next"><span class="dir">Libro II →</span><span class="t">En preparación</span></span>`}
+    ${before}
+    ${after}
   </nav>
 </div></section>`
-  }));
-}
+    }));
+  }
+});
 
 // ---------- La edición ----------
 write("sobre/index.html", layout({
@@ -304,8 +323,8 @@ write("sobre/index.html", layout({
   <p>Las figuras son construcciones originales programadas para esta web. Siguen la idea de Oliver Byrne, que en 1847 publicó los seis primeros libros con los segmentos y ángulos coloreados en lugar de nombrados con letras. Aquí se combinan ambas cosas: cada elemento lleva su letra y su color, y el texto lo nombra con el mismo color.</p>
   <h2>Estado</h2>
   <ul>
-    <li>Libro I: completo en enunciados. Figuras interactivas en ${featured.map(f => `<a href="../libro-1/${f.n}/">I.${f.n}</a>`).join(", ")}.</li>
-    <li>Libros II a XIII: en preparación.</li>
+    ${disponibles.map(b => `<li>Libro ${b.numero}: completo en enunciados.${b.proposiciones.some(p => p.figura) ? ` Figuras interactivas en ${featured.filter(f => f.id.startsWith(b.numero + ".")).map(f => `<a href="../${f.href}">${f.id}</a>`).join(", ")}.` : " Figuras en preparación."}</li>`).join("\n    ")}
+    <li>Libros ${libros.find(b => !b.disponible)?.numero} a XIII: en preparación.</li>
   </ul>
   <h2>Para contrastar</h2>
   <ul>
