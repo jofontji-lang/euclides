@@ -37,14 +37,14 @@ p{margin:0}
 .brandmark::after{content:"";position:absolute;inset:5px;border:1px solid #b18a4b66;border-radius:50%}
 .brandname{font-size:12px;letter-spacing:.22em;font-weight:700;line-height:1.2}
 .brandname span{display:block;font:10px var(--mono);letter-spacing:.09em;color:var(--muted);margin-top:4px;font-weight:400}
-.nav{display:flex;align-items:center;gap:26px}
-.nav a{text-decoration:none;color:#5b6359;font-size:13px}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a{text-decoration:none;color:#5b6359;font-size:13px;white-space:nowrap}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--green)}
 .nav a[aria-current="page"]{box-shadow:inset 0 -2px var(--gold)}
 .nav .out{border:1px solid var(--green);padding:9px 12px;color:var(--green)}
 .nav .out:hover{background:var(--green);color:#fff}
 .menu-btn{display:none;background:none;border:1px solid var(--line);padding:8px 12px;font:11px var(--mono);letter-spacing:.1em;color:var(--green);cursor:pointer}
-@media (max-width:860px){
+@media (max-width:1080px){
   .menu-btn{display:block}
   .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:6px var(--gutter) 16px}
   .nav.open{display:flex}

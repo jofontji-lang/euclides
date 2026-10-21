@@ -17,7 +17,7 @@
     "numero": "III",
     "titulo": "El círculo",
     "proposiciones": 37,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-3"
   },
   {

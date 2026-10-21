@@ -1,0 +1,290 @@
+{
+  "numero": "III",
+  "titulo": "El círculo",
+  "intro": "Once definiciones y treinta y siete proposiciones sobre el círculo: cuerdas, tangentes, ángulos inscritos y la potencia de un punto. Incluye el ángulo inscrito en una semicircunferencia, que la tradición atribuye a Tales.",
+  "buscar": "Buscar: tangente, 31, cuerda…",
+  "definiciones": [
+    "Círculos iguales son aquellos cuyos diámetros son iguales, o cuyos radios son iguales.",
+    "Se dice que una recta <i>toca</i> un círculo cuando, encontrándose con él y prolongada, no lo corta.",
+    "Se dice que dos círculos <i>se tocan</i> cuando, encontrándose, no se cortan.",
+    "En un círculo se dice que las rectas <i>equidistan</i> del centro cuando las perpendiculares trazadas a ellas desde el centro son iguales.",
+    "Y se dice que está a mayor distancia aquella recta sobre la que cae la perpendicular mayor.",
+    "Un <i>segmento</i> de círculo es la figura comprendida por una recta y un arco de circunferencia.",
+    "El ángulo <i>de un segmento</i> es el comprendido por una recta y un arco de circunferencia.",
+    "El ángulo <i>en un segmento</i> es el que se forma al tomar un punto en el arco del segmento y unirlo con los extremos de la recta que es su base.",
+    "Y cuando las rectas que comprenden el ángulo cortan un arco, se dice que el ángulo <i>se apoya</i> en ese arco.",
+    "Un <i>sector</i> de círculo es la figura comprendida por dos rectas trazadas desde el centro y el arco que cortan.",
+    "Segmentos de círculo <i>semejantes</i> son los que admiten ángulos iguales, o en los que los ángulos son iguales entre sí."
+  ],
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "problema",
+      "titulo": "Hallar el centro de un círculo",
+      "enunciado": "Hallar el centro de un círculo dado.",
+      "usa": ["I.8", "I.10", "I.11"],
+      "nota": "Se traza una cuerda cualquiera y su mediatriz; el centro es el punto medio de la parte de la mediatriz que queda dentro del círculo. Euclides añade como corolario que la mediatriz de cualquier cuerda pasa por el centro."
+    },
+    {
+      "n": 2,
+      "tipo": "teorema",
+      "titulo": "La cuerda queda dentro del círculo",
+      "enunciado": "Si se toman dos puntos cualesquiera en la circunferencia de un círculo, la recta que los une cae dentro del círculo.",
+      "usa": ["I.5", "I.16", "I.19", "III.1"]
+    },
+    {
+      "n": 3,
+      "tipo": "teorema",
+      "titulo": "Diámetro que divide una cuerda en partes iguales",
+      "enunciado": "Si en un círculo una recta que pasa por el centro divide en dos partes iguales a otra que no pasa por el centro, la corta también en ángulos rectos; y si la corta en ángulos rectos, la divide en dos partes iguales.",
+      "usa": ["I.5", "I.8", "I.26", "III.1"]
+    },
+    {
+      "n": 4,
+      "tipo": "teorema",
+      "titulo": "Dos cuerdas no se dividen mutuamente en partes iguales",
+      "enunciado": "Si en un círculo se cortan dos rectas que no pasan por el centro, no se dividen mutuamente en dos partes iguales.",
+      "usa": ["III.1", "III.3"]
+    },
+    {
+      "n": 5,
+      "tipo": "teorema",
+      "titulo": "Círculos que se cortan no son concéntricos",
+      "enunciado": "Si dos círculos se cortan, no tienen el mismo centro.",
+      "usa": ["N.C. 5"]
+    },
+    {
+      "n": 6,
+      "tipo": "teorema",
+      "titulo": "Círculos que se tocan no son concéntricos",
+      "enunciado": "Si dos círculos se tocan, no tienen el mismo centro.",
+      "usa": ["N.C. 5"]
+    },
+    {
+      "n": 7,
+      "tipo": "teorema",
+      "titulo": "Rectas desde un punto interior del diámetro",
+      "enunciado": "Si en el diámetro de un círculo se toma un punto que no es el centro y desde él se trazan rectas hasta la circunferencia, la mayor es la que pasa por el centro y la menor es el resto del mismo diámetro; de las demás, la más cercana a la que pasa por el centro es siempre mayor que la más alejada, y desde ese punto solo caen sobre la circunferencia dos rectas iguales, una a cada lado de la menor.",
+      "usa": ["I.4", "I.7", "I.20", "I.23", "I.24"]
+    },
+    {
+      "n": 8,
+      "tipo": "teorema",
+      "titulo": "Rectas desde un punto exterior",
+      "enunciado": "Si desde un punto exterior a un círculo se trazan rectas hasta la circunferencia, una de ellas por el centro, de las que caen en la parte cóncava la mayor es la que pasa por el centro, y de las demás la más cercana a ella es siempre mayor que la más alejada; de las que caen en la parte convexa la menor es la que está entre el punto y el diámetro, y la más cercana a ella es siempre menor que la más alejada; y solo caen dos rectas iguales, una a cada lado de la menor.",
+      "usa": ["I.4", "I.20", "I.21", "I.23", "I.24", "III.1"]
+    },
+    {
+      "n": 9,
+      "tipo": "teorema",
+      "titulo": "Caracterización del centro",
+      "enunciado": "Si se toma un punto dentro de un círculo y desde él caen sobre la circunferencia más de dos rectas iguales, ese punto es el centro del círculo.",
+      "usa": ["I.8", "I.10", "III.1"]
+    },
+    {
+      "n": 10,
+      "tipo": "teorema",
+      "titulo": "Dos círculos se cortan como mucho en dos puntos",
+      "enunciado": "Un círculo no corta a otro círculo en más de dos puntos.",
+      "usa": ["I.10", "I.11", "III.1", "III.5"]
+    },
+    {
+      "n": 11,
+      "tipo": "teorema",
+      "titulo": "Tangencia interior y recta de los centros",
+      "enunciado": "Si dos círculos se tocan interiormente y se toman sus centros, la recta que une los centros, prolongada, pasa por el punto de contacto.",
+      "usa": ["I.20", "III.1"]
+    },
+    {
+      "n": 12,
+      "tipo": "teorema",
+      "titulo": "Tangencia exterior y recta de los centros",
+      "enunciado": "Si dos círculos se tocan exteriormente, la recta que une sus centros pasa por el punto de contacto.",
+      "usa": ["I.20", "III.1"]
+    },
+    {
+      "n": 13,
+      "tipo": "teorema",
+      "titulo": "Dos círculos se tocan en un solo punto",
+      "enunciado": "Un círculo no toca a otro círculo en más de un punto, tanto si lo toca interior como exteriormente.",
+      "usa": ["I.10", "I.11", "III.1", "III.2", "III.11", "III.12"]
+    },
+    {
+      "n": 14,
+      "tipo": "teorema",
+      "titulo": "Cuerdas iguales equidistan del centro",
+      "enunciado": "En un círculo, las rectas iguales equidistan del centro, y las que equidistan del centro son iguales entre sí.",
+      "usa": ["I.12", "I.47", "III.1", "III.3"]
+    },
+    {
+      "n": 15,
+      "tipo": "teorema",
+      "titulo": "El diámetro es la mayor cuerda",
+      "enunciado": "De las rectas en un círculo, la mayor es el diámetro, y de las demás, la más cercana al centro es siempre mayor que la más alejada.",
+      "usa": ["I.12", "I.20", "I.24", "III.1", "III.14"]
+    },
+    {
+      "n": 16,
+      "tipo": "teorema",
+      "titulo": "La perpendicular al diámetro en su extremo es tangente",
+      "enunciado": "La recta trazada en ángulo recto con el diámetro de un círculo desde su extremo cae fuera del círculo, y en el espacio entre esa recta y la circunferencia no puede interponerse otra recta; además, el ángulo del semicírculo es mayor, y el ángulo restante menor, que cualquier ángulo rectilíneo agudo.",
+      "usa": ["I.5", "I.12", "I.17", "I.19"],
+      "nota": "El «ángulo restante», entre la tangente y el arco, es el ángulo de contingencia o ángulo cornicular: menor que cualquier ángulo rectilíneo y, sin embargo, no nulo. Fue objeto de discusión hasta el siglo XVII. Euclides añade como corolario que esta perpendicular es tangente al círculo."
+    },
+    {
+      "n": 17,
+      "tipo": "problema",
+      "titulo": "Trazar una tangente desde un punto",
+      "enunciado": "Desde un punto dado, trazar una recta que toque a un círculo dado.",
+      "usa": ["I.4", "I.11", "III.1", "III.16"]
+    },
+    {
+      "n": 18,
+      "tipo": "teorema",
+      "titulo": "El radio es perpendicular a la tangente",
+      "enunciado": "Si una recta toca un círculo y se une el centro con el punto de contacto, la recta así trazada es perpendicular a la tangente.",
+      "usa": ["I.17", "I.19", "III.1"]
+    },
+    {
+      "n": 19,
+      "tipo": "teorema",
+      "titulo": "La perpendicular a la tangente pasa por el centro",
+      "enunciado": "Si una recta toca un círculo y desde el punto de contacto se traza una recta en ángulo recto con la tangente, el centro del círculo está en la recta así trazada.",
+      "usa": ["III.18"]
+    },
+    {
+      "n": 20,
+      "tipo": "teorema",
+      "titulo": "El ángulo central es el doble del inscrito",
+      "enunciado": "En un círculo, el ángulo en el centro es el doble del ángulo en la circunferencia cuando ambos se apoyan en el mismo arco.",
+      "usa": ["I.5", "I.32"],
+      "nota": "Es el teorema del ángulo inscrito. De él salen casi todos los resultados sobre ángulos del resto del libro: III.21, III.22, III.31 y III.32."
+    },
+    {
+      "n": 21,
+      "tipo": "teorema",
+      "titulo": "Ángulos en el mismo segmento",
+      "enunciado": "En un círculo, los ángulos en el mismo segmento son iguales entre sí.",
+      "usa": ["I.32", "III.1", "III.20"],
+      "nota": "Todos los ángulos inscritos que se apoyan en el mismo arco son iguales. Es la base del arco capaz (III.33)."
+    },
+    {
+      "n": 22,
+      "tipo": "teorema",
+      "titulo": "Cuadrilátero inscrito",
+      "enunciado": "Los ángulos opuestos de los cuadriláteros inscritos en círculos son iguales a dos rectos.",
+      "usa": ["I.32", "III.21"],
+      "nota": "Es decir, suman 180°. El recíproco, que Euclides no enuncia, también es cierto: un cuadrilátero con ángulos opuestos suplementarios se puede inscribir en un círculo."
+    },
+    {
+      "n": 23,
+      "tipo": "teorema",
+      "titulo": "Segmentos semejantes sobre la misma recta",
+      "enunciado": "Sobre una misma recta y del mismo lado no se pueden construir dos segmentos de círculo semejantes y desiguales.",
+      "usa": ["I.16", "III.10"]
+    },
+    {
+      "n": 24,
+      "tipo": "teorema",
+      "titulo": "Segmentos semejantes sobre rectas iguales",
+      "enunciado": "Los segmentos de círculo semejantes construidos sobre rectas iguales son iguales entre sí.",
+      "usa": ["III.10", "III.23"]
+    },
+    {
+      "n": 25,
+      "tipo": "problema",
+      "titulo": "Completar el círculo de un segmento",
+      "enunciado": "Dado un segmento de círculo, describir el círculo completo del que es segmento.",
+      "usa": ["I.4", "I.6", "I.10", "I.11", "I.23", "III.9"]
+    },
+    {
+      "n": 26,
+      "tipo": "teorema",
+      "titulo": "Ángulos iguales, arcos iguales",
+      "enunciado": "En círculos iguales, los ángulos iguales se apoyan en arcos iguales, tanto si están en los centros como en las circunferencias.",
+      "usa": ["I.4", "III.20", "III.24"]
+    },
+    {
+      "n": 27,
+      "tipo": "teorema",
+      "titulo": "Arcos iguales, ángulos iguales",
+      "enunciado": "En círculos iguales, los ángulos que se apoyan en arcos iguales son iguales entre sí, tanto si están en los centros como en las circunferencias.",
+      "usa": ["I.23", "III.20", "III.26"]
+    },
+    {
+      "n": 28,
+      "tipo": "teorema",
+      "titulo": "Cuerdas iguales, arcos iguales",
+      "enunciado": "En círculos iguales, las rectas iguales cortan arcos iguales, el mayor igual al mayor y el menor igual al menor.",
+      "usa": ["I.8", "III.1", "III.26"]
+    },
+    {
+      "n": 29,
+      "tipo": "teorema",
+      "titulo": "Arcos iguales, cuerdas iguales",
+      "enunciado": "En círculos iguales, los arcos iguales están subtendidos por rectas iguales.",
+      "usa": ["I.4", "III.1", "III.27"]
+    },
+    {
+      "n": 30,
+      "tipo": "problema",
+      "titulo": "Dividir un arco en dos partes iguales",
+      "enunciado": "Dividir en dos partes iguales un arco dado.",
+      "usa": ["I.4", "I.10", "I.11", "III.28"]
+    },
+    {
+      "n": 31,
+      "tipo": "teorema",
+      "titulo": "Ángulo en el semicírculo (Tales)",
+      "enunciado": "En un círculo, el ángulo en el semicírculo es recto; el ángulo en un segmento mayor es menor que un recto, y el ángulo en un segmento menor es mayor que un recto. Además, el ángulo del segmento mayor es mayor que un recto, y el ángulo del segmento menor es menor que un recto.",
+      "usa": ["I.5", "I.17", "I.32", "III.22"],
+      "nota": "La primera parte es el teorema que la tradición atribuye a Tales de Mileto (siglo VI a. C.): todo ángulo inscrito en una semicircunferencia es recto. La figura de I.47 lo usa para mover el vértice A sin que deje de ser recto."
+    },
+    {
+      "n": 32,
+      "tipo": "teorema",
+      "titulo": "Ángulo entre tangente y cuerda",
+      "enunciado": "Si una recta toca un círculo y desde el punto de contacto se traza una recta que corta el círculo, los ángulos que forma con la tangente son iguales a los ángulos en los segmentos alternos del círculo.",
+      "usa": ["I.11", "I.32", "III.19", "III.21", "III.22", "III.31"],
+      "nota": "Es el ángulo semiinscrito: el que forman una tangente y una cuerda es igual al ángulo inscrito que se apoya en el arco que queda entre ellas."
+    },
+    {
+      "n": 33,
+      "tipo": "problema",
+      "titulo": "Arco capaz",
+      "enunciado": "Sobre una recta dada, describir un segmento de círculo que admita un ángulo igual a un ángulo rectilíneo dado.",
+      "usa": ["I.4", "I.10", "I.11", "I.23", "III.16", "III.32"],
+      "nota": "Es el arco capaz: el lugar de los puntos desde los que un segmento se ve bajo un ángulo dado. Se usa todavía en topografía y navegación para situar un punto a partir de los ángulos con que se ven dos referencias."
+    },
+    {
+      "n": 34,
+      "tipo": "problema",
+      "titulo": "Cortar un segmento capaz de un ángulo",
+      "enunciado": "De un círculo dado, cortar un segmento que admita un ángulo igual a un ángulo rectilíneo dado.",
+      "usa": ["I.23", "III.17", "III.32"]
+    },
+    {
+      "n": 35,
+      "tipo": "teorema",
+      "titulo": "Cuerdas que se cortan",
+      "enunciado": "Si en un círculo se cortan dos rectas, el rectángulo comprendido por los segmentos de una es igual al rectángulo comprendido por los segmentos de la otra.",
+      "usa": ["I.12", "I.47", "II.5", "III.1", "III.3"],
+      "nota": "En notación actual: si las cuerdas AC y BD se cortan en E, entonces AE·EC = BE·ED. Ese producto, igual para todas las cuerdas que pasan por E, es lo que hoy se llama potencia del punto E."
+    },
+    {
+      "n": 36,
+      "tipo": "teorema",
+      "titulo": "Secante y tangente desde un punto exterior",
+      "enunciado": "Si desde un punto exterior a un círculo se trazan dos rectas, una que lo corta y otra que lo toca, el rectángulo comprendido por la secante entera y la parte exterior, entre el punto y la circunferencia convexa, es igual al cuadrado de la tangente.",
+      "usa": ["I.12", "I.47", "II.6", "III.1", "III.3", "III.18"],
+      "nota": "En notación actual: si desde D se trazan la secante DCA y la tangente DB, entonces DA·DC = DB². Es la potencia de un punto exterior, la misma idea que III.35."
+    },
+    {
+      "n": 37,
+      "tipo": "teorema",
+      "titulo": "Recíproco de III.36",
+      "enunciado": "Si desde un punto exterior a un círculo se trazan dos rectas, una que lo corta y otra que llega hasta él, y el rectángulo comprendido por la secante entera y su parte exterior es igual al cuadrado de la recta que llega, esta recta toca el círculo.",
+      "usa": ["I.8", "III.1", "III.17", "III.18", "III.36"]
+    }
+  ]
+}
