@@ -45,14 +45,14 @@
     "numero": "VII",
     "titulo": "Aritmética: primos y máximo común divisor",
     "proposiciones": 39,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-7"
   },
   {
     "numero": "VIII",
     "titulo": "Proporciones continuas",
     "proposiciones": 27,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-8"
   },
   {

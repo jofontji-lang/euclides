@@ -1,0 +1,329 @@
+{
+  "numero": "VII",
+  "titulo": "Aritmética: primos y máximo común divisor",
+  "intro": "Veintidós definiciones y treinta y nueve proposiciones que empiezan la teoría de números: el algoritmo de Euclides para el máximo común divisor, la proporción entre números, los números primos entre sí, el lema de Euclides sobre los primos y el mínimo común múltiplo. Los números se representan como segmentos, pero la teoría ya no depende de la geometría.",
+  "buscar": "Buscar: primo, 2, máximo común…",
+  "definiciones": [
+    "La <i>unidad</i> es aquello por lo que cada una de las cosas que existen se llama una.",
+    "Un <i>número</i> es una multitud compuesta de unidades.",
+    "Un número es <i>parte</i> de un número, el menor del mayor, cuando mide al mayor;",
+    "y es <i>partes</i> cuando no lo mide.",
+    "El número mayor es <i>múltiplo</i> del menor cuando es medido por el menor.",
+    "Número <i>par</i> es el que se divide en dos partes iguales.",
+    "Número <i>impar</i> es el que no se divide en dos partes iguales, o el que se diferencia en una unidad de un número par.",
+    "Número <i>parmente par</i> es el que es medido por un número par según un número par.",
+    "Número <i>parmente impar</i> es el que es medido por un número par según un número impar.",
+    "Número <i>imparmente impar</i> es el que es medido por un número impar según un número impar.",
+    "Número <i>primo</i> es el que solo es medido por la unidad.",
+    "Números <i>primos entre sí</i> son los que solo tienen la unidad como medida común.",
+    "Número <i>compuesto</i> es el que es medido por algún número.",
+    "Números <i>compuestos entre sí</i> son los que tienen algún número como medida común.",
+    "Se dice que un número <i>multiplica</i> a otro cuando el multiplicado se añade a sí mismo tantas veces como unidades hay en el otro, y así se produce algún número.",
+    "Cuando dos números se multiplican entre sí y producen algún número, el número producido se llama <i>plano</i>, y sus <i>lados</i> son los números que se han multiplicado.",
+    "Cuando tres números se multiplican entre sí y producen algún número, el número producido es <i>sólido</i>, y sus lados son los números que se han multiplicado.",
+    "Número <i>cuadrado</i> es el igual multiplicado por el igual, o el comprendido por dos números iguales.",
+    "Y <i>cubo</i> es el igual multiplicado por el igual y otra vez por el igual, o el comprendido por tres números iguales.",
+    "Los números son <i>proporcionales</i> cuando el primero es el mismo múltiplo, la misma parte o las mismas partes del segundo que el tercero del cuarto.",
+    "Números planos y sólidos <i>semejantes</i> son los que tienen sus lados proporcionales.",
+    "Número <i>perfecto</i> es el que es igual a sus propias partes."
+  ],
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "teorema",
+      "titulo": "Criterio para números primos entre sí",
+      "enunciado": "Dados dos números desiguales, si al restar sucesivamente el menor del mayor el resto nunca mide al anterior hasta que queda la unidad, los números dados son primos entre sí.",
+      "usa": [],
+      "nota": "Es el algoritmo de Euclides, en la versión con restas: si termina en 1, los números no tienen divisores comunes. Por ejemplo, 21 y 8: 21 − 8 − 8 = 5, 8 − 5 = 3, 5 − 3 = 2, 3 − 2 = 1."
+    },
+    {
+      "n": 2,
+      "tipo": "problema",
+      "titulo": "Máximo común divisor de dos números",
+      "enunciado": "Dados dos números que no son primos entre sí, hallar su máxima medida común.",
+      "usa": ["VII.1"],
+      "nota": "Es el algoritmo de Euclides, uno de los algoritmos más antiguos que se siguen usando. Por ejemplo, para 84 y 36: 84 − 36 − 36 = 12 y 36 − 12 − 12 − 12 = 0, así que el máximo común divisor es 12. Euclides añade como corolario que todo divisor común de dos números divide a su máximo común divisor."
+    },
+    {
+      "n": 3,
+      "tipo": "problema",
+      "titulo": "Máximo común divisor de tres números",
+      "enunciado": "Dados tres números que no son primos entre sí, hallar su máxima medida común.",
+      "usa": ["VII.2"],
+      "nota": "Se halla el máximo común divisor de los dos primeros y después el de ese resultado y el tercero."
+    },
+    {
+      "n": 4,
+      "tipo": "teorema",
+      "titulo": "Todo número es parte o partes de otro",
+      "enunciado": "Todo número es parte o partes de todo número, el menor del mayor.",
+      "usa": ["VII.2"],
+      "nota": "En notación actual: si a < b, la fracción a/b es o bien de la forma 1/n (parte) o bien m/n (partes)."
+    },
+    {
+      "n": 5,
+      "tipo": "teorema",
+      "titulo": "Suma de partes",
+      "enunciado": "Si un número es parte de un número, y otro es la misma parte de otro, también la suma será la misma parte de la suma que uno lo es del otro.",
+      "usa": [],
+      "nota": "En notación actual: si a = b/n y c = d/n, entonces a + c = (b + d)/n. Las proposiciones VII.5 a VII.10 trasladan a los números lo que V.1 a V.6 decían de las magnitudes."
+    },
+    {
+      "n": 6,
+      "tipo": "teorema",
+      "titulo": "Suma de partes (varias partes)",
+      "enunciado": "Si un número es partes de un número, y otro es las mismas partes de otro, también la suma será las mismas partes de la suma que uno lo es del otro.",
+      "usa": ["VII.5"]
+    },
+    {
+      "n": 7,
+      "tipo": "teorema",
+      "titulo": "Diferencia de partes",
+      "enunciado": "Si un número es la misma parte de un número que un número quitado lo es de un número quitado, también el resto será la misma parte del resto que el todo del todo.",
+      "usa": ["VII.5"]
+    },
+    {
+      "n": 8,
+      "tipo": "teorema",
+      "titulo": "Diferencia de partes (varias partes)",
+      "enunciado": "Si un número es las mismas partes de un número que un número quitado lo es de un número quitado, también el resto será las mismas partes del resto que el todo del todo.",
+      "usa": ["VII.6", "VII.7"]
+    },
+    {
+      "n": 9,
+      "tipo": "teorema",
+      "titulo": "Alternancia de una parte",
+      "enunciado": "Si un número es parte de un número, y otro es la misma parte de otro, también alternando, la parte o partes que el primero sea del tercero, la misma parte o las mismas partes será el segundo del cuarto.",
+      "usa": ["VII.5", "VII.6"]
+    },
+    {
+      "n": 10,
+      "tipo": "teorema",
+      "titulo": "Alternancia de varias partes",
+      "enunciado": "Si un número es partes de un número, y otro es las mismas partes de otro, también alternando, las partes o la parte que el primero sea del tercero, las mismas partes o la misma parte será el segundo del cuarto.",
+      "usa": ["VII.6", "VII.9"]
+    },
+    {
+      "n": 11,
+      "tipo": "teorema",
+      "titulo": "El resto es al resto como el todo al todo",
+      "enunciado": "Si el todo es al todo como un número quitado es a un número quitado, también el resto será al resto como el todo al todo.",
+      "usa": ["VII.7", "VII.8"],
+      "nota": "Versión para números de V.19."
+    },
+    {
+      "n": 12,
+      "tipo": "teorema",
+      "titulo": "Suma de antecedentes y consecuentes",
+      "enunciado": "Si hay tantos números como se quiera en proporción, como uno de los antecedentes es a uno de los consecuentes, así serán todos los antecedentes a todos los consecuentes.",
+      "usa": ["VII.5", "VII.6"],
+      "nota": "Versión para números de V.12."
+    },
+    {
+      "n": 13,
+      "tipo": "teorema",
+      "titulo": "Proporción alternada",
+      "enunciado": "Si cuatro números son proporcionales, también serán proporcionales alternando.",
+      "usa": ["VII.9", "VII.10"],
+      "nota": "Versión para números de V.16: si a : b = c : d, entonces a : c = b : d."
+    },
+    {
+      "n": 14,
+      "tipo": "teorema",
+      "titulo": "Proporción por igualdad",
+      "enunciado": "Si hay tantos números como se quiera, y otros tantos que tomados de dos en dos están en la misma razón, también estarán en la misma razón por igualdad.",
+      "usa": ["VII.13"],
+      "nota": "Versión para números de V.22."
+    },
+    {
+      "n": 15,
+      "tipo": "teorema",
+      "titulo": "La unidad y la alternancia",
+      "enunciado": "Si la unidad mide a un número tantas veces como otro número mide a otro, también alternando la unidad medirá al tercer número tantas veces como el segundo mide al cuarto.",
+      "usa": ["VII.9"]
+    },
+    {
+      "n": 16,
+      "tipo": "teorema",
+      "titulo": "Propiedad conmutativa",
+      "enunciado": "Si dos números, multiplicándose entre sí, producen ciertos números, los números producidos serán iguales entre sí.",
+      "usa": ["VII.15"],
+      "nota": "En notación actual: a·b = b·a. Con la definición de multiplicación como suma repetida (definición 15) no es evidente y hay que demostrarlo."
+    },
+    {
+      "n": 17,
+      "tipo": "teorema",
+      "titulo": "Multiplicar por un mismo número",
+      "enunciado": "Si un número, multiplicando a dos números, produce ciertos números, los números producidos tendrán la misma razón que los multiplicados.",
+      "usa": ["VII.13", "VII.15"],
+      "nota": "En notación actual: c·a : c·b = a : b."
+    },
+    {
+      "n": 18,
+      "tipo": "teorema",
+      "titulo": "Multiplicar un mismo número",
+      "enunciado": "Si dos números, multiplicando a un número cualquiera, producen ciertos números, los números producidos tendrán la misma razón que los multiplicadores.",
+      "usa": ["VII.16", "VII.17"],
+      "nota": "En notación actual: a·c : b·c = a : b."
+    },
+    {
+      "n": 19,
+      "tipo": "teorema",
+      "titulo": "Producto de extremos y de medios",
+      "enunciado": "Si cuatro números son proporcionales, el número producido por el primero y el cuarto será igual al producido por el segundo y el tercero; y si el producido por el primero y el cuarto es igual al producido por el segundo y el tercero, los cuatro números serán proporcionales.",
+      "usa": ["VII.13", "VII.17", "VII.18"],
+      "nota": "En notación actual: a : b = c : d si y solo si a·d = b·c. Es la versión para números de VI.16."
+    },
+    {
+      "n": 20,
+      "tipo": "teorema",
+      "titulo": "Los menores de una razón",
+      "enunciado": "Los menores números de los que tienen la misma razón con ellos miden a los que tienen la misma razón el mismo número de veces, el mayor al mayor y el menor al menor.",
+      "usa": ["VII.13"],
+      "nota": "En notación actual: si a/b es una fracción irreducible y a/b = c/d, entonces c = k·a y d = k·b para algún número k."
+    },
+    {
+      "n": 21,
+      "tipo": "teorema",
+      "titulo": "Primos entre sí, menores de su razón",
+      "enunciado": "Los números primos entre sí son los menores de los que tienen la misma razón con ellos.",
+      "usa": ["VII.19", "VII.20"],
+      "nota": "Una fracción con numerador y denominador primos entre sí es irreducible."
+    },
+    {
+      "n": 22,
+      "tipo": "teorema",
+      "titulo": "Los menores de su razón son primos entre sí",
+      "enunciado": "Los menores números de los que tienen la misma razón con ellos son primos entre sí.",
+      "usa": ["VII.20"],
+      "nota": "Recíproco de VII.21: una fracción irreducible tiene numerador y denominador primos entre sí."
+    },
+    {
+      "n": 23,
+      "tipo": "teorema",
+      "titulo": "Divisor de uno de dos primos entre sí",
+      "enunciado": "Si dos números son primos entre sí, el número que mide a uno de ellos será primo con el otro.",
+      "usa": []
+    },
+    {
+      "n": 24,
+      "tipo": "teorema",
+      "titulo": "Producto de primos con un número",
+      "enunciado": "Si dos números son primos con un número, su producto también será primo con él.",
+      "usa": ["VII.19", "VII.20", "VII.21", "VII.23"]
+    },
+    {
+      "n": 25,
+      "tipo": "teorema",
+      "titulo": "Cuadrado de un primo con otro",
+      "enunciado": "Si dos números son primos entre sí, el producto de uno de ellos por sí mismo será primo con el otro.",
+      "usa": ["VII.24"]
+    },
+    {
+      "n": 26,
+      "tipo": "teorema",
+      "titulo": "Productos de primos entre sí",
+      "enunciado": "Si dos números son primos con otros dos, cada uno con cada uno, sus productos también serán primos entre sí.",
+      "usa": ["VII.24"]
+    },
+    {
+      "n": 27,
+      "tipo": "teorema",
+      "titulo": "Potencias de primos entre sí",
+      "enunciado": "Si dos números son primos entre sí y cada uno, multiplicándose por sí mismo, produce un número, los productos serán primos entre sí; y si los números iniciales, multiplicando a los productos, producen otros números, también estos serán primos entre sí.",
+      "usa": ["VII.25", "VII.26"],
+      "nota": "En notación actual: si a y b son primos entre sí, también lo son a² y b², y a³ y b³."
+    },
+    {
+      "n": 28,
+      "tipo": "teorema",
+      "titulo": "La suma de primos entre sí",
+      "enunciado": "Si dos números son primos entre sí, su suma también será prima con cada uno de ellos; y si la suma de dos números es prima con uno de ellos, también los números iniciales serán primos entre sí.",
+      "usa": []
+    },
+    {
+      "n": 29,
+      "tipo": "teorema",
+      "titulo": "Un primo es primo con lo que no mide",
+      "enunciado": "Todo número primo es primo con todo número al que no mide.",
+      "usa": []
+    },
+    {
+      "n": 30,
+      "tipo": "teorema",
+      "titulo": "Lema de Euclides",
+      "enunciado": "Si dos números, multiplicándose entre sí, producen un número, y un número primo mide al producto, también medirá a uno de los números iniciales.",
+      "usa": ["VII.19", "VII.20", "VII.29"],
+      "nota": "En notación actual: si un primo p divide a a·b, entonces p divide a a o a b. Es la pieza clave del teorema fundamental de la aritmética: la descomposición de un número en factores primos es única."
+    },
+    {
+      "n": 31,
+      "tipo": "teorema",
+      "titulo": "Todo compuesto tiene un divisor primo",
+      "enunciado": "Todo número compuesto es medido por algún número primo.",
+      "usa": [],
+      "nota": "La demostración es un ejemplo temprano del descenso infinito: si no fuera así, habría una sucesión infinita de divisores cada vez menores, lo que es imposible entre los números."
+    },
+    {
+      "n": 32,
+      "tipo": "teorema",
+      "titulo": "Todo número es primo o tiene un divisor primo",
+      "enunciado": "Todo número o es primo o es medido por algún número primo.",
+      "usa": ["VII.31"]
+    },
+    {
+      "n": 33,
+      "tipo": "problema",
+      "titulo": "Reducir una razón a sus menores términos",
+      "enunciado": "Dados tantos números como se quiera, hallar los menores de los que tienen la misma razón con ellos.",
+      "usa": ["VII.3", "VII.15", "VII.16", "VII.17"],
+      "nota": "Es simplificar una fracción, o una razón de varios términos, dividiendo por el máximo común divisor."
+    },
+    {
+      "n": 34,
+      "tipo": "problema",
+      "titulo": "Mínimo común múltiplo de dos números",
+      "enunciado": "Dados dos números, hallar el menor número al que miden.",
+      "usa": ["VII.16", "VII.19", "VII.20", "VII.21"],
+      "nota": "En notación actual: mcm(a, b) = a·b / mcd(a, b)."
+    },
+    {
+      "n": 35,
+      "tipo": "teorema",
+      "titulo": "El mínimo común múltiplo divide a los múltiplos comunes",
+      "enunciado": "Si dos números miden a un número, el menor número medido por ellos también medirá a ese número.",
+      "usa": ["VII.34"]
+    },
+    {
+      "n": 36,
+      "tipo": "problema",
+      "titulo": "Mínimo común múltiplo de tres números",
+      "enunciado": "Dados tres números, hallar el menor número al que miden.",
+      "usa": ["VII.34", "VII.35"]
+    },
+    {
+      "n": 37,
+      "tipo": "teorema",
+      "titulo": "Divisor y parte del mismo nombre",
+      "enunciado": "Si un número es medido por algún número, el número medido tendrá una parte que se llama como el número que mide.",
+      "usa": ["VII.15"],
+      "nota": "Por ejemplo, si 3 mide a 12, entonces 12 tiene una tercera parte."
+    },
+    {
+      "n": 38,
+      "tipo": "teorema",
+      "titulo": "Parte y divisor del mismo nombre",
+      "enunciado": "Si un número tiene una parte cualquiera, será medido por un número que se llama como la parte.",
+      "usa": ["VII.15"],
+      "nota": "Recíproco de VII.37: si 12 tiene una tercera parte, entonces 3 mide a 12."
+    },
+    {
+      "n": 39,
+      "tipo": "problema",
+      "titulo": "El menor número con partes dadas",
+      "enunciado": "Hallar el menor número que tenga partes dadas.",
+      "usa": ["VII.36", "VII.37", "VII.38"],
+      "nota": "Por ejemplo, el menor número que tiene mitad, tercera y cuarta parte es 12: el mínimo común múltiplo de 2, 3 y 4."
+    }
+  ]
+}

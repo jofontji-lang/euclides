@@ -220,7 +220,7 @@ for (const b of disponibles) {
   write(`${b.slug}/index.html`, layout({
     rel: `${b.slug}/index.html`, active: b.slug,
     title: `Libro ${b.numero} · Euclides · Los Elementos`,
-    description: `Libro ${b.numero} de los Elementos de Euclides (${b.titulo}): ${partes.slice(0, -1).join(", ")} y ${partes.at(-1)}.`,
+    description: `Libro ${b.numero} de los Elementos de Euclides (${b.titulo}): ${partes.length > 1 ? partes.slice(0, -1).join(", ") + " y " : ""}${partes.at(-1)}.`,
     body: `
 <div class="wrap">
   <nav class="crumbs" aria-label="Ruta"><a href="../">Elementos</a><span aria-hidden="true">›</span><span>Libro ${b.numero}</span></nav>
@@ -287,7 +287,9 @@ disponibles.forEach((b, bi) => {
   </div>`;
     const before = prev
       ? `<a href="../${prev.n}/"><span class="dir">← ${b.numero}.${prev.n}</span><span class="t">${esc(prev.titulo)}</span></a>`
-      : `<a href="../#${b.postulados ? "postulados" : "definiciones"}"><span class="dir">← Principios</span><span class="t">${b.postulados ? "Definiciones y postulados" : "Definiciones"}</span></a>`;
+      : b.definiciones?.length ? `<a href="../#${b.postulados ? "postulados" : "definiciones"}"><span class="dir">← Principios</span><span class="t">${b.postulados ? "Definiciones y postulados" : "Definiciones"}</span></a>`
+      // Libro sin definiciones: se vuelve a la última proposición del libro anterior
+      : (ant => `<a href="../../${ant.slug}/${ant.proposiciones.length}/"><span class="dir">← ${ant.numero}.${ant.proposiciones.length}</span><span class="t">${esc(ant.proposiciones.at(-1).titulo)}</span></a>`)(disponibles[bi - 1]);
     const after = next
       ? `<a class="next" href="../${next.n}/"><span class="dir">${b.numero}.${next.n} →</span><span class="t">${esc(next.titulo)}</span></a>`
       : sig ? `<a class="next" href="../../${sig.slug}/"><span class="dir">Libro ${sig.numero} →</span><span class="t">${esc(sig.titulo)}</span></a>`

@@ -1,0 +1,214 @@
+{
+  "numero": "VIII",
+  "titulo": "Proporciones continuas",
+  "intro": "Veintisiete proposiciones, sin definiciones nuevas, sobre números en proporción continua: lo que hoy llamamos progresiones geométricas, como 8, 12, 18, 27. Estudia cuántos medios proporcionales caben entre dos números y cuándo los extremos son cuadrados o cubos.",
+  "buscar": "Buscar: cuadrado, 11, proporción continua…",
+  "proposiciones": [
+    {
+      "n": 1,
+      "tipo": "teorema",
+      "titulo": "Extremos primos entre sí",
+      "enunciado": "Si hay tantos números como se quiera en proporción continua y sus extremos son primos entre sí, los números son los menores de los que tienen la misma razón con ellos.",
+      "usa": ["VII.14", "VII.20", "VII.21"],
+      "nota": "Por ejemplo, 8, 12, 18, 27 están en proporción continua de razón 3/2; como 8 y 27 son primos entre sí, no hay una progresión de cuatro términos más pequeña con esa razón."
+    },
+    {
+      "n": 2,
+      "tipo": "problema",
+      "titulo": "Construir una progresión geométrica mínima",
+      "enunciado": "Hallar tantos números como se prescriba en proporción continua, los menores que estén en una razón dada.",
+      "usa": ["VII.17", "VII.18", "VII.27", "VIII.1"],
+      "nota": "Para la razón a : b se toman aⁿ, aⁿ⁻¹·b, …, bⁿ. Euclides añade como corolario que los extremos de una progresión así son potencias de a y de b."
+    },
+    {
+      "n": 3,
+      "tipo": "teorema",
+      "titulo": "Recíproco de VIII.1",
+      "enunciado": "Si tantos números como se quiera en proporción continua son los menores de los que tienen la misma razón con ellos, sus extremos son primos entre sí.",
+      "usa": ["VII.22", "VII.27", "VII.33", "VIII.2"]
+    },
+    {
+      "n": 4,
+      "tipo": "problema",
+      "titulo": "Progresión con razones dadas",
+      "enunciado": "Dadas tantas razones como se quiera en sus menores números, hallar los menores números en proporción continua según las razones dadas.",
+      "usa": ["VII.17", "VII.18", "VII.34", "VII.35"],
+      "nota": "Las razones pueden ser distintas: por ejemplo, para 2 : 3 y 4 : 5 se obtiene 8 : 12 : 15."
+    },
+    {
+      "n": 5,
+      "tipo": "teorema",
+      "titulo": "Razón entre números planos",
+      "enunciado": "Los números planos tienen entre sí la razón compuesta de las razones de sus lados.",
+      "usa": ["VII.17", "VII.18", "VIII.4"],
+      "nota": "Versión para números de VI.23: (a·b) : (c·d) es el producto de las razones a : c y b : d."
+    },
+    {
+      "n": 6,
+      "tipo": "teorema",
+      "titulo": "Si el primero no mide al segundo",
+      "enunciado": "Si hay tantos números como se quiera en proporción continua y el primero no mide al segundo, tampoco ninguno medirá a ningún otro.",
+      "usa": ["VII.14", "VII.33", "VIII.2", "VIII.3"]
+    },
+    {
+      "n": 7,
+      "tipo": "teorema",
+      "titulo": "Si el primero mide al último",
+      "enunciado": "Si hay tantos números como se quiera en proporción continua y el primero mide al último, también medirá al segundo.",
+      "usa": ["VIII.6"]
+    },
+    {
+      "n": 8,
+      "tipo": "teorema",
+      "titulo": "Medios proporcionales entre números de la misma razón",
+      "enunciado": "Si entre dos números caen números en proporción continua con ellos, cuantos números caigan entre ellos en proporción continua, tantos caerán también en proporción continua entre los números que tienen la misma razón que los iniciales.",
+      "usa": ["VII.14", "VII.20", "VII.33", "VIII.1", "VIII.3"],
+      "nota": "Una consecuencia, que ya conocía Arquitas de Tarento: entre n + 1 y n no cabe ninguna media proporcional. Por eso, en la teoría musical griega, intervalos como la octava (2 : 1) o el tono (9 : 8) no se pueden dividir en dos partes iguales."
+    },
+    {
+      "n": 9,
+      "tipo": "teorema",
+      "titulo": "Medios entre primos entre sí y la unidad",
+      "enunciado": "Si dos números son primos entre sí y entre ellos caen números en proporción continua, cuantos números caigan entre ellos en proporción continua, tantos caerán también entre cada uno de ellos y la unidad en proporción continua.",
+      "usa": ["VII.15", "VII.17", "VIII.1", "VIII.2", "VIII.3"]
+    },
+    {
+      "n": 10,
+      "tipo": "teorema",
+      "titulo": "Recíproco de VIII.9",
+      "enunciado": "Si entre cada uno de dos números y la unidad caen números en proporción continua, cuantos números caigan entre cada uno de ellos y la unidad en proporción continua, tantos caerán también entre los propios números en proporción continua.",
+      "usa": ["VII.15", "VII.17", "VII.18"]
+    },
+    {
+      "n": 11,
+      "tipo": "teorema",
+      "titulo": "Media proporcional entre dos cuadrados",
+      "enunciado": "Entre dos números cuadrados hay un número medio proporcional, y un cuadrado es a otro cuadrado en la razón duplicada de la que tiene un lado con el otro.",
+      "usa": ["VII.17", "VII.18"],
+      "nota": "En notación actual: entre a² y b² está a·b, porque a² : a·b = a·b : b². Y a² : b² = (a : b)²."
+    },
+    {
+      "n": 12,
+      "tipo": "teorema",
+      "titulo": "Dos medias proporcionales entre dos cubos",
+      "enunciado": "Entre dos números cubos hay dos números medios proporcionales, y un cubo es a otro cubo en la razón triplicada de la que tiene un lado con el otro.",
+      "usa": ["VII.17", "VII.18"],
+      "nota": "En notación actual: a³, a²·b, a·b², b³ están en proporción continua."
+    },
+    {
+      "n": 13,
+      "tipo": "teorema",
+      "titulo": "Cuadrados y cubos de una progresión",
+      "enunciado": "Si hay tantos números como se quiera en proporción continua y cada uno, multiplicándose por sí mismo, produce un número, los productos serán proporcionales; y si los números iniciales, multiplicando a los productos, producen otros números, también estos serán proporcionales.",
+      "usa": ["VII.14", "VII.17", "VII.18"],
+      "nota": "Los cuadrados y los cubos de una progresión geométrica también forman progresiones geométricas."
+    },
+    {
+      "n": 14,
+      "tipo": "teorema",
+      "titulo": "Cuadrados que se miden",
+      "enunciado": "Si un cuadrado mide a un cuadrado, también el lado medirá al lado; y si el lado mide al lado, también el cuadrado medirá al cuadrado.",
+      "usa": ["VIII.7", "VIII.11"],
+      "nota": "En notación actual: a² divide a b² si y solo si a divide a b."
+    },
+    {
+      "n": 15,
+      "tipo": "teorema",
+      "titulo": "Cubos que se miden",
+      "enunciado": "Si un número cubo mide a un número cubo, también el lado medirá al lado; y si el lado mide al lado, también el cubo medirá al cubo.",
+      "usa": ["VIII.7", "VIII.12"],
+      "nota": "En notación actual: a³ divide a b³ si y solo si a divide a b."
+    },
+    {
+      "n": 16,
+      "tipo": "teorema",
+      "titulo": "Cuadrados que no se miden",
+      "enunciado": "Si un número cuadrado no mide a un número cuadrado, tampoco el lado medirá al lado; y si el lado no mide al lado, tampoco el cuadrado medirá al cuadrado.",
+      "usa": ["VIII.14"]
+    },
+    {
+      "n": 17,
+      "tipo": "teorema",
+      "titulo": "Cubos que no se miden",
+      "enunciado": "Si un número cubo no mide a un número cubo, tampoco el lado medirá al lado; y si el lado no mide al lado, tampoco el cubo medirá al cubo.",
+      "usa": ["VIII.15"]
+    },
+    {
+      "n": 18,
+      "tipo": "teorema",
+      "titulo": "Media proporcional entre planos semejantes",
+      "enunciado": "Entre dos números planos semejantes hay un número medio proporcional, y un número plano es a otro en la razón duplicada de la que tiene un lado con el lado correspondiente.",
+      "usa": ["VII.13", "VII.16", "VII.17", "VII.18"],
+      "nota": "Generaliza VIII.11: los cuadrados son un caso particular de números planos semejantes."
+    },
+    {
+      "n": 19,
+      "tipo": "teorema",
+      "titulo": "Dos medias proporcionales entre sólidos semejantes",
+      "enunciado": "Entre dos números sólidos semejantes caen dos números medios proporcionales, y un número sólido es a otro semejante en la razón triplicada de la que tiene un lado con el lado correspondiente.",
+      "usa": ["VII.13", "VII.16", "VII.17", "VII.18"],
+      "nota": "Generaliza VIII.12 a todos los números sólidos semejantes."
+    },
+    {
+      "n": 20,
+      "tipo": "teorema",
+      "titulo": "Una media proporcional implica planos semejantes",
+      "enunciado": "Si entre dos números cae un número medio proporcional, los números serán planos semejantes.",
+      "usa": ["VII.19", "VII.20", "VII.33"],
+      "nota": "Recíproco de VIII.18."
+    },
+    {
+      "n": 21,
+      "tipo": "teorema",
+      "titulo": "Dos medias proporcionales implican sólidos semejantes",
+      "enunciado": "Si entre dos números caen dos números medios proporcionales, los números serán sólidos semejantes.",
+      "usa": ["VII.19", "VII.20", "VIII.2", "VIII.20"],
+      "nota": "Recíproco de VIII.19."
+    },
+    {
+      "n": 22,
+      "tipo": "teorema",
+      "titulo": "Tres términos y el primero cuadrado",
+      "enunciado": "Si tres números están en proporción continua y el primero es cuadrado, también el tercero será cuadrado.",
+      "usa": ["VIII.20"],
+      "nota": "Por ejemplo, 4, 6, 9: el primero es cuadrado, y también el tercero."
+    },
+    {
+      "n": 23,
+      "tipo": "teorema",
+      "titulo": "Cuatro términos y el primero cubo",
+      "enunciado": "Si cuatro números están en proporción continua y el primero es cubo, también el cuarto será cubo.",
+      "usa": ["VIII.21"],
+      "nota": "Por ejemplo, 8, 12, 18, 27: el primero es cubo, y también el cuarto."
+    },
+    {
+      "n": 24,
+      "tipo": "teorema",
+      "titulo": "Razón de cuadrados con un cuadrado",
+      "enunciado": "Si dos números tienen entre sí la razón que un número cuadrado tiene con otro número cuadrado, y el primero es cuadrado, también el segundo será cuadrado.",
+      "usa": ["VIII.8", "VIII.11", "VIII.22"]
+    },
+    {
+      "n": 25,
+      "tipo": "teorema",
+      "titulo": "Razón de cubos con un cubo",
+      "enunciado": "Si dos números tienen entre sí la razón que un número cubo tiene con otro número cubo, y el primero es cubo, también el segundo será cubo.",
+      "usa": ["VIII.8", "VIII.12", "VIII.23"]
+    },
+    {
+      "n": 26,
+      "tipo": "teorema",
+      "titulo": "Planos semejantes, razón de cuadrados",
+      "enunciado": "Los números planos semejantes tienen entre sí la razón que un número cuadrado tiene con otro número cuadrado.",
+      "usa": ["VIII.2", "VIII.18"],
+      "nota": "Por ejemplo, 6 = 2·3 y 24 = 4·6 son planos semejantes, y 6 : 24 = 1 : 4."
+    },
+    {
+      "n": 27,
+      "tipo": "teorema",
+      "titulo": "Sólidos semejantes, razón de cubos",
+      "enunciado": "Los números sólidos semejantes tienen entre sí la razón que un número cubo tiene con otro número cubo.",
+      "usa": ["VIII.2", "VIII.19"]
+    }
+  ]
+}
