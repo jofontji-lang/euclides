@@ -195,7 +195,10 @@ for (const b of disponibles) {
   ].filter(([, , arr]) => arr?.length);
   const panels = {
     definiciones: `<p class="panel-intro"><span class="kicker">ὅροι</span><br>Fijan el significado de los términos. No afirman que los objetos existan: eso lo garantizan los postulados y las construcciones.</p>
-      ${items(b.definiciones || [], "defs")}`,
+      ${b.gruposDefiniciones
+        // Libro X: tres grupos de definiciones, cada uno numerado desde 1 y con su título
+        ? b.gruposDefiniciones.reduce((acc, g) => ({ i: acc.i + g.n, html: acc.html + `<h3 class="defs-group">${esc(g.titulo)}</h3>${items(b.definiciones.slice(acc.i, acc.i + g.n), "defs")}` }), { i: 0, html: "" }).html
+        : items(b.definiciones || [], "defs")}`,
     postulados: `<p class="panel-intro"><span class="kicker">αἰτήματα</span><br>Lo que se pide conceder: las construcciones con regla y compás, y dos hechos sobre ángulos y rectas.</p>
       ${items(b.postulados || [])}
       <p class="note">El quinto postulado, el de las paralelas, no se usa hasta la <a href="29/">proposición I.29</a>. Las 28 proposiciones anteriores valen también en geometrías no euclídeas.</p>`,

@@ -177,6 +177,8 @@ p{margin:0}
 .tab[aria-selected="true"]{color:var(--green);box-shadow:inset 0 -2px var(--gold)}
 .panel{padding-block:34px 10px}
 .panel-intro{max-width:44em;color:var(--muted);font-size:14px;margin-bottom:26px}
+.defs-group{font-size:22px;margin:34px 0 14px;padding-top:22px;border-top:1px solid var(--line)}
+.defs-group:first-of-type{margin-top:0;padding-top:0;border-top:0}
 ol.items{margin:0;padding:0;list-style:none;display:grid;gap:14px;max-width:48em}
 ol.items li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 ol.items .n{font:12px var(--mono);color:var(--gold);padding-top:3px}
