@@ -87,7 +87,7 @@
     "numero": "XIII",
     "titulo": "Los cinco sólidos regulares",
     "proposiciones": 18,
-    "disponible": false,
+    "disponible": true,
     "slug": "libro-13"
   }
 ]

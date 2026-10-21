@@ -132,7 +132,8 @@ const heroArt = `<svg class="pyth" viewBox="0 0 500 410" role="img" aria-label="
 // Proposiciones con figura interactiva, de todos los libros
 const featured = disponibles.flatMap(b => b.proposiciones.filter(p => p.figura).map(p => ({ ...p, id: `${b.numero}.${p.n}`, href: `${b.slug}/${p.n}/` })));
 // «los Libros I y II», «los Libros I, II y III»…
-const listaLibros = disponibles.length === 1 ? `el Libro ${disponibles[0].numero}`
+const completo = disponibles.length === libros.length;
+const listaLibros = completo ? "los trece libros" : disponibles.length === 1 ? `el Libro ${disponibles[0].numero}`
   : `los Libros ${disponibles.slice(0, -1).map(b => b.numero).join(", ")} y ${disponibles.at(-1).numero}`;
 const numeral = n => ["Cero", "Una", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez", "Once", "Doce"][n] ?? String(n);
 const home = layout({
@@ -161,7 +162,7 @@ const home = layout({
   <ol class="books">${libros.map(b => b.disponible
     ? `<li class="ready"><a class="card" href="${b.slug}/"><span class="roman">LIBER ${b.numero}</span><strong>${esc(b.titulo)}</strong><small>${b.proposiciones} proposiciones</small><span class="status ready">Disponible</span></a></li>`
     : `<li><div class="card"><span class="roman">LIBER ${b.numero}</span><strong>${esc(b.titulo)}</strong><small>${b.proposiciones} proposiciones</small><span class="status">En preparación</span></div></li>`).join("")}</ol>
-  <p class="notice">${disponibles.length === 1 ? "Ya está disponible" : "Ya están disponibles"} ${listaLibros}, con todas sus definiciones y proposiciones. Los demás libros se irán incorporando con el mismo formato.</p>
+  <p class="notice">${completo ? "Los trece libros están completos, con todas sus definiciones y proposiciones. Las figuras interactivas y las demostraciones paso a paso se irán añadiendo poco a poco." : `${disponibles.length === 1 ? "Ya está disponible" : "Ya están disponibles"} ${listaLibros}, con todas sus definiciones y proposiciones. Los demás libros se irán incorporando con el mismo formato.`}</p>
 </div></section>
 <section class="section wrap">
   <div class="section-head"><div><div class="kicker">El lector geométrico</div><h2>${featured.length === 1 ? "Una demostración" : `${numeral(featured.length)} demostraciones`}<br>para empezar.</h2></div>
@@ -178,7 +179,7 @@ const home = layout({
   <div><div class="kicker">Cómo leer los estados</div>
   <div class="keyrow"><span class="tag">✓ Con figura</span><span>Proposición con figura interactiva y demostración completa paso a paso.</span></div>
   <div class="keyrow"><span class="tag pending">◷ Enunciado</span><span>Proposición con su enunciado; la figura y la demostración están en preparación.</span></div>
-  <div class="keyrow"><span class="tag pending">◷ En preparación</span><span>Libro aún no incorporado a la edición.</span></div>
+  ${completo ? "" : `<div class="keyrow"><span class="tag pending">◷ En preparación</span><span>Libro aún no incorporado a la edición.</span></div>`}
   <p class="more"><a href="sobre/">Más sobre la edición y las fuentes →</a></p></div>
 </section>`
 });
@@ -373,7 +374,7 @@ write("sobre/index.html", layout({
   <h2>Estado</h2>
   <ul>
     ${disponibles.map(b => `<li>Libro ${b.numero}: completo en enunciados.${b.proposiciones.some(p => p.figura) ? ` Figuras interactivas en ${featured.filter(f => f.id.startsWith(b.numero + ".")).map(f => `<a href="../${f.href}">${f.id}</a>`).join(", ")}.` : " Figuras en preparación."}</li>`).join("\n    ")}
-    <li>Libros ${libros.find(b => !b.disponible)?.numero} a XIII: en preparación.</li>
+    ${completo ? "" : `<li>Libros ${libros.find(b => !b.disponible).numero} a XIII: en preparación.</li>`}
   </ul>
   <h2>Para contrastar</h2>
   <ul>
