@@ -346,6 +346,11 @@ write("mapa/index.html", layout({
     <p>Las ${nodos.length - 10} proposiciones de ${listaLibros}, los 5 postulados y las 5 nociones comunes, unidos por las ${numAristas} citas de sus demostraciones. Pulsa una proposición: en <span class="sg sg-red">rojo</span>, todo lo que necesita hasta llegar a los postulados; en <span class="sg sg-blue">azul</span>, todo lo que se construye sobre ella.</p>
     <p class="small muted">La más citada es <a href="../${nodos.find(n => n.id === masCitada[0]).href}">${masCitada[0]}</a>, ${esc(nodos.find(n => n.id === masCitada[0]).titulo.toLowerCase())}: la usan directamente ${masCitada[1]} proposiciones.</p>
   </header>
+  <div class="map-books tools" id="map-books" role="group" aria-label="Libros que se muestran en el mapa">
+    <button type="button" class="chip" data-libro="all" aria-pressed="true">Todos</button>
+    ${disponibles.map(b => `<button type="button" class="chip" data-libro="${b.numero}" aria-pressed="false" aria-label="Libro ${b.numero}" title="Libro ${b.numero}: ${esc(b.titulo)}">${b.numero}</button>`).join("")}
+    <span class="count" id="map-count" aria-live="polite"></span>
+  </div>
   <div class="map">
     <aside class="map-info" id="map-info" aria-live="polite"><p class="muted">Cargando el mapa…</p></aside>
     <div class="map-graph" id="map-graph"><noscript><p>El mapa necesita JavaScript. Las dependencias de cada proposición están también en su ficha, en «Se apoya en» y «La usan».</p></noscript></div>
