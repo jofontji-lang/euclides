@@ -4,6 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(ROOT, "_site");
@@ -20,6 +21,9 @@ const ordinal = { I: "primero", II: "segundo", III: "tercero", IV: "cuarto", V: 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const strip = s => String(s).replace(/<[^>]+>/g, "");
 const pages = [];
+// Huella del contenido de cada archivo de src/: se añade como ?v=… para que el navegador descargue la versión nueva al cambiar.
+const ver = Object.fromEntries(["style.css", "site.js", "figures.js", "mapa.js"].map(f =>
+  [f, createHash("sha1").update(fs.readFileSync(path.join(ROOT, "src", f))).digest("hex").slice(0, 8)]));
 
 function write(rel, html) {
   const file = path.join(OUT, rel);
@@ -63,7 +67,7 @@ function layout({ rel, title, description, active, body, figures = false, script
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<link rel="stylesheet" href="${r}assets/style.css">
+<link rel="stylesheet" href="${r}assets/style.css?v=${ver["style.css"]}">
 </head>
 <body>
 <div class="topline"></div>
@@ -79,8 +83,8 @@ ${body}
   <div><div class="logo">EUCLIDES</div><p>Una edición digital para mirar, leer y demostrar.<br>Preparada por Josep Font Jiménez · <a href="${HOME}">matematicasjosepfont.es</a></p></div>
   <div class="footer-right">ΜΕΤΡΟΝ ΑΡΙΣΤΟΝ<br><span>LA MEDIDA ES LO MEJOR</span></div>
 </div></footer>
-<script src="${r}assets/site.js" defer></script>
-${figures ? `<script src="${r}assets/figures.js" defer></script>` : ""}${script ? `<script src="${r}assets/${script}" defer></script>` : ""}
+<script src="${r}assets/site.js?v=${ver["site.js"]}" defer></script>
+${figures ? `<script src="${r}assets/figures.js?v=${ver["figures.js"]}" defer></script>` : ""}${script ? `<script src="${r}assets/${script}?v=${ver[script]}" defer></script>` : ""}
 </body>
 </html>
 `;
@@ -88,10 +92,10 @@ ${figures ? `<script src="${r}assets/figures.js" defer></script>` : ""}${script 
 
 // Bloque de figura interactiva
 const figureHTML = (id, stepsSel, { still = false } = {}) => {
-  const vb = { "I.1": "0 0 400 310", "I.32": "0 0 400 300", "I.47": "0 -20 400 350", "II.4": "0 0 400 330", "II.11": "0 0 400 380" }[id];
-  const aria = { "I.1": "Construcción del triángulo equilátero sobre AB", "I.32": "Ángulos de un triángulo y paralela por C", "I.47": "Cuadrados sobre los lados de un triángulo rectángulo", "II.4": "Cuadrado sobre AB dividido en los cuadrados sobre AC y CB y dos rectángulos iguales", "II.11": "Construcción de la sección áurea: el cuadrado sobre AH es igual al rectángulo comprendido por AB y HB" }[id];
+  const vb = { "I.1": "0 0 400 310", "I.32": "0 0 400 300", "I.47": "0 -20 400 350", "II.4": "0 0 400 330", "II.11": "0 0 400 380", "III.31": "0 0 400 330" }[id];
+  const aria = { "I.1": "Construcción del triángulo equilátero sobre AB", "I.32": "Ángulos de un triángulo y paralela por C", "I.47": "Cuadrados sobre los lados de un triángulo rectángulo", "II.4": "Cuadrado sobre AB dividido en los cuadrados sobre AC y CB y dos rectángulos iguales", "II.11": "Construcción de la sección áurea: el cuadrado sobre AH es igual al rectángulo comprendido por AB y HB", "III.31": "Triángulo inscrito en una semicircunferencia con el ángulo recto en A" }[id];
   if (still) return `<div class="diagram" data-fig="${id}" data-steps="${stepsSel}" data-still><svg viewBox="${vb}" role="img" aria-label="${aria}"><g class="layer"></g></svg></div>`;
-  const hint = { "I.1": "ARRASTRA A O B", "I.32": "ARRASTRA LOS VÉRTICES", "I.47": "ARRASTRA A", "II.4": "ARRASTRA C", "II.11": "ARRASTRA B" }[id];
+  const hint = { "I.1": "ARRASTRA A O B", "I.32": "ARRASTRA LOS VÉRTICES", "I.47": "ARRASTRA A", "II.4": "ARRASTRA C", "II.11": "ARRASTRA B", "III.31": "ARRASTRA A" }[id];
   return `<div data-fig="${id}" data-steps="${stepsSel}">
   <div class="fig-toolbar"><div class="kicker">Figura dinámica</div><span>${hint}</span></div>
   <div class="diagram"><svg viewBox="${vb}" role="img" aria-label="${aria}"><g class="layer"></g></svg></div>
@@ -160,7 +164,7 @@ const home = layout({
 <section class="section wrap">
   <div class="section-head"><div><div class="kicker">El lector geométrico</div><h2>${featured.length === 1 ? "Una demostración" : `${numeral(featured.length)} demostraciones`}<br>para empezar.</h2></div>
   <p>Cada una se construye paso a paso. Puedes deformar la figura y ver que la conclusión no depende del dibujo.</p></div>
-  <div class="demos">${featured.map(p => `<a class="demo" href="${p.href}">
+  <div class="demos cols-${featured.length <= 5 ? featured.length : Math.ceil(featured.length / Math.ceil(featured.length / 5))}">${featured.map(p => `<a class="demo" href="${p.href}">
     ${figureHTML(p.figura, "#mini-" + p.id.replace(".", "-"), { still: true })}
     <ol id="mini-${p.id.replace(".", "-")}" hidden>${p.pasos.map(s => `<li>${s}</li>`).join("")}</ol>
     <span class="kicker">Proposición ${p.id}</span><h3>${esc(p.titulo)}</h3><p>${esc(kind(p))}</p></a>`).join("")}</div>

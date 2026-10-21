@@ -237,7 +237,15 @@
       "tipo": "teorema",
       "titulo": "Ángulo en el semicírculo (Tales)",
       "enunciado": "En un círculo, el ángulo en el semicírculo es recto; el ángulo en un segmento mayor es menor que un recto, y el ángulo en un segmento menor es mayor que un recto. Además, el ángulo del segmento mayor es mayor que un recto, y el ángulo del segmento menor es menor que un recto.",
-      "usa": ["I.5", "I.17", "I.32", "III.22"],
+      "figura": "III.31",
+      "usa": ["I.5", "I.13", "I.17", "I.32", "III.22"],
+      "pasos": [
+        "Sea <i>BC</i> un diámetro del círculo de centro <i>E</i>, y <i>A</i> un punto cualquiera de la semicircunferencia. Se demuestra que el ángulo <i>BAC</i> es recto. Arrastra <i>A</i>.",
+        "Se traza el radio <i>EA</i>. Como <i>EA</i> = <i>EB</i>, el triángulo <i>EAB</i> es isósceles y el ángulo <span class=\"sg sg-red\">ABE</span> es igual al ángulo <span class=\"sg sg-red\">BAE</span> (I.5).",
+        "Como <i>EA</i> = <i>EC</i>, también el ángulo <span class=\"sg sg-blue\">ACE</span> es igual al ángulo <span class=\"sg sg-blue\">EAC</span> (I.5). Por tanto, el ángulo <i>BAC</i> es igual a los ángulos en <i>B</i> y en <i>C</i> juntos.",
+        "Se prolonga <i>BA</i> hasta <i>F</i>. En el triángulo <i>ABC</i>, el ángulo exterior <span class=\"sg sg-sage\">FAC</span> es igual a la suma de los ángulos interiores de los otros dos vértices, <span class=\"sg sg-red\">B</span> y <span class=\"sg sg-blue\">C</span> (I.32): los tres ángulos del triángulo suman dos rectos, y <span class=\"sg sg-sage\">FAC</span> junto con <i>BAC</i> también. En la figura, la paralela a <i>BC</i> por <i>A</i> lo divide en un ángulo igual al de <i>B</i> y otro igual al de <i>C</i>.",
+        "Así, el ángulo <i>BAC</i> es igual al ángulo <span class=\"sg sg-sage\">FAC</span>. Como juntos son iguales a dos rectos (I.13), cada uno de ellos es recto. <i>Q.E.D.</i>"
+      ],
       "nota": "La primera parte es el teorema que la tradición atribuye a Tales de Mileto (siglo VI a. C.): todo ángulo inscrito en una semicircunferencia es recto. La figura de I.47 lo usa para mover el vértice A sin que deje de ser recto."
     },
     {

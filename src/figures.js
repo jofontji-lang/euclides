@@ -94,6 +94,25 @@ FIGS["II.11"]={vb:[400,380],points:{B:{x:280,y:150}},drag:["B"],
     if(s<5)return `AB = ${fmt(a)} · AH = ${fmt(h)} · HB = ${fmt(a-h)} · AB : AH = ${dec(a/h)}`;
     return `AH² = ${fmt(h*h)} · AB·HB = ${fmt(a*(a-h))} · AB : AH = ${dec(a/h)}`}};
 
+/* III.31 — Ángulo en el semicírculo (Tales). BC diámetro, E centro, A sobre la semicircunferencia superior.
+   Los radios EA, EB y EC forman dos triángulos isósceles: ∠B = ∠BAE (rojo) y ∠C = ∠EAC (azul). */
+const T={E:{x:200,y:205},R:125};
+FIGS["III.31"]={vb:[400,330],points:{A:{x:T.E.x+T.R*Math.cos(2),y:T.E.y-T.R*Math.sin(2)}},drag:["A"],
+  move(P,k,p){let t=Math.atan2(-(p.y-T.E.y),p.x-T.E.x);if(t<0)t=p.x>T.E.x?0:Math.PI;
+    t=Math.max(15*Math.PI/180,Math.min(165*Math.PI/180,t));P.A={x:T.E.x+T.R*Math.cos(t),y:T.E.y-T.R*Math.sin(t)}},
+  draw(P,s,at){const{A}=P,E=T.E,B={x:E.x-T.R,y:E.y},C={x:E.x+T.R,y:E.y},F=add(A,mul(unit(sub(A,B)),70)),Pa=add(A,{x:65,y:0});
+    // Pa: punto de la paralela a BC por A; divide el ángulo exterior FAC en uno igual a ∠B (rojo) y otro igual a ∠C (azul)
+    const u1=unit(sub(B,A)),u2=unit(sub(C,A)),r1=add(A,mul(u1,11)),r2=add(r1,mul(u2,11)),r3=add(A,mul(u2,11));
+    return circ(E,T.R,"cons")
+      +at(1,wedge(B,A,C,28,"w-red")+wedge(A,B,E,24,"w-red"))
+      +at(2,wedge(C,A,B,28,"w-blue")+wedge(A,E,C,24,"w-blue"))
+      +at(3,wedge(A,F,C,40,"w-sage")+wedge(A,F,Pa,30,"w-red")+wedge(A,Pa,C,30,"w-blue")+ln(sub(A,{x:45,y:0}),Pa,"dash")+ln(A,F,"ln")+lab(F,"F",A))
+      +at(4,`<polyline points="${f(r1.x)},${f(r1.y)} ${f(r2.x)},${f(r2.y)} ${f(r3.x)},${f(r3.y)}" class="ln"/>`)
+      +ln(B,C,"ln")+at(1,ln(A,E,"ln"))+ln(A,B,"ln")+ln(A,C,"ln")+pt(E)+pt(B)+pt(C)
+      +lab(A,"A",E)+lab(B,"B",{x:B.x+10,y:B.y})+lab(C,"C",{x:C.x-10,y:C.y})+lab(E,"E",{x:E.x,y:E.y-10})},
+  readout(P){const E=T.E,B={x:E.x-T.R,y:E.y},C={x:E.x+T.R,y:E.y},b=angleAt(B,P.A,C),c=angleAt(C,P.A,B),a=angleAt(P.A,B,C);
+    return `∠B = ${fmt(b)}° · ∠C = ${fmt(c)}° · ∠B + ∠C = ${fmt(b+c)}° · ∠BAC = ${fmt(a)}°`}};
+
 /* Motor */
 function init(root){
   const cfg=FIGS[root.dataset.fig];if(!cfg)return;
