@@ -3,6 +3,16 @@
 const btn=document.querySelector(".menu-btn"),nav=document.querySelector(".nav");
 if(btn&&nav)btn.addEventListener("click",()=>{const o=nav.classList.toggle("open");btn.setAttribute("aria-expanded",o)});
 
+/* Lista desplegable «Libros»: se abre al pulsar y se cierra al pulsar fuera, con Escape o al salir con el tabulador */
+const books=document.querySelector(".nav-books"),drop=books&&books.querySelector(".nav-drop");
+if(drop){
+  const set=o=>{books.classList.toggle("open",o);drop.setAttribute("aria-expanded",o)};
+  drop.addEventListener("click",()=>set(!books.classList.contains("open")));
+  document.addEventListener("click",e=>{if(!books.contains(e.target))set(false)});
+  books.addEventListener("keydown",e=>{if(e.key==="Escape"&&books.classList.contains("open")){set(false);drop.focus()}});
+  books.addEventListener("focusout",e=>{if(!books.contains(e.relatedTarget))set(false)});
+}
+
 /* Pestañas: cada grupo [data-tabs] con botones [role=tab] que controlan paneles por id; se recuerda en la URL (#id) */
 document.querySelectorAll("[data-tabs]").forEach(group=>{
   const tabs=[...group.querySelectorAll('[role="tab"]')];

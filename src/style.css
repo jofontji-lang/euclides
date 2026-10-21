@@ -43,14 +43,37 @@ p{margin:0}
 .nav a[aria-current="page"]{box-shadow:inset 0 -2px var(--gold)}
 .nav .out{border:1px solid var(--green);padding:9px 12px;color:var(--green)}
 .nav .out:hover{background:var(--green);color:#fff}
+/* Lista desplegable «Libros» */
+.nav-books{position:relative}
+.nav-drop{background:none;border:0;padding:0;font:13px var(--sans);color:#5b6359;cursor:pointer;white-space:nowrap}
+.nav-drop:hover,.nav-books.open .nav-drop{color:var(--green)}
+.nav-drop.current{color:var(--green);box-shadow:inset 0 -2px var(--gold)}
+.nav-drop span{font-size:10px;margin-left:2px}
+.drop{display:none;position:absolute;top:100%;left:-16px;z-index:20;min-width:340px;margin-top:12px;background:var(--card);border:1px solid #ded8c9;box-shadow:var(--shadow);padding:6px 0}
+.drop::before{content:"";position:absolute;left:0;right:0;top:-13px;height:13px}
+.nav-books.open .drop{display:block}
+@media (hover:hover) and (min-width:861px){.nav-books:hover .drop{display:block}}
+.nav .drop a{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:baseline;padding:9px 16px;white-space:normal}
+.nav .drop a:hover{background:#b18a4b14}
+.nav .drop a[aria-current="page"]{box-shadow:inset 3px 0 var(--gold);background:#b18a4b14}
+.drop-n{font:11px var(--mono);letter-spacing:.06em;color:var(--gold)}
+.drop-t{font-size:13px;color:var(--ink)}
+.nav .drop .drop-all{display:block;border-top:1px solid var(--line);margin-top:6px;padding-top:11px;font:11px var(--mono);letter-spacing:.06em;color:var(--green)}
 .menu-btn{display:none;background:none;border:1px solid var(--line);padding:8px 12px;font:11px var(--mono);letter-spacing:.1em;color:var(--green);cursor:pointer}
-@media (max-width:1080px){
+@media (max-width:860px){
   .menu-btn{display:block}
   .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:6px var(--gutter) 16px}
   .nav.open{display:flex}
   .nav a{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
   .nav a[aria-current="page"]{box-shadow:none;color:var(--gold)}
   .nav .out{margin-top:12px;text-align:center;border-bottom:1px solid var(--green)}
+  .nav-drop{display:none}
+  .drop,.nav-books.open .drop{display:block;position:static;min-width:0;margin:0;border:0;box-shadow:none;background:none;padding:12px 0 4px;border-bottom:1px solid var(--line)}
+  .drop::before{content:"LIBROS";position:static;display:block;height:auto;font:10px var(--mono);letter-spacing:.14em;color:var(--muted);margin-bottom:4px}
+  .nav .drop a{border-bottom:0;padding:8px 0;font-size:15px;grid-template-columns:88px minmax(0,1fr)}
+  .nav .drop a[aria-current="page"]{box-shadow:none;background:none}
+  .nav .drop a[aria-current="page"] .drop-t{color:var(--gold)}
+  .nav .drop .drop-all{border-top:0;margin-top:0;padding-top:8px}
 }
 
 /* Migas */

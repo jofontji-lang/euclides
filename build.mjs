@@ -37,12 +37,14 @@ function layout({ rel, title, description, active, body, figures = false, script
   const depth = rel.split("/").length - 1;
   const r = absolute ? "/" : "../".repeat(depth) || "./";
   const url = SITE + "/" + rel.replace(/index\.html$/, "");
-  const nav = [
-    ["inicio", r, "Inicio"],
-    ...disponibles.map(b => [b.slug, r + b.slug + "/", "Libro " + b.numero]),
-    ["mapa", r + "mapa/", "Mapa"],
-    ["sobre", r + "sobre/", "La edición"],
-  ].map(([k, href, t]) => `<a href="${href}"${active === k ? ' aria-current="page"' : ""}>${t}</a>`).join("");
+  const link = (k, href, t) => `<a href="${href}"${active === k ? ' aria-current="page"' : ""}>${t}</a>`;
+  // «Libros» abre una lista con los libros disponibles (site.js); en el móvil se muestra ya desplegada.
+  const enLibro = disponibles.some(b => b.slug === active);
+  const librosMenu = `<div class="nav-books">
+    <button type="button" class="nav-drop${enLibro ? " current" : ""}" aria-expanded="false" aria-controls="menu-libros">Libros <span aria-hidden="true">▾</span></button>
+    <div class="drop" id="menu-libros">${disponibles.map(b => `<a href="${r}${b.slug}/"${active === b.slug ? ' aria-current="page"' : ""}><span class="drop-n">Libro ${b.numero}</span><span class="drop-t">${esc(b.titulo)}</span></a>`).join("")}<a class="drop-all" href="${r}#libros">Los trece libros →</a></div>
+  </div>`;
+  const nav = link("inicio", r, "Inicio") + librosMenu + link("mapa", r + "mapa/", "Mapa") + link("sobre", r + "sobre/", "La edición");
   return `<!doctype html>
 <html lang="es">
 <head>
